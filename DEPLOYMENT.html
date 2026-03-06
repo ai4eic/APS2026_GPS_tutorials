@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Deployment Guide &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>Deployment Guide &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,13 +90,15 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'DEPLOYMENT';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/DEPLOYMENT.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/DEPLOYMENT.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -189,23 +194,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -258,9 +252,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -283,7 +277,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +294,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/DEPLOYMENT.md" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/DEPLOYMENT.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +311,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2FDEPLOYMENT.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2FDEPLOYMENT.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,9 +412,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -476,13 +470,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deployment-guide">
-<h1>Deployment Guide<a class="headerlink" href="#deployment-guide" title="Link to this heading">#</a></h1>
+<h1>Deployment Guide<a class="headerlink" href="#deployment-guide" title="Permalink to this heading">#</a></h1>
 <p>This document explains how the Jupyter Book is built and deployed to GitHub Pages.</p>
 <section id="automatic-deployment">
-<h2>Automatic Deployment<a class="headerlink" href="#automatic-deployment" title="Link to this heading">#</a></h2>
+<h2>Automatic Deployment<a class="headerlink" href="#automatic-deployment" title="Permalink to this heading">#</a></h2>
 <p>The tutorial is automatically built and deployed using GitHub Actions whenever changes are pushed to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 <section id="deployment-workflow">
-<h3>Deployment Workflow<a class="headerlink" href="#deployment-workflow" title="Link to this heading">#</a></h3>
+<h3>Deployment Workflow<a class="headerlink" href="#deployment-workflow" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Trigger</strong>: Push to <code class="docutils literal notranslate"><span class="pre">main</span></code> branch or manual workflow dispatch</p></li>
 <li><p><strong>Build</strong>: GitHub Actions builds the Jupyter Book using <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code></p></li>
@@ -491,7 +485,7 @@ document.write(`
 </ol>
 </section>
 <section id="workflow-file">
-<h3>Workflow File<a class="headerlink" href="#workflow-file" title="Link to this heading">#</a></h3>
+<h3>Workflow File<a class="headerlink" href="#workflow-file" title="Permalink to this heading">#</a></h3>
 <p>The deployment is configured in <code class="docutils literal notranslate"><span class="pre">.github/workflows/deploy-book.yml</span></code>:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Deploy Jupyter Book</span>
 
@@ -513,9 +507,9 @@ document.write(`
 </section>
 </section>
 <section id="github-pages-configuration">
-<h2>GitHub Pages Configuration<a class="headerlink" href="#github-pages-configuration" title="Link to this heading">#</a></h2>
+<h2>GitHub Pages Configuration<a class="headerlink" href="#github-pages-configuration" title="Permalink to this heading">#</a></h2>
 <section id="repository-settings">
-<h3>Repository Settings<a class="headerlink" href="#repository-settings" title="Link to this heading">#</a></h3>
+<h3>Repository Settings<a class="headerlink" href="#repository-settings" title="Permalink to this heading">#</a></h3>
 <p>To enable GitHub Pages for this repository:</p>
 <ol class="arabic simple">
 <li><p>Go to repository <strong>Settings</strong> → <strong>Pages</strong></p></li>
@@ -531,7 +525,7 @@ document.write(`
 <p>The site will be available at: <code class="docutils literal notranslate"><span class="pre">https://ai4eic.github.io/DNP2025-tutorials/</span></code></p>
 </section>
 <section id="custom-domain-optional">
-<h3>Custom Domain (Optional)<a class="headerlink" href="#custom-domain-optional" title="Link to this heading">#</a></h3>
+<h3>Custom Domain (Optional)<a class="headerlink" href="#custom-domain-optional" title="Permalink to this heading">#</a></h3>
 <p>To use a custom domain:</p>
 <ol class="arabic simple">
 <li><p>Add a <code class="docutils literal notranslate"><span class="pre">CNAME</span></code> file to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch with your domain</p></li>
@@ -541,7 +535,7 @@ document.write(`
 </section>
 </section>
 <section id="manual-deployment">
-<h2>Manual Deployment<a class="headerlink" href="#manual-deployment" title="Link to this heading">#</a></h2>
+<h2>Manual Deployment<a class="headerlink" href="#manual-deployment" title="Permalink to this heading">#</a></h2>
 <p>If you need to deploy manually:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the book</span>
 jupyter-book<span class="w"> </span>build<span class="w"> </span>.
@@ -555,7 +549,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 </div>
 </section>
 <section id="deployment-status">
-<h2>Deployment Status<a class="headerlink" href="#deployment-status" title="Link to this heading">#</a></h2>
+<h2>Deployment Status<a class="headerlink" href="#deployment-status" title="Permalink to this heading">#</a></h2>
 <p>You can check the deployment status in the repository:</p>
 <ul class="simple">
 <li><p><strong>Actions tab</strong>: View workflow runs and build logs</p></li>
@@ -563,9 +557,9 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 </ul>
 </section>
 <section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
 <section id="build-fails">
-<h3>Build Fails<a class="headerlink" href="#build-fails" title="Link to this heading">#</a></h3>
+<h3>Build Fails<a class="headerlink" href="#build-fails" title="Permalink to this heading">#</a></h3>
 <p>Check the GitHub Actions logs for errors:</p>
 <ol class="arabic simple">
 <li><p>Go to <strong>Actions</strong> tab</p></li>
@@ -580,7 +574,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 </ul>
 </section>
 <section id="pages-not-updating">
-<h3>Pages Not Updating<a class="headerlink" href="#pages-not-updating" title="Link to this heading">#</a></h3>
+<h3>Pages Not Updating<a class="headerlink" href="#pages-not-updating" title="Permalink to this heading">#</a></h3>
 <p>If changes aren’t appearing:</p>
 <ol class="arabic simple">
 <li><p>Check workflow succeeded in <strong>Actions</strong> tab</p></li>
@@ -590,7 +584,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 </ol>
 </section>
 <section id="errors">
-<h3>404 Errors<a class="headerlink" href="#errors" title="Link to this heading">#</a></h3>
+<h3>404 Errors<a class="headerlink" href="#errors" title="Permalink to this heading">#</a></h3>
 <p>If you get 404 errors:</p>
 <ol class="arabic simple">
 <li><p>Ensure <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch exists</p></li>
@@ -600,7 +594,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 </section>
 </section>
 <section id="build-cache">
-<h2>Build Cache<a class="headerlink" href="#build-cache" title="Link to this heading">#</a></h2>
+<h2>Build Cache<a class="headerlink" href="#build-cache" title="Permalink to this heading">#</a></h2>
 <p>The workflow uses caching to speed up builds:</p>
 <ul class="simple">
 <li><p><strong>pip cache</strong>: Python packages</p></li>
@@ -609,7 +603,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 <p>To clear the cache, manually delete it in the Actions cache settings.</p>
 </section>
 <section id="security">
-<h2>Security<a class="headerlink" href="#security" title="Link to this heading">#</a></h2>
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this heading">#</a></h2>
 <p>The workflow uses GitHub’s built-in <code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN</span></code> which has:</p>
 <ul class="simple">
 <li><p><strong>Read</strong> access to repository</p></li>
@@ -619,7 +613,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 <p>No additional secrets are required.</p>
 </section>
 <section id="monitoring">
-<h2>Monitoring<a class="headerlink" href="#monitoring" title="Link to this heading">#</a></h2>
+<h2>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this heading">#</a></h2>
 <p>Monitor deployment health:</p>
 <ul class="simple">
 <li><p><strong>GitHub Actions</strong>: Check workflow status</p></li>
@@ -628,7 +622,7 @@ ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> <
 </ul>
 </section>
 <section id="local-testing">
-<h2>Local Testing<a class="headerlink" href="#local-testing" title="Link to this heading">#</a></h2>
+<h2>Local Testing<a class="headerlink" href="#local-testing" title="Permalink to this heading">#</a></h2>
 <p>Before pushing changes, test locally:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clean previous build</span>
 jupyter-book<span class="w"> </span>clean<span class="w"> </span>.
@@ -643,10 +637,10 @@ open<span class="w"> </span>_build/html/index.html
 <p>This ensures your changes will build successfully in CI/CD.</p>
 </section>
 <section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Review <a class="reference internal" href="BUILD.html"><span class="std std-doc">BUILD.md</span></a> for local build instructions</p></li>
-<li><p>See <a class="reference internal" href="CONTRIBUTING.html"><span class="std std-doc">CONTRIBUTING.md</span></a> for contribution guidelines</p></li>
+<li><p>Review <a class="reference internal" href="BUILD.html"><span class="doc std std-doc">BUILD.md</span></a> for local build instructions</p></li>
+<li><p>See <a class="reference internal" href="CONTRIBUTING.html"><span class="doc std std-doc">CONTRIBUTING.md</span></a> for contribution guidelines</p></li>
 <li><p>Check <a class="reference download internal" download="" href="_downloads/aeb42283af8ef8e9da40ededd3ae2ab2/_config.yml"><span class="xref download myst">_config.yml</span></a> for Jupyter Book configuration</p></li>
 </ul>
 </section>
@@ -735,7 +729,7 @@ open<span class="w"> </span>_build/html/index.html
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -745,7 +739,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

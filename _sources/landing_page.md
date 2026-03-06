@@ -1,10 +1,10 @@
-# Deep Learning Tutorials for Experimental Nuclear Physics
+# Data Science for Physicists
 
-Welcome to the DNP 2025 Deep Learning Tutorials presented at APS-DNP 2025 Data Science Workshop sessions! This Jupyter Book provides comprehensive tutorials on applying deep learning techniques to experimental nuclear physics, specifically for the Forward Calorimeter (FCAL) at GlueX in Hall-D Jefferson Lab.
+Welcome to the Short Course on Data Science for Physicists presented at APS-Global Physics Summit 2026! This Jupyter Book provides comprehensive tutorials on applying deep learning techniques to experimental nuclear physics, specifically for the Forward Calorimeter (FCAL) at GlueX in Hall-D Jefferson Lab.
 
 ## Overview
 
-These tutorials are designed for Nuclear and Paricle Physics and Researchers. We focus on two main applications of deep learning:
+These tutorials are designed for Nuclear and Particle Physics and Researchers. We focus on two main applications of deep learning:
 
 1. **CNN-based Classification**: Using Convolutional Neural Networks to classify FCAL showers and distinguish between photons and splitoffs
 2. **Generative AI**: Building generative models to simulate FCAL photon showers based on their kinematics.
@@ -45,14 +45,14 @@ You can explore and download them at: [![Hugging Face Model](https://img.shields
 
 ## Event Information
 
-**DNP 2025 Tutorial Session**  
-Date: October 17, 2025  
-Location: Chicago, IL  
-Workshop Sessions: [1WD](https://schedule.aps.org/dnp/2025/events/1WD/2), [2WD](https://schedule.aps.org/dnp/2025/events/2WD/2)
+**APS GPS 2026 Tutorial Session: Data Science for Physicists**  
+Date: March 14-15, 2026  
+Location: Denver, CO  
+Workshop Sessions: [1WD](https://summit.aps.org/events/MAR-SH01), [2WD](https://summit.aps.org/events/MAR-SH04)
 
-![](images/dnp2025_header_aps.png)
+![](./images/gps2026_header_aps.png)
 
-For questions or feedback, please open an issue on our [GitHub repository](https://github.com/ai4eic/DNP2025-tutorials).
+For questions or feedback, please open an issue on our [GitHub repository](https://ai4eic.github.io/APS2026_GPS_tutorials).
 
 ---
 

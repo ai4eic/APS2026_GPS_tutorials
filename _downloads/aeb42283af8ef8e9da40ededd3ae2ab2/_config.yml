@@ -1,9 +1,9 @@
 # Jupyter Book Configuration
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025
-author: Karthik Suresh & Cristiano Fanelli
-copyright: "2025"
+title: APS-GPS 2026 - (Short Course) Data Science for Physicists
+author: Cristiano Fanelli & Karthik Suresh
+copyright: "2026"
 logo : images/AI4eic_logo4.png  # A path to the book logo
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -16,7 +16,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/ai4eic/DNP2025-tutorials
+  url: https://ai4eic.github.io/APS2026_GPS_tutorials
   path_to_book: .  # Path to the book (root in this case)
   branch: main
 
@@ -27,15 +27,15 @@ html:
   use_repository_button: true
   use_edit_page_button: true
   home_page_in_navbar: true
-  baseurl: https://ai4eic.github.io/DNP2025-tutorials/
-  extra_footer : "DNP 2025 Data Science Workshop"  # Will be displayed underneath the footer.
+  baseurl: https://ai4eic.github.io/APS2026_GPS_tutorials
+  extra_footer : "APS-GPS 2026 - (Short Course) Data Science for Physicists"  # Will be displayed underneath the footer.
   analytics:
       plausible_analytics_url: https://plausible.io/js/script.js
 
   comments:
     hypothesis              : true
-    utterances              : 
-                            repo: "ai4eic/DNP2025-tutorials"
+    utterances              :
+                            repo: "ai4eic/APS2026_GPS_tutorials"
 
 #######################################################################################
 # Launch button settings
@@ -54,7 +54,7 @@ sphinx:
     - sphinx_design
   config:
     html_theme_options:
-      repository_url: https://github.com/ai4eic/DNP2025-tutorials
+      repository_url: https://github.com/ai4eic/APS2026_GPS_tutorials
       use_repository_button: true
       use_issues_button: true
       use_edit_page_button: true

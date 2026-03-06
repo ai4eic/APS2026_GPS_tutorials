@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Formulation &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>Problem Formulation &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,15 +90,17 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03-problem-description';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/chapters/03-problem-description.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/chapters/03-problem-description.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Conditional GAN for FCAL Shower generation" href="../notebooks/03-gan-generation.html" />
@@ -191,23 +196,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -260,9 +254,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -285,7 +279,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +296,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/chapters/03-problem-description.md" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/chapters/03-problem-description.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +313,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2Fchapters/03-problem-description.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fchapters/03-problem-description.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,9 +414,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -462,12 +456,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="problem-formulation">
-<h1>Problem Formulation<a class="headerlink" href="#problem-formulation" title="Link to this heading">#</a></h1>
+<h1>Problem Formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this heading">#</a></h1>
 <p>The Forward Calorimeter (FCAL) in the GlueX detector is a high-granularity electromagnetic calorimeter composed of lead-glass modules arranged in a square grid. It measures the position and energy of electromagnetic (EM) showers produced by incident photons and electrons. When a high-energy photon enters the FCAL, it converts into an <span class="math notranslate nohighlight">\(e^+e^-\)</span> pair, initiating a cascade of secondary particles that deposit energy across neighboring calorimeter cells. The resulting two-dimensional energy map — the <strong>hit pattern</strong> — reflects the spatial development of the shower.</p>
 <p>In this study, we focus exclusively on <strong>photon-induced showers</strong> simulated with the GlueX Monte Carlo (HDGeant4 + halld_recon). From these reconstructed showers, we extract <strong>localized patches</strong> of the FCAL energy map centered around the shower maximum. Each patch encodes a localized shower image in the <span class="math notranslate nohighlight">\((\text{row}, \text{col})\)</span> grid, normalized to the total deposited energy.</p>
 <hr class="docutils" />
 <section id="problem-definition">
-<h2>Problem Definition<a class="headerlink" href="#problem-definition" title="Link to this heading">#</a></h2>
+<h2>Problem Definition<a class="headerlink" href="#problem-definition" title="Permalink to this heading">#</a></h2>
 <p>The goal of this exercise is to develop a <strong>Generative Adversarial Network (GAN)</strong> that can <strong>synthesize realistic FCAL shower images</strong>, conditioned on the <strong>thrown photon energy (<span class="math notranslate nohighlight">\(E_{\text{thrown}}\)</span>)</strong>.</p>
 <p>Formally, the generative model learns a conditional mapping:</p>
 <div class="math notranslate nohighlight">
@@ -485,8 +479,8 @@ G(z, E_{\text{thrown}}) \rightarrow \hat{I}_{\text{shower}}
 </section>
 <hr class="docutils" />
 <section id="dataset-and-preprocessing">
-<h2>Dataset and Preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Link to this heading">#</a></h2>
-<p>The dataset is built from reconstructed <strong>photon showers</strong> only. We will use the same dataset used for <a class="reference internal" href="../notebooks/02-cnn-classification.html"><span class="std std-doc">classification</span></a> and <a class="reference internal" href="../notebooks/02-cnn-regression.html"><span class="std std-doc">regression</span></a>:</p>
+<h2>Dataset and Preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Permalink to this heading">#</a></h2>
+<p>The dataset is built from reconstructed <strong>photon showers</strong> only. We will use the same dataset used for <a class="reference internal" href="../notebooks/02-cnn-classification.html"><span class="doc std std-doc">classification</span></a> and <a class="reference internal" href="../notebooks/02-cnn-regression.html"><span class="doc std std-doc">regression</span></a>:</p>
 <ol class="arabic simple">
 <li><p><strong>Event Selection</strong></p>
 <ul class="simple">
@@ -518,15 +512,14 @@ E' = \frac{\log(1 + E / E_0)}{\log(1 + E_{\text{max}} / E_0)}
 </ol>
 <p>The dataset can be found in <a class="reference external" href="https://huggingface.co/datasets/AI4EIC/DNP2025-tutorial/resolve/main/formatted_dataset/CNN4FCAL_GUN_PATCHSIZE_11.h5">huggingface</a>.</p>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/true_patches.png"><img alt="GAN training data" src="../_images/true_patches.png" style="width: 80%;" />
-</a>
+<a class="reference internal image-reference" href="../_images/true_patches.png"><img alt="GAN training data" src="../_images/true_patches.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">:caption: A sample training dataset to generate FCAL shower energy patches is shown below. The pixel energies and thrownE are normalized as mentioned above.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">:caption: A sample training dataset to generate FCAL shower energy patches is shown below. The pixel energies and thrownE are normalized as mentioned above.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="data-preprocessing">
-<h2>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h2>
+<h2>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this heading">#</a></h2>
 <p>For this demonstration, the dataset is restricted to events with <strong>thrown photon energies between 1.0 GeV and 2.0 GeV</strong>.</p>
 <p>This limited range serves two purposes:</p>
 <ol class="arabic simple">
@@ -538,7 +531,7 @@ By fixing a limited energy range, the model focuses on learning <strong>fine-gra
 This allows clearer interpretation of the conditioning effect and better visual inspection of generated patterns.</p></li>
 </ol>
 <section id="hit-energy-threshold">
-<h3>Hit Energy Threshold<a class="headerlink" href="#hit-energy-threshold" title="Link to this heading">#</a></h3>
+<h3>Hit Energy Threshold<a class="headerlink" href="#hit-energy-threshold" title="Permalink to this heading">#</a></h3>
 <p>Because a GAN learns to generate <em>physically plausible</em> but not <em>pixel-by-pixel identical</em> hit patterns, a small energy threshold is applied to define realistic cell occupancies.<br />
 In particular, we apply a <strong>per-cell energy cut of 0.05 GeV (50 MeV)</strong> when evaluating or visualizing generated showers:</p>
 <div class="math notranslate nohighlight">
@@ -549,7 +542,7 @@ E_{\text{cell}} \ge 0.05 \, \text{GeV}
 <p>By doing so, the comparison between real and generated showers focuses on meaningful energy deposits — i.e., those that would actually produce measurable detector responses — rather than on statistical pixel noise or reconstruction artifacts.</p>
 </section>
 <section id="practical-implication">
-<h3>Practical Implication<a class="headerlink" href="#practical-implication" title="Link to this heading">#</a></h3>
+<h3>Practical Implication<a class="headerlink" href="#practical-implication" title="Permalink to this heading">#</a></h3>
 <p>With these cuts:</p>
 <ul class="simple">
 <li><p>The GAN trains faster and more stably due to reduced input variance.</p></li>
@@ -649,7 +642,7 @@ E_{\text{cell}} \ge 0.05 \, \text{GeV}
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -659,7 +652,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction to GlueX &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>Introduction to GlueX &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,19 +90,21 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01-intro-to-gluex';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/chapters/01-intro-to-gluex.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/chapters/01-intro-to-gluex.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The Forward Calorimeter (FCAL) in GlueX" href="01-intro-to-fcal.html" />
-    <link rel="prev" title="Deep Learning Tutorials for Experimental Nuclear Physics" href="../landing_page.html" />
+    <link rel="prev" title="Data Science for Physicists" href="../landing_page.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,23 +196,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current nav bd-sidenav">
@@ -260,9 +254,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -285,7 +279,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +296,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/chapters/01-intro-to-gluex.md" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/chapters/01-intro-to-gluex.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +313,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2Fchapters/01-intro-to-gluex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fchapters/01-intro-to-gluex.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,9 +414,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -470,39 +464,38 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-gluex">
-<h1>Introduction to GlueX<a class="headerlink" href="#introduction-to-gluex" title="Link to this heading">#</a></h1>
+<h1>Introduction to GlueX<a class="headerlink" href="#introduction-to-gluex" title="Permalink to this heading">#</a></h1>
 <section id="scientific-motivation">
-<h2>Scientific Motivation<a class="headerlink" href="#scientific-motivation" title="Link to this heading">#</a></h2>
+<h2>Scientific Motivation<a class="headerlink" href="#scientific-motivation" title="Permalink to this heading">#</a></h2>
 <p>The <strong>GlueX</strong> experiment is a dedicated photoproduction experiment at Jefferson Lab (Hall D), designed to explore the spectrum of light-quark mesons, with special sensitivity to <strong>hybrid and exotic mesons</strong> that carry gluonic excitations beyond the simple quark–antiquark picture. <span id="id1">[<a class="reference internal" href="#id22" title="GlueX Collaboration / Hall-D Wiki. Overview of the gluex experiment. Online, 2025. URL: https://halldweb.jlab.org/wiki/index.php/GlueX_Project_Overviews.">1</a>, <a class="reference internal" href="#id17" title="J. Zarling. The gluex experiment: recent results and future plans. JPS Conference Proceedings, 2019. arXiv:1911.11239.">2</a>]</span></p>
 <p>Lattice QCD and phenomenological models predict that <strong>hybrid mesons</strong> with exotic quantum numbers (for example <span class="math notranslate nohighlight">\(J^{PC} = 1^{-+}, 0^{+-}, 2^{+-}\)</span>) should exist in the light-quark sector. These states are difficult to access in many production modes but may be favorable in photoproduction at intermediate energies. <span id="id2">[<a class="reference internal" href="#id22" title="GlueX Collaboration / Hall-D Wiki. Overview of the gluex experiment. Online, 2025. URL: https://halldweb.jlab.org/wiki/index.php/GlueX_Project_Overviews.">1</a>, <a class="reference internal" href="#id17" title="J. Zarling. The gluex experiment: recent results and future plans. JPS Conference Proceedings, 2019. arXiv:1911.11239.">2</a>, <a class="reference internal" href="#id18" title="E. S. Swanson. The new resonances: exotic or conventional mesons? Physics Reports, 429:243, 2006.">3</a>]</span></p>
 <p>GlueX aims to provide a high-statistics, high-acceptance data set with linearly polarized photons to enable precision spectroscopy and amplitude analyses. <span id="id3">[<a class="reference internal" href="#id22" title="GlueX Collaboration / Hall-D Wiki. Overview of the gluex experiment. Online, 2025. URL: https://halldweb.jlab.org/wiki/index.php/GlueX_Project_Overviews.">1</a>, <a class="reference internal" href="#id17" title="J. Zarling. The gluex experiment: recent results and future plans. JPS Conference Proceedings, 2019. arXiv:1911.11239.">2</a>]</span></p>
 </section>
 <hr class="docutils" />
 <section id="experimental-apparatus-and-beamline">
-<h2>Experimental Apparatus and Beamline<a class="headerlink" href="#experimental-apparatus-and-beamline" title="Link to this heading">#</a></h2>
+<h2>Experimental Apparatus and Beamline<a class="headerlink" href="#experimental-apparatus-and-beamline" title="Permalink to this heading">#</a></h2>
 <section id="cebaf-and-hall-d">
-<h3>CEBAF and Hall D<a class="headerlink" href="#cebaf-and-hall-d" title="Link to this heading">#</a></h3>
+<h3>CEBAF and Hall D<a class="headerlink" href="#cebaf-and-hall-d" title="Permalink to this heading">#</a></h3>
 <p>The Continuous Electron Beam Accelerator Facility (CEBAF) at JLab delivers up to 12 GeV electron beams, which feed into multiple experimental halls. The Hall D complex was added as part of the 12 GeV upgrade to house the GlueX experiment. <span id="id4">[<a class="reference internal" href="#id22" title="GlueX Collaboration / Hall-D Wiki. Overview of the gluex experiment. Online, 2025. URL: https://halldweb.jlab.org/wiki/index.php/GlueX_Project_Overviews.">1</a>, <a class="reference internal" href="#id15" title="GlueX Collaboration and others. The gluex beamline and detector. Nuclear Instruments and Methods A 987, pages 164807, 2021. arXiv:2005.14272.">4</a>]</span></p>
 </section>
 <section id="photon-beam-production-and-tagging">
-<h3>Photon Beam Production and Tagging<a class="headerlink" href="#photon-beam-production-and-tagging" title="Link to this heading">#</a></h3>
+<h3>Photon Beam Production and Tagging<a class="headerlink" href="#photon-beam-production-and-tagging" title="Permalink to this heading">#</a></h3>
 <p>To create a <strong>linearly polarized photon beam</strong> near 9 GeV, GlueX uses <em>coherent bremsstrahlung</em> from a thin diamond radiator. Electrons that emit photons lose energy and are bent more strongly by downstream dipoles; their position in the tagging spectrometer determines the photon energy. The polarization is maximized near a coherent peak in the spectrum. <span id="id5">[<a class="reference internal" href="#id22" title="GlueX Collaboration / Hall-D Wiki. Overview of the gluex experiment. Online, 2025. URL: https://halldweb.jlab.org/wiki/index.php/GlueX_Project_Overviews.">1</a>, <a class="reference internal" href="#id15" title="GlueX Collaboration and others. The gluex beamline and detector. Nuclear Instruments and Methods A 987, pages 164807, 2021. arXiv:2005.14272.">4</a>]</span></p>
 <p>Photon flux is monitored via a <strong>pair spectrometer</strong>, and polarization is measured by a <strong>triplet polarimeter</strong>. <span id="id6">[<a class="reference internal" href="#id15" title="GlueX Collaboration and others. The gluex beamline and detector. Nuclear Instruments and Methods A 987, pages 164807, 2021. arXiv:2005.14272.">4</a>]</span></p>
 </section>
 <section id="target-and-trigger">
-<h3>Target and Trigger<a class="headerlink" href="#target-and-trigger" title="Link to this heading">#</a></h3>
+<h3>Target and Trigger<a class="headerlink" href="#target-and-trigger" title="Permalink to this heading">#</a></h3>
 <p>The photon beam interacts with a <strong>liquid hydrogen target</strong> (30 cm long) inside the spectrometer. Downstream detectors form triggers based on multiplicities, energy deposits, and timing. The DAQ system supports high trigger rates (tens of kHz) and uses pipelined electronics (flash ADCs, TDCs) with ~3.3 µs latency. <span id="id7">[<a class="reference internal" href="#id15" title="GlueX Collaboration and others. The gluex beamline and detector. Nuclear Instruments and Methods A 987, pages 164807, 2021. arXiv:2005.14272.">4</a>]</span></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="detector-systems-overview">
-<h2>Detector Systems Overview<a class="headerlink" href="#detector-systems-overview" title="Link to this heading">#</a></h2>
+<h2>Detector Systems Overview<a class="headerlink" href="#detector-systems-overview" title="Permalink to this heading">#</a></h2>
 <p>Below is a simplified schematic of the GlueX detector in Hall D:</p>
 <figure class="align-default" id="id25">
-<a class="reference internal image-reference" href="../_images/gluex_detector_schematic.png"><img alt="GlueX detector schematic" src="../_images/gluex_detector_schematic.png" style="width: 80%;" />
-</a>
+<a class="reference internal image-reference" href="../_images/gluex_detector_schematic.png"><img alt="GlueX detector schematic" src="../_images/gluex_detector_schematic.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Cut-away view of GlueX in Hall D (not to scale).</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Cut-away view of GlueX in Hall D (not to scale).</span><a class="headerlink" href="#id25" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The detector is azimuthally symmetric and nearly hermetic for charged and neutral particles. <span id="id8">[<a class="reference internal" href="#id15" title="GlueX Collaboration and others. The gluex beamline and detector. Nuclear Instruments and Methods A 987, pages 164807, 2021. arXiv:2005.14272.">4</a>]</span></p>
@@ -523,18 +516,18 @@ document.write(`
 </ul>
 </section>
 <section id="data-taking-simulation-and-reconstruction-software">
-<h2>Data Taking, Simulation, and Reconstruction Software<a class="headerlink" href="#data-taking-simulation-and-reconstruction-software" title="Link to this heading">#</a></h2>
+<h2>Data Taking, Simulation, and Reconstruction Software<a class="headerlink" href="#data-taking-simulation-and-reconstruction-software" title="Permalink to this heading">#</a></h2>
 <section id="run-periods-and-beam-conditions">
-<h3>Run Periods and Beam Conditions<a class="headerlink" href="#run-periods-and-beam-conditions" title="Link to this heading">#</a></h3>
+<h3>Run Periods and Beam Conditions<a class="headerlink" href="#run-periods-and-beam-conditions" title="Permalink to this heading">#</a></h3>
 <p>GlueX began commissioning in 2014, then gradually ramped to physics-quality data in 2016 and beyond. The approved Phase I program ran through 2018, collecting large data sets. Phase II is ongoing, featuring the DIRC upgrade and higher photon fluxes. <span id="id11">[<a class="reference internal" href="#id22" title="GlueX Collaboration / Hall-D Wiki. Overview of the gluex experiment. Online, 2025. URL: https://halldweb.jlab.org/wiki/index.php/GlueX_Project_Overviews.">1</a>, <a class="reference internal" href="#id23" title="GlueX Collaboration. Future physics using gluex in hall-d. GlueX White Paper, 2019. halldweb whitepaper.">7</a>]</span></p>
 <p>Photon flux in Phase I ranged from <span class="math notranslate nohighlight">\(1\times10^{7}\)</span> to <span class="math notranslate nohighlight">\(3\times 10^{7} \gamma/s\)</span> in the coherent peak. <span id="id12">[<a class="reference internal" href="#id23" title="GlueX Collaboration. Future physics using gluex in hall-d. GlueX White Paper, 2019. halldweb whitepaper.">7</a>]</span></p>
 </section>
 <section id="simulation-framework">
-<h3>Simulation Framework<a class="headerlink" href="#simulation-framework" title="Link to this heading">#</a></h3>
+<h3>Simulation Framework<a class="headerlink" href="#simulation-framework" title="Permalink to this heading">#</a></h3>
 <p>GlueX uses a GEANT4-based simulation (HDGeant4) to model detector response, geometry, and materials. Digitization and smearing steps generate simulated detector hits. Conditions (e.g. calibration constants) are pulled from databases (CCDB, RCDB). <span id="id13">[<a class="reference internal" href="#id15" title="GlueX Collaboration and others. The gluex beamline and detector. Nuclear Instruments and Methods A 987, pages 164807, 2021. arXiv:2005.14272.">4</a>, <a class="reference internal" href="#id21" title="GlueX Collaboration / Hall-D Wiki. Gluex / hall-d online documentation. Online, 2025. URL: https://halldweb.jlab.org/wiki.">8</a>]</span></p>
 </section>
 <section id="reconstruction-and-analysis-workflow">
-<h3>Reconstruction and Analysis Workflow<a class="headerlink" href="#reconstruction-and-analysis-workflow" title="Link to this heading">#</a></h3>
+<h3>Reconstruction and Analysis Workflow<a class="headerlink" href="#reconstruction-and-analysis-workflow" title="Permalink to this heading">#</a></h3>
 <p>The data and MC are processed through <code class="docutils literal notranslate"><span class="pre">halld_recon</span></code>, using <code class="docutils literal notranslate"><span class="pre">JANA2</span></code> (<code class="docutils literal notranslate"><span class="pre">JANA</span></code>) as the event engine. Reconstruction includes:</p>
 <ul class="simple">
 <li><p>Hit clustering, track finding, and fitting</p></li>
@@ -545,18 +538,16 @@ document.write(`
 </ul>
 <p>The JANA/DANA framework enables modular plugins for physics skims and format conversion.</p>
 <figure class="align-default" id="id26">
-<a class="reference internal image-reference" href="../_images/simreconFlow.png"><img alt="GlueX detector schematic" src="../_images/simreconFlow.png" style="width: 80%;" />
-</a>
+<a class="reference internal image-reference" href="../_images/simreconFlow.png"><img alt="GlueX detector schematic" src="../_images/simreconFlow.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Flow chart on simulation and reconstruction pipeline used at GlueX.</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Flow chart on simulation and reconstruction pipeline used at GlueX.</span><a class="headerlink" href="#id26" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <div class="docutils container" id="id14">
-<div role="list" class="citation-list">
 <div class="citation" id="id22" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id3">3</a>,<a role="doc-backlink" href="#id4">4</a>,<a role="doc-backlink" href="#id5">5</a>,<a role="doc-backlink" href="#id11">6</a>)</span>
@@ -635,7 +626,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Deep Learning Tutorials for Experimental Nuclear Physics</p>
+        <p class="prev-next-title">Data Science for Physicists</p>
       </div>
     </a>
     <a class="right-next"
@@ -692,7 +683,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -702,7 +693,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

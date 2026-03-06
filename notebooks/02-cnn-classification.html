@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>CNN for FCAL Shower Classification &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>CNN for FCAL Shower Classification &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,15 +90,17 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/02-cnn-classification';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/notebooks/02-cnn-classification.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/02-cnn-classification.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CNN for FCAL Shower Regression" href="02-cnn-regression.html" />
@@ -191,23 +196,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -260,9 +254,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -285,7 +279,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +296,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/notebooks/02-cnn-classification.ipynb" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/notebooks/02-cnn-classification.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +313,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/02-cnn-classification.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/02-cnn-classification.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,9 +414,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -479,9 +473,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cnn-for-fcal-shower-classification">
-<h1>CNN for FCAL Shower Classification<a class="headerlink" href="#cnn-for-fcal-shower-classification" title="Link to this heading">#</a></h1>
+<h1>CNN for FCAL Shower Classification<a class="headerlink" href="#cnn-for-fcal-shower-classification" title="Permalink to this heading">#</a></h1>
 <section id="prepare-dataset">
-<h2>Prepare Dataset<a class="headerlink" href="#prepare-dataset" title="Link to this heading">#</a></h2>
+<h2>Prepare Dataset<a class="headerlink" href="#prepare-dataset" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install h5py scikit-learn torch torchvision tqdm safetensors &gt; /dev/null
@@ -576,7 +570,7 @@ document.write(`
 </div>
 </div>
 <section id="step-1-open-and-inspect-the-h5-file">
-<h3>Step 1: Open and Inspect the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> File<a class="headerlink" href="#step-1-open-and-inspect-the-h5-file" title="Link to this heading">#</a></h3>
+<h3>Step 1: Open and Inspect the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> File<a class="headerlink" href="#step-1-open-and-inspect-the-h5-file" title="Permalink to this heading">#</a></h3>
 <p>We can open the dataset and confirm whats inside it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,7 +592,7 @@ document.write(`
 </div>
 </section>
 <section id="step-2-create-a-custom-pytorch-dataset">
-<h3>Step 2: Create a Custom PyTorch Dataset<a class="headerlink" href="#step-2-create-a-custom-pytorch-dataset" title="Link to this heading">#</a></h3>
+<h3>Step 2: Create a Custom PyTorch Dataset<a class="headerlink" href="#step-2-create-a-custom-pytorch-dataset" title="Permalink to this heading">#</a></h3>
 <p>This dataset will:</p>
 <ul class="simple">
 <li><p>Read directly from the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file</p></li>
@@ -665,7 +659,7 @@ document.write(`
 </div>
 </section>
 <section id="step-3-split-into-train-validation-testing">
-<h3>Step 3: Split into Train / Validation / Testing<a class="headerlink" href="#step-3-split-into-train-validation-testing" title="Link to this heading">#</a></h3>
+<h3>Step 3: Split into Train / Validation / Testing<a class="headerlink" href="#step-3-split-into-train-validation-testing" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
@@ -696,7 +690,7 @@ document.write(`
 </div>
 </section>
 <section id="step-4-create-dataset-and-dataloader-objects">
-<h3>Step 4: Create Dataset and DataLoader Objects<a class="headerlink" href="#step-4-create-dataset-and-dataloader-objects" title="Link to this heading">#</a></h3>
+<h3>Step 4: Create Dataset and DataLoader Objects<a class="headerlink" href="#step-4-create-dataset-and-dataloader-objects" title="Permalink to this heading">#</a></h3>
 <p>Let us normalize each of the images with the total energy of all the hits in the shower</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -761,7 +755,7 @@ thrownE: tensor([1.6663, 1.1155, 1.1404, 0.9574, 1.5913, 1.4105, 1.1804, 1.8689]
 </section>
 </section>
 <section id="cnn-model-architecture-and-training">
-<h2>CNN Model Architecture and training<a class="headerlink" href="#cnn-model-architecture-and-training" title="Link to this heading">#</a></h2>
+<h2>CNN Model Architecture and training<a class="headerlink" href="#cnn-model-architecture-and-training" title="Permalink to this heading">#</a></h2>
 <p>The architerure will have the following architecture</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -961,9 +955,9 @@ thrownE: tensor([1.6663, 1.1155, 1.1404, 0.9574, 1.5913, 1.4105, 1.1804, 1.8689]
 </div>
 </section>
 <section id="model-testing">
-<h2>Model Testing<a class="headerlink" href="#model-testing" title="Link to this heading">#</a></h2>
+<h2>Model Testing<a class="headerlink" href="#model-testing" title="Permalink to this heading">#</a></h2>
 <section id="test-scores">
-<h3>Test scores<a class="headerlink" href="#test-scores" title="Link to this heading">#</a></h3>
+<h3>Test scores<a class="headerlink" href="#test-scores" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">DO_TRAIN</span><span class="p">:</span>
@@ -1095,11 +1089,11 @@ At t=0.50: ε_sig=0.9200, R_bkg=0.8879
 </div>
 </section>
 <section id="figure-of-merit-fom-definitions">
-<h3>Figure of Merit (FoM) Definitions<a class="headerlink" href="#figure-of-merit-fom-definitions" title="Link to this heading">#</a></h3>
+<h3>Figure of Merit (FoM) Definitions<a class="headerlink" href="#figure-of-merit-fom-definitions" title="Permalink to this heading">#</a></h3>
 <p>In binary classifier optimization specifically one dealing with signal and backgrounds, the <strong>optimal threshold</strong> is chosen by maximizing a <em>Figure of Merit (FoM)</em> that quantifies the balance between signal efficiency and background suppression.</p>
 <hr class="docutils" />
 <section id="signal-significance">
-<h4><strong>Signal Significance</strong><a class="headerlink" href="#signal-significance" title="Link to this heading">#</a></h4>
+<h4><strong>Signal Significance</strong><a class="headerlink" href="#signal-significance" title="Permalink to this heading">#</a></h4>
 <p>A commond way of defining <strong>signal significance</strong> is as follows,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1116,7 +1110,7 @@ At t=0.50: ε_sig=0.9200, R_bkg=0.8879
 </section>
 <hr class="docutils" />
 <section id="purity">
-<h4><strong>Purity</strong><a class="headerlink" href="#purity" title="Link to this heading">#</a></h4>
+<h4><strong>Purity</strong><a class="headerlink" href="#purity" title="Permalink to this heading">#</a></h4>
 <p>Purity measures how “clean” the selected sample is, i.e., the fraction of signal among all selected events:</p>
 <p><span class="math notranslate nohighlight">\(
 \text{Purity} = \frac{S}{S + B}
@@ -1132,7 +1126,7 @@ At t=0.50: ε_sig=0.9200, R_bkg=0.8879
 </section>
 <hr class="docutils" />
 <section id="interpretation">
-<h4><strong>Interpretation</strong><a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h4>
+<h4><strong>Interpretation</strong><a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Signal Significance</strong> → best when you want to <em>maximize discovery potential</em> (e.g., physics searches).</p></li>
 <li><p><strong>Purity</strong> → best when you want <em>clean signal selection</em> (e.g., building templates or performing precise fits).</p></li>
@@ -1220,7 +1214,7 @@ At t=0.50: ε_sig=0.9200, R_bkg=0.8879
 </section>
 </section>
 <section id="performance-in-bins-of-showere">
-<h3>Performance in bins of showerE<a class="headerlink" href="#performance-in-bins-of-showere" title="Link to this heading">#</a></h3>
+<h3>Performance in bins of showerE<a class="headerlink" href="#performance-in-bins-of-showere" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EBins</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.100</span><span class="p">,</span> <span class="mf">0.500</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
@@ -1325,7 +1319,7 @@ At t=0.50: ε_sig=0.9200, R_bkg=0.8879
 </section>
 </section>
 <section id="inference-on-physics-events">
-<h2>Inference on Physics events<a class="headerlink" href="#inference-on-physics-events" title="Link to this heading">#</a></h2>
+<h2>Inference on Physics events<a class="headerlink" href="#inference-on-physics-events" title="Permalink to this heading">#</a></h2>
 <p>In order to extract the performance of CNN photon identifier. Let us use Physics events. We will be comparing the performance of CNN w.r.t rectangular cut and no cuts.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1671,7 +1665,7 @@ Contents of event_000000:
 </div>
 </section>
 <section id="conclusion-and-next-steps">
-<h2>Conclusion and Next steps<a class="headerlink" href="#conclusion-and-next-steps" title="Link to this heading">#</a></h2>
+<h2>Conclusion and Next steps<a class="headerlink" href="#conclusion-and-next-steps" title="Permalink to this heading">#</a></h2>
 <p>From the preliminary CNN we built, We are able to get the following performance</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1709,7 +1703,7 @@ Contents of event_000000:
 <div><p>The CNN suppresses spurious photon–split-off combinations that broaden the ω peak. Even though it keeps fewer total events, the resulting spectrum is cleaner and closer to the intrinsic resonance shape — a clear indication that learned selection captures physical shower patterns better than rigid geometric cuts.</p>
 </div></blockquote>
 <section id="excersises-to-try-out">
-<h3>Excersises to try out<a class="headerlink" href="#excersises-to-try-out" title="Link to this heading">#</a></h3>
+<h3>Excersises to try out<a class="headerlink" href="#excersises-to-try-out" title="Permalink to this heading">#</a></h3>
 <p>Here are some concrete directions to extend this work and explore further physics–ML integration:</p>
 <ol class="arabic simple">
 <li><p><strong>Optimize the classifier working point</strong></p>
@@ -1838,7 +1832,7 @@ Contents of event_000000:
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -1848,7 +1842,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

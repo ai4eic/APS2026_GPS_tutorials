@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Data Preprocessing &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>Data Preprocessing &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,15 +90,17 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/02-dataset-preparation';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/notebooks/02-dataset-preparation.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/02-dataset-preparation.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CNN for FCAL Shower Classification" href="02-cnn-classification.html" />
@@ -191,23 +196,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -260,9 +254,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -285,7 +279,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +296,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/notebooks/02-dataset-preparation.ipynb" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/notebooks/02-dataset-preparation.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +313,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/02-dataset-preparation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/02-dataset-preparation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,9 +414,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -471,9 +465,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing">
-<h1>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h1>
+<h1>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this heading">#</a></h1>
 <section id="particle-gun">
-<h2>Particle Gun<a class="headerlink" href="#particle-gun" title="Link to this heading">#</a></h2>
+<h2>Particle Gun<a class="headerlink" href="#particle-gun" title="Permalink to this heading">#</a></h2>
 <p>The dataset is found in <a class="reference external" href="https://huggingface.co/datasets/AI4EIC/DNP2025-tutorial/resolve/main/unformatted_dataset/ParticleGunDataSet_800k.root">hugging face dataset</a></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -507,7 +501,7 @@ document.write(`
 </table>
 </div>
 <section id="fcalshowers-tree">
-<h3>FCALShowers tree<a class="headerlink" href="#fcalshowers-tree" title="Link to this heading">#</a></h3>
+<h3>FCALShowers tree<a class="headerlink" href="#fcalshowers-tree" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">FCALShowers</span></code> tree stores reconstructed and truth-level information for individual showers in the Forward Calorimeter (FCAL).<br />
 Each entry corresponds to one shower and includes both <em>thrown particle kinematics</em> (from Monte Carlo truth) and <em>reconstructed shower quantities</em> derived from detector hits.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -640,7 +634,7 @@ Each entry corresponds to one shower and includes both <em>thrown particle kinem
 </section>
 <hr class="docutils" />
 <section id="notes">
-<h3>Notes:<a class="headerlink" href="#notes" title="Link to this heading">#</a></h3>
+<h3>Notes:<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Arrays (<code class="docutils literal notranslate"><span class="pre">rows</span></code>, <code class="docutils literal notranslate"><span class="pre">cols</span></code>, <code class="docutils literal notranslate"><span class="pre">energies</span></code>) contain per-hit information for the FCAL blocks belonging to that shower.</p></li>
 <li><p>Energy ratios (<code class="docutils literal notranslate"><span class="pre">E1E9</span></code>) – The central crystal to surrounding 3×3 block (used to identify EM vs hadronic showers).</p></li>
@@ -877,7 +871,7 @@ Number of split-off showers: 379306
 </div>
 </section>
 <section id="sparse-nature-of-fcal-shower-images-and-motivation-for-preprocessing">
-<h3>Sparse Nature of FCAL Shower Images and Motivation for Preprocessing<a class="headerlink" href="#sparse-nature-of-fcal-shower-images-and-motivation-for-preprocessing" title="Link to this heading">#</a></h3>
+<h3>Sparse Nature of FCAL Shower Images and Motivation for Preprocessing<a class="headerlink" href="#sparse-nature-of-fcal-shower-images-and-motivation-for-preprocessing" title="Permalink to this heading">#</a></h3>
 <p>As can be observed from the raw FCAL shower images, the spatial energy deposition is <strong>highly sparse</strong>.<br />
 Each shower typically consists of only a small number of active cells (often less than ten) within the full calorimeter readout grid (e.g., 59×59). This means that the majority of pixels in these images carry zero or negligible energy, leading to two significant challenges:</p>
 <ol class="arabic simple">
@@ -893,12 +887,12 @@ For example, a <code class="docutils literal notranslate"><span class="pre">PATC
 </section>
 </section>
 <section id="patch-construction-and-dataset-preparation">
-<h2>Patch Construction and Dataset Preparation<a class="headerlink" href="#patch-construction-and-dataset-preparation" title="Link to this heading">#</a></h2>
+<h2>Patch Construction and Dataset Preparation<a class="headerlink" href="#patch-construction-and-dataset-preparation" title="Permalink to this heading">#</a></h2>
 <p>In this section, lets see how we can construct the <em>localized energy patches</em> from the Forward Calorimeter (FCAL) hit data and organize them into an HDF5 dataset suitable for training machine-learning models.</p>
 <p>Each FCAL shower consists of a collection of calorimeter cell hits, each hit defined by its grid coordinates <code class="docutils literal notranslate"><span class="pre">(row,</span> <span class="pre">col)</span></code> and deposited energy. The goal is to convert these irregular hit patterns into fixed-size <strong>11×11 image patches</strong> centered on the highest-energy cell in each shower. These patches serve as compact spatial representations of shower shapes that can be directly used as CNN inputs.</p>
 <hr class="docutils" />
 <section id="building-1111-energy-patches">
-<h3>1. Building 11×11 Energy Patches<a class="headerlink" href="#building-1111-energy-patches" title="Link to this heading">#</a></h3>
+<h3>1. Building 11×11 Energy Patches<a class="headerlink" href="#building-1111-energy-patches" title="Permalink to this heading">#</a></h3>
 <p>The function <code class="docutils literal notranslate"><span class="pre">make_patches_vectorized()</span></code> takes as input the lists of hit rows, columns, and energies for each shower and performs the following steps:</p>
 <ol class="arabic simple">
 <li><p><strong>Padding and Masking</strong></p>
@@ -1014,7 +1008,7 @@ For example, a <code class="docutils literal notranslate"><span class="pre">PATC
 </div>
 </section>
 <section id="creating-labels">
-<h3>Creating Labels<a class="headerlink" href="#creating-labels" title="Link to this heading">#</a></h3>
+<h3>Creating Labels<a class="headerlink" href="#creating-labels" title="Permalink to this heading">#</a></h3>
 <p>Each shower in the dataset is labeled according to its origin:</p>
 <ul class="simple">
 <li><p><strong>1</strong> – Photon Shower (true electromagnetic)</p></li>
@@ -1111,13 +1105,13 @@ For example, a <code class="docutils literal notranslate"><span class="pre">PATC
 </section>
 </section>
 <section id="omega-events">
-<h2>Omega Events<a class="headerlink" href="#omega-events" title="Link to this heading">#</a></h2>
+<h2>Omega Events<a class="headerlink" href="#omega-events" title="Permalink to this heading">#</a></h2>
 <p>This Dataset contains Monte Carlo and reconstructed information for exclusive <span class="math notranslate nohighlight">\(\omega\)</span> (omega) production events in the GlueX detector.<br />
 The data are stored in the tree <strong><code class="docutils literal notranslate"><span class="pre">OmegaSampleTree</span></code></strong>, which organizes both <em>truth-level (thrown)</em> and <em>reconstructed</em> particle kinematics, as well as calorimeter-level information from the Forward Calorimeter (FCAL).</p>
 <p>The dataset is designed to support studies of photon reconstruction, FCAL shower modeling, and the development of fast simulation and machine learning pipelines.</p>
 <hr class="docutils" />
 <section id="structure-of-the-omegasampletree">
-<h3>Structure of the <code class="docutils literal notranslate"><span class="pre">OmegaSampleTree</span></code><a class="headerlink" href="#structure-of-the-omegasampletree" title="Link to this heading">#</a></h3>
+<h3>Structure of the <code class="docutils literal notranslate"><span class="pre">OmegaSampleTree</span></code><a class="headerlink" href="#structure-of-the-omegasampletree" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Variable Name</strong></p></th>
@@ -1268,7 +1262,7 @@ The data are stored in the tree <strong><code class="docutils literal notranslat
 </section>
 <hr class="docutils" />
 <section id="id1">
-<h3>Notes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3>Notes<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Thrown quantities</strong> correspond to generator-level (true) values from the ω → π⁺π⁻π⁰ decay simulation.</p></li>
 <li><p><strong>Reconstructed quantities</strong> are obtained from detector-level reconstruction and tracking algorithms (as implemented in <em>halld_recon</em>).</p></li>
@@ -1684,7 +1678,7 @@ FCALNeutralShowerE of type std::vector&lt;double&gt;
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -1694,7 +1688,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Building the Tutorial &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>Building the Tutorial &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,13 +90,15 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'BUILD';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/BUILD.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/BUILD.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -189,23 +194,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -258,9 +252,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -283,7 +277,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +294,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/BUILD.md" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/BUILD.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +311,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2FBUILD.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2FBUILD.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,9 +412,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -466,12 +460,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="building-the-tutorial">
-<h1>Building the Tutorial<a class="headerlink" href="#building-the-tutorial" title="Link to this heading">#</a></h1>
+<h1>Building the Tutorial<a class="headerlink" href="#building-the-tutorial" title="Permalink to this heading">#</a></h1>
 <section id="jupyter-book">
-<h2>Jupyter Book<a class="headerlink" href="#jupyter-book" title="Link to this heading">#</a></h2>
+<h2>Jupyter Book<a class="headerlink" href="#jupyter-book" title="Permalink to this heading">#</a></h2>
 <p>This tutorial is built using Jupyter Book, a modern documentation framework. There are several ways to build and view it:</p>
 <section id="option-1-github-pages-recommended">
-<h3>Option 1: GitHub Pages (Recommended)<a class="headerlink" href="#option-1-github-pages-recommended" title="Link to this heading">#</a></h3>
+<h3>Option 1: GitHub Pages (Recommended)<a class="headerlink" href="#option-1-github-pages-recommended" title="Permalink to this heading">#</a></h3>
 <p>The tutorial is automatically built and deployed to GitHub Pages:</p>
 <ul class="simple">
 <li><p><strong>Live Site:</strong> <a class="reference external" href="https://ai4eic.github.io/DNP2025-tutorials/">https://ai4eic.github.io/DNP2025-tutorials/</a></p></li>
@@ -479,7 +473,7 @@ document.write(`
 <p>The site is automatically updated when changes are pushed to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 </section>
 <section id="option-2-local-build">
-<h3>Option 2: Local Build<a class="headerlink" href="#option-2-local-build" title="Link to this heading">#</a></h3>
+<h3>Option 2: Local Build<a class="headerlink" href="#option-2-local-build" title="Permalink to this heading">#</a></h3>
 <p>To build and view the book locally:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ai4eic/DNP2025-tutorials.git
@@ -500,7 +494,7 @@ start<span class="w"> </span>_build/html/index.html<span class="w">  </span><spa
 </div>
 </section>
 <section id="option-3-local-markdown-reader">
-<h3>Option 3: Local Markdown Reader<a class="headerlink" href="#option-3-local-markdown-reader" title="Link to this heading">#</a></h3>
+<h3>Option 3: Local Markdown Reader<a class="headerlink" href="#option-3-local-markdown-reader" title="Permalink to this heading">#</a></h3>
 <p>You can also read the Markdown files directly:</p>
 <p><strong>Using VS Code:</strong></p>
 <ol class="arabic simple">
@@ -520,7 +514,7 @@ grip<span class="w"> </span>README.md<span class="w"> </span><span class="m">641
 </div>
 </section>
 <section id="option-4-simple-web-server">
-<h3>Option 4: Simple Web Server<a class="headerlink" href="#option-4-simple-web-server" title="Link to this heading">#</a></h3>
+<h3>Option 4: Simple Web Server<a class="headerlink" href="#option-4-simple-web-server" title="Permalink to this heading">#</a></h3>
 <p>You can serve the built HTML files with any web server:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the book first</span>
 jupyter-book<span class="w"> </span>build<span class="w"> </span>.
@@ -535,7 +529,7 @@ python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="
 </section>
 </section>
 <section id="chapter-organization">
-<h2>Chapter Organization<a class="headerlink" href="#chapter-organization" title="Link to this heading">#</a></h2>
+<h2>Chapter Organization<a class="headerlink" href="#chapter-organization" title="Permalink to this heading">#</a></h2>
 <p>The tutorial is organized as follows:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> - Main introduction</p></li>
@@ -548,7 +542,7 @@ python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="
 </ul>
 </section>
 <section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h2>
 <p>To add or modify content:</p>
 <ol class="arabic simple">
 <li><p>Edit the relevant Markdown file in <code class="docutils literal notranslate"><span class="pre">chapters/</span></code></p></li>
@@ -558,17 +552,17 @@ python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="
 </ol>
 </section>
 <section id="viewing-on-github">
-<h2>Viewing on GitHub<a class="headerlink" href="#viewing-on-github" title="Link to this heading">#</a></h2>
+<h2>Viewing on GitHub<a class="headerlink" href="#viewing-on-github" title="Permalink to this heading">#</a></h2>
 <p>GitHub automatically renders Markdown files, so you can:</p>
 <ol class="arabic simple">
 <li><p>Navigate to the repository on GitHub</p></li>
 <li><p>Browse the <code class="docutils literal notranslate"><span class="pre">chapters/</span></code> directory</p></li>
 <li><p>Click on any <code class="docutils literal notranslate"><span class="pre">.md</span></code> file to view it</p></li>
 </ol>
-<p>Start with <a class="reference internal" href="#README.md"><span class="xref myst">README.md</span></a> and follow the links in <a class="reference internal" href="SUMMARY.html"><span class="std std-doc">SUMMARY.md</span></a>.</p>
+<p>Start with <a class="reference internal" href="README.html"><span class="doc std std-doc">README.md</span></a> and follow the links in <a class="reference internal" href="SUMMARY.html"><span class="doc std std-doc">SUMMARY.md</span></a>.</p>
 </section>
 <section id="configuration-files">
-<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Link to this heading">#</a></h2>
+<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> - Jupyter Book configuration (title, author, repository links, etc.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> - Table of contents structure</p></li>
@@ -576,7 +570,7 @@ python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="
 </ul>
 </section>
 <section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h2>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Math equations are rendered using MathJax</p></li>
 <li><p>The book supports both Markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>) and Jupyter Notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) files</p></li>
@@ -585,7 +579,7 @@ python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="
 </ul>
 </section>
 <section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
 <p><strong>Build Errors:</strong>
 If you encounter errors during build, ensure you have the latest version of jupyter-book:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>jupyter-book
@@ -680,7 +674,7 @@ jupyter-book<span class="w"> </span>build<span class="w"> </span>.
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -690,7 +684,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

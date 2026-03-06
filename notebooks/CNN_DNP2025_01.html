@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Convolutional Neural Network - Primer &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>Convolutional Neural Network - Primer &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,15 +90,17 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/CNN_DNP2025_01';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/notebooks/CNN_DNP2025_01.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/CNN_DNP2025_01.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Conditional GAN for FCAL Shower generation" href="03-gan-generation.html" />
@@ -190,23 +195,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -259,9 +253,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -284,7 +278,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +295,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/notebooks/CNN_DNP2025_01.ipynb" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/notebooks/CNN_DNP2025_01.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +312,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/CNN_DNP2025_01.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/CNN_DNP2025_01.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,9 +413,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -469,7 +463,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="convolutional-neural-network-primer">
-<h1>Convolutional Neural Network - Primer<a class="headerlink" href="#convolutional-neural-network-primer" title="Link to this heading">#</a></h1>
+<h1>Convolutional Neural Network - Primer<a class="headerlink" href="#convolutional-neural-network-primer" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
@@ -480,7 +474,7 @@ document.write(`
 </div>
 </div>
 <section id="the-building-blocks-of-convolutional-neural-networks">
-<h2>The building blocks of convolutional neural networks<a class="headerlink" href="#the-building-blocks-of-convolutional-neural-networks" title="Link to this heading">#</a></h2>
+<h2>The building blocks of convolutional neural networks<a class="headerlink" href="#the-building-blocks-of-convolutional-neural-networks" title="Permalink to this heading">#</a></h2>
 <p>CNN inspired by the functioning of the visual cortex in our brain.
 Experiment in 1959 with an anesthetized cat.
 Neurons respond differently after projecting different patterns of light in front of the cat.
@@ -500,7 +494,7 @@ Primary layers of the viual cortex detects edges and straight lines, highger ord
 </ul>
 </section>
 <section id="performing-discrete-convolutions-in-2d">
-<h2>Performing discrete convolutions in 2D<a class="headerlink" href="#performing-discrete-convolutions-in-2d" title="Link to this heading">#</a></h2>
+<h2>Performing discrete convolutions in 2D<a class="headerlink" href="#performing-discrete-convolutions-in-2d" title="Permalink to this heading">#</a></h2>
 <p>Convolution applies a small filter (kernel) over the input x, allowing it to detect local structures like edges, textures, and patterns.</p>
 <p><img alt="2D convolution" src="https://miro.medium.com/v2/resize:fit:658/1*GcI7G-JLAQiEoCON7xFbhg.gif" /></p>
 <p>Note that the demonstration of convolution is only done for 1 channel. But if there are more than one channels, the convolution is applied to each channel separately and summed up as shown in reference <a class="reference external" href="https://miro.medium.com/v2/resize:fit:1600/1*ciDgQEjViWLnCbmX-EeSrA.gif">here</a></p>
@@ -524,10 +518,9 @@ S(i, j) = (I * K)(i, j) = \sum_{m=-k}^{k} \sum_{n=-l}^{l} I(i - m, j - n) \cdot 
 </ul>
 </section>
 <section id="an-example-of-2d-convolution">
-<h2>An example of 2D convolution<a class="headerlink" href="#an-example-of-2d-convolution" title="Link to this heading">#</a></h2>
+<h2>An example of 2D convolution<a class="headerlink" href="#an-example-of-2d-convolution" title="Permalink to this heading">#</a></h2>
 <p>Consider the image below:</p>
-<a class="reference internal image-reference" href="https://c8.alamy.com/comp/2C4JRDX/seamless-pattern-with-horizontal-and-vertical-black-lines-2C4JRDX.jpg"><img alt="Image of a pattern" src="https://c8.alamy.com/comp/2C4JRDX/seamless-pattern-with-horizontal-and-vertical-black-lines-2C4JRDX.jpg" style="width: 600px;" />
-</a>
+<a class="reference internal image-reference" href="https://c8.alamy.com/comp/2C4JRDX/seamless-pattern-with-horizontal-and-vertical-black-lines-2C4JRDX.jpg"><img alt="Image of a pattern" src="https://c8.alamy.com/comp/2C4JRDX/seamless-pattern-with-horizontal-and-vertical-black-lines-2C4JRDX.jpg" style="width: 600px;" /></a>
 <p>Let us apply 3x3 kernel to this image. To make it more intutive, let us apply a vertical edge kernel  and a horizontal edge kernel usually referred to as a <strong>sobel filter</strong>.</p>
 <p>The vertical edge kernel is as follows:
 $<span class="math notranslate nohighlight">\(
@@ -637,7 +630,7 @@ K_{\text{Gaussian}} = \frac{1}{9} \begin{bmatrix}
 <p>This kernel is a 3x3 matrix with weights that are all positive and sum to 1. The weights in the center of the kernel are the highest, and the weights decrease as you move away from the center.</p>
 </section>
 <section id="padding-inputs-to-control-the-size-of-the-output-feature-maps">
-<h2>Padding inputs to control the size of the output feature maps<a class="headerlink" href="#padding-inputs-to-control-the-size-of-the-output-feature-maps" title="Link to this heading">#</a></h2>
+<h2>Padding inputs to control the size of the output feature maps<a class="headerlink" href="#padding-inputs-to-control-the-size-of-the-output-feature-maps" title="Permalink to this heading">#</a></h2>
 <p><strong><code class="docutils literal notranslate"><span class="pre">Why</span> <span class="pre">Padding</span> <span class="pre">Matters?</span></code></strong></p>
 <ul class="simple">
 <li><p>Prevents excessive shrinking of feature maps in deep networks.</p></li>
@@ -663,7 +656,7 @@ K_{\text{Gaussian}} = \frac{1}{9} \begin{bmatrix}
 <p>Here is a demonstration of these padding types in 1D. For 2D (or n-D), the concept is the same.</p>
 <p><img alt="Padding types" src="https://raw.githubusercontent.com/cfteach/NNDL_DATA621/webpage-src/DATA621/DATA621/images/Fig4_lec10.png" /></p>
 <section id="determining-the-size-of-the-convolution-output">
-<h3>Determining the size of the convolution output<a class="headerlink" href="#determining-the-size-of-the-convolution-output" title="Link to this heading">#</a></h3>
+<h3>Determining the size of the convolution output<a class="headerlink" href="#determining-the-size-of-the-convolution-output" title="Permalink to this heading">#</a></h3>
 <p>The output size <span class="math notranslate nohighlight">\( o \)</span> of a convolution operation is given by the formula:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -671,7 +664,7 @@ o = \left\lfloor \frac{n + 2p - m}{s} \right\rfloor + 1
 \]</div>
 </section>
 <section id="where">
-<h3>Where:<a class="headerlink" href="#where" title="Link to this heading">#</a></h3>
+<h3>Where:<a class="headerlink" href="#where" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( o \)</span>: output size (number of elements along that dimension),</p></li>
 <li><p><span class="math notranslate nohighlight">\( n \)</span>: input size (e.g., image width or height),</p></li>
@@ -682,7 +675,7 @@ o = \left\lfloor \frac{n + 2p - m}{s} \right\rfloor + 1
 </ul>
 </section>
 <section id="interpretation">
-<h3>Interpretation:<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<h3>Interpretation:<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Padding increases the effective input size.</p></li>
 <li><p>Larger stride reduces the output size by skipping positions.</p></li>
@@ -690,7 +683,7 @@ o = \left\lfloor \frac{n + 2p - m}{s} \right\rfloor + 1
 </ul>
 </section>
 <section id="example">
-<h3>Example:<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
 <p>If you have an input of size 32, kernel size 5, padding 2, and stride 1:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -717,7 +710,7 @@ NumPy version:  2.0.2
 </section>
 </section>
 <section id="subsampling-layers-pooling-layers">
-<h2>Subsampling layers – Pooling layers<a class="headerlink" href="#subsampling-layers-pooling-layers" title="Link to this heading">#</a></h2>
+<h2>Subsampling layers – Pooling layers<a class="headerlink" href="#subsampling-layers-pooling-layers" title="Permalink to this heading">#</a></h2>
 <p>Pooling layers are used to reduce the dimensionality of the feature maps. This helps to reduce the computational cost of the network and to make the network more robust to small variations in the input.</p>
 <p>There are two types of pooling layers:</p>
 <ol class="arabic simple">
@@ -728,7 +721,7 @@ NumPy version:  2.0.2
 <p><img alt="Pooling layers" src="https://raw.githubusercontent.com/cfteach/NNDL_DATA621/webpage-src/DATA621/DATA621/images/Fig7_lec10.png" /></p>
 </section>
 <section id="putting-everything-together-implementing-a-cnn">
-<h2>Putting everything together – implementing a CNN<a class="headerlink" href="#putting-everything-together-implementing-a-cnn" title="Link to this heading">#</a></h2>
+<h2>Putting everything together – implementing a CNN<a class="headerlink" href="#putting-everything-together-implementing-a-cnn" title="Permalink to this heading">#</a></h2>
 <p><strong>Working with multiple input or color channels</strong></p>
 <p>In the following example:</p>
 <ul class="simple">
@@ -740,7 +733,7 @@ NumPy version:  2.0.2
 <p>It reduces spatial dimensions while maintaining 5 feature maps</p>
 <p><img alt="CNN workflow" src="https://raw.githubusercontent.com/cfteach/NNDL_DATA621/webpage-src/DATA621/DATA621/images/Fig8_lec10.png" /></p>
 <section id="the-multilayer-cnn-architecture-with-pytorch">
-<h3>The multilayer CNN architecture with PyTorch<a class="headerlink" href="#the-multilayer-cnn-architecture-with-pytorch" title="Link to this heading">#</a></h3>
+<h3>The multilayer CNN architecture with PyTorch<a class="headerlink" href="#the-multilayer-cnn-architecture-with-pytorch" title="Permalink to this heading">#</a></h3>
 <p><img alt="CNN architecture" src="https://raw.githubusercontent.com/cfteach/NNDL_DATA621/webpage-src/DATA621/DATA621/images/Fig10_lec10.png" /></p>
 <p>N.b.:</p>
 <ul class="simple">
@@ -835,7 +828,7 @@ NumPy version:  2.0.2
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -845,7 +838,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

@@ -1,14 +1,15 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Conditional GAN for FCAL Shower generation &#8212; Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025</title>
+    <title>Conditional GAN for FCAL Shower generation &#8212; APS-GPS 2026 - (Short Course) Data Science for Physicists</title>
   
   
   
@@ -28,29 +29,31 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script kind="utterances">
 
@@ -72,7 +75,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "ai4eic/DNP2025-tutorials");
+    script.setAttribute("repo", "ai4eic/APS2026_GPS_tutorials");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -87,15 +90,17 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/03-gan-generation';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/DNP2025-tutorials/notebooks/03-gan-generation.html" />
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/03-gan-generation.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Convolutional Neural Network - Primer" href="CNN_DNP2025_01.html" />
@@ -191,23 +196,12 @@ commentsRunWhenDOMLoaded(addUtterances);
       
     
     
-    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>
-    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="Deep Learning Tutorials for Nuclear Physics at APS-DNP 2025 - Home"/>`);</script>
+    <img src="../_static/AI4eic_logo4.png" class="logo__image only-light" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>
+    <script>document.write(`<img src="../_static/AI4eic_logo4.png" class="logo__image only-dark" alt="APS-GPS 2026 - (Short Course) Data Science for Physicists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -260,9 +254,9 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -285,7 +279,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +296,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/edit/main/notebooks/03-gan-generation.ipynb" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/notebooks/03-gan-generation.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +313,7 @@ commentsRunWhenDOMLoaded(addUtterances);
       
       
       
-      <li><a href="https://github.com/ai4eic/DNP2025-tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03-gan-generation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03-gan-generation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -420,9 +414,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -451,7 +445,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generator-network">Generator Network</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminator-network">Discriminator Network</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wgan-gp-objective">WGAN-GP Objective</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-strategy-and-ncritic">Training Strategy and N<sub>CRITIC</sub></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-strategy-and-n-sub-critic-sub">Training Strategy and N<sub>CRITIC</sub></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-formulation-and-physics-guided-regularization">Loss Formulation and Physics-Guided Regularization</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wasserstein-loss">Wasserstein Loss</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-penalty-gp">Gradient Penalty (GP)</a></li>
@@ -484,7 +478,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conditional-gan-for-fcal-shower-generation">
-<h1>Conditional GAN for FCAL Shower generation<a class="headerlink" href="#conditional-gan-for-fcal-shower-generation" title="Link to this heading">#</a></h1>
+<h1>Conditional GAN for FCAL Shower generation<a class="headerlink" href="#conditional-gan-for-fcal-shower-generation" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install h5py scikit-learn torch torchvision tqdm safetensors autograd torchmetrics &gt; /dev/null
@@ -571,11 +565,11 @@ document.write(`
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is exactly the same as in <a class="reference internal" href="02-cnn-regression.html"><span class="std std-doc">CNN for Regression</span></a>.</p>
+<p>This is exactly the same as in <a class="reference internal" href="02-cnn-regression.html"><span class="doc std std-doc">CNN for Regression</span></a>.</p>
 </div>
 <p>We are using the same <code class="docutils literal notranslate"><span class="pre">.h5</span></code> dataset for regression. when we process it, We will be simply selecting out photons only to perform our training</p>
 <section id="step-1-open-and-inspect-the-h5-file">
-<h2>Step 1: Open and Inspect the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> File<a class="headerlink" href="#step-1-open-and-inspect-the-h5-file" title="Link to this heading">#</a></h2>
+<h2>Step 1: Open and Inspect the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> File<a class="headerlink" href="#step-1-open-and-inspect-the-h5-file" title="Permalink to this heading">#</a></h2>
 <p>We can open the dataset and confirm whats inside it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,7 +591,7 @@ document.write(`
 </div>
 </section>
 <section id="step-2-create-a-custom-pytorch-dataset">
-<h2>Step 2: Create a Custom PyTorch Dataset<a class="headerlink" href="#step-2-create-a-custom-pytorch-dataset" title="Link to this heading">#</a></h2>
+<h2>Step 2: Create a Custom PyTorch Dataset<a class="headerlink" href="#step-2-create-a-custom-pytorch-dataset" title="Permalink to this heading">#</a></h2>
 <p>This dataset will:</p>
 <ul class="simple">
 <li><p>Read directly from the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file</p></li>
@@ -679,7 +673,7 @@ document.write(`
 </div>
 </section>
 <section id="step-3-create-dataset-and-dataloader-objects">
-<h2>Step 3: Create Dataset and DataLoader Objects<a class="headerlink" href="#step-3-create-dataset-and-dataloader-objects" title="Link to this heading">#</a></h2>
+<h2>Step 3: Create Dataset and DataLoader Objects<a class="headerlink" href="#step-3-create-dataset-and-dataloader-objects" title="Permalink to this heading">#</a></h2>
 <p>The entire dataset will be used for training here. Let us normalize each of the images with the total energy of all the hits in the shower</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -777,7 +771,7 @@ thrownE: tensor([0.1288, 0.5836, 0.8712, 0.1819, 0.8454, 0.0968, 0.6243, 0.5636]
 </div>
 </section>
 <section id="step-4-diagnostic-plots">
-<h2>Step 4: Diagnostic plots<a class="headerlink" href="#step-4-diagnostic-plots" title="Link to this heading">#</a></h2>
+<h2>Step 4: Diagnostic plots<a class="headerlink" href="#step-4-diagnostic-plots" title="Permalink to this heading">#</a></h2>
 <p>Let us make a few diagnostic plots. We will be using these plots for visual comparison between generated samples and true distributions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1057,10 +1051,10 @@ thrownE: tensor([0.1288, 0.5836, 0.8712, 0.1819, 0.8454, 0.0968, 0.6243, 0.5636]
 </div>
 </section>
 <section id="gan-architecture">
-<h2>GAN architecture<a class="headerlink" href="#gan-architecture" title="Link to this heading">#</a></h2>
+<h2>GAN architecture<a class="headerlink" href="#gan-architecture" title="Permalink to this heading">#</a></h2>
 <p>The architecture implemented here is a <strong>conditional Wasserstein GAN with Gradient Penalty (WGAN-GP)</strong>, designed for fast simulation of calorimeter hit patterns conditioned on thrown particle energy. The goal is to learn a smooth mapping between the underlying particle-level features (e.g., thrown energy) and the corresponding spatial energy depositions (pixel maps) in the Forward Calorimeter.</p>
 <section id="generator-network">
-<h3>Generator Network<a class="headerlink" href="#generator-network" title="Link to this heading">#</a></h3>
+<h3>Generator Network<a class="headerlink" href="#generator-network" title="Permalink to this heading">#</a></h3>
 <p>The <strong>Generator (G)</strong> learns to map a random latent vector <code class="docutils literal notranslate"><span class="pre">z</span></code> (sampled from a Gaussian prior) and a conditioning vector <code class="docutils literal notranslate"><span class="pre">e</span></code> (normalized thrown energy) into a realistic hit map of dimension <em>11×11</em>. The conditioning is incorporated via <strong>Feature-wise Linear Modulation (FiLM)</strong> layers, which apply learned affine transformations to intermediate feature maps based on the conditioning input.</p>
 <ul class="simple">
 <li><p>The FiLM layers effectively “steer” the generator’s internal activations so that the generated pattern corresponds to the desired physical energy.</p></li>
@@ -1070,7 +1064,7 @@ thrownE: tensor([0.1288, 0.5836, 0.8712, 0.1819, 0.8454, 0.0968, 0.6243, 0.5636]
 <p>This structure ensures that the generator not only learns realistic spatial correlations but also remains responsive to changes in physical conditions (energy, and later possibly <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span>).</p>
 </section>
 <section id="discriminator-network">
-<h3>Discriminator Network<a class="headerlink" href="#discriminator-network" title="Link to this heading">#</a></h3>
+<h3>Discriminator Network<a class="headerlink" href="#discriminator-network" title="Permalink to this heading">#</a></h3>
 <p>The <strong>Discriminator (D)</strong> acts as an energy-conditioned critic. It receives both the calorimeter image and the conditioning vector, and evaluates a scalar “realness” score without a sigmoid activation — consistent with the Wasserstein formulation.</p>
 <ul class="simple">
 <li><p>The image is passed through a sequence of spectrally normalized convolutional layers, producing compact latent representations.</p></li>
@@ -1180,12 +1174,12 @@ thrownE: tensor([0.1288, 0.5836, 0.8712, 0.1819, 0.8454, 0.0968, 0.6243, 0.5636]
 </div>
 </section>
 <section id="wgan-gp-objective">
-<h3>WGAN-GP Objective<a class="headerlink" href="#wgan-gp-objective" title="Link to this heading">#</a></h3>
+<h3>WGAN-GP Objective<a class="headerlink" href="#wgan-gp-objective" title="Permalink to this heading">#</a></h3>
 <p>The model follows the <strong>Wasserstein GAN with Gradient Penalty</strong> formulation. Instead of minimizing Jensen–Shannon divergence as in a vanilla GAN, the Wasserstein loss minimizes the Earth Mover’s distance between real and generated distributions. This offers smoother gradients and improved stability.</p>
 <p>The <strong>gradient penalty</strong> term enforces the Lipschitz continuity constraint by penalizing deviations of the discriminator’s gradient norm from unity. This prevents the discriminator from forming sharp decision boundaries that would destabilize training.</p>
 </section>
-<section id="training-strategy-and-ncritic">
-<h3>Training Strategy and N<sub>CRITIC</sub><a class="headerlink" href="#training-strategy-and-ncritic" title="Link to this heading">#</a></h3>
+<section id="training-strategy-and-n-sub-critic-sub">
+<h3>Training Strategy and N<sub>CRITIC</sub><a class="headerlink" href="#training-strategy-and-n-sub-critic-sub" title="Permalink to this heading">#</a></h3>
 <p>In each iteration, the discriminator is updated <strong>N<sub>CRITIC</sub> = 2</strong> times for every generator update. This choice reflects the need for the critic to remain close to its optimal configuration while the generator evolves.</p>
 <ul class="simple">
 <li><p>A stronger critic (trained more often) gives more reliable gradient feedback to the generator.</p></li>
@@ -1194,10 +1188,10 @@ thrownE: tensor([0.1288, 0.5836, 0.8712, 0.1819, 0.8454, 0.0968, 0.6243, 0.5636]
 </ul>
 </section>
 <section id="loss-formulation-and-physics-guided-regularization">
-<h3>Loss Formulation and Physics-Guided Regularization<a class="headerlink" href="#loss-formulation-and-physics-guided-regularization" title="Link to this heading">#</a></h3>
+<h3>Loss Formulation and Physics-Guided Regularization<a class="headerlink" href="#loss-formulation-and-physics-guided-regularization" title="Permalink to this heading">#</a></h3>
 <p>The training objective combines the <strong>Wasserstein loss with gradient penalty (WGAN-GP)</strong> and additional <strong>physics-informed losses</strong> tailored to calorimeter responses. This hybrid objective ensures both mathematical stability and physical realism in the generated showers.</p>
 <section id="wasserstein-loss">
-<h4>Wasserstein Loss<a class="headerlink" href="#wasserstein-loss" title="Link to this heading">#</a></h4>
+<h4>Wasserstein Loss<a class="headerlink" href="#wasserstein-loss" title="Permalink to this heading">#</a></h4>
 <p>The Wasserstein loss replaces the standard adversarial loss with one based on the <strong>Earth Mover’s (EM) distance</strong> between the real and generated distributions.<br />
 The critic (discriminator) is trained to assign higher scores to real samples and lower scores to fake ones, while the generator attempts to maximize this score difference.</p>
 <div class="math notranslate nohighlight">
@@ -1211,7 +1205,7 @@ The critic (discriminator) is trained to assign higher scores to real samples an
 <p>This formulation avoids the saturation problems typical in vanilla GANs and provides smoother gradients, which are essential when modeling sparse and noisy calorimeter data.</p>
 </section>
 <section id="gradient-penalty-gp">
-<h4>Gradient Penalty (GP)<a class="headerlink" href="#gradient-penalty-gp" title="Link to this heading">#</a></h4>
+<h4>Gradient Penalty (GP)<a class="headerlink" href="#gradient-penalty-gp" title="Permalink to this heading">#</a></h4>
 <p>To satisfy the <strong>1-Lipschitz continuity</strong> required by the Wasserstein metric, a gradient penalty term is added to the discriminator loss.<br />
 For each batch, random interpolations between real and generated samples are created, and the L2 norm of the critic’s gradient with respect to these interpolates is constrained to be close to 1:</p>
 <div class="math notranslate nohighlight">
@@ -1228,7 +1222,7 @@ For each batch, random interpolations between real and generated samples are cre
 </section>
 <hr class="docutils" />
 <section id="physics-guided-loss">
-<h4>Physics-Guided Loss<a class="headerlink" href="#physics-guided-loss" title="Link to this heading">#</a></h4>
+<h4>Physics-Guided Loss<a class="headerlink" href="#physics-guided-loss" title="Permalink to this heading">#</a></h4>
 <p>Beyond the purely adversarial signal, <strong>domain-specific regularization</strong> is introduced to align generated showers with physically interpretable calorimeter observables:</p>
 <ul class="simple">
 <li><p><strong>Occupancy:</strong> the number of hit cells above a given energy threshold.<br />
@@ -1250,7 +1244,7 @@ Enforces realistic shower compactness and lateral energy profiles.</p></li>
 <p>This encourages the generator not only to “fool” the discriminator but also to produce showers with physically meaningful structure.</p>
 </section>
 <section id="training-dynamics">
-<h4>Training Dynamics<a class="headerlink" href="#training-dynamics" title="Link to this heading">#</a></h4>
+<h4>Training Dynamics<a class="headerlink" href="#training-dynamics" title="Permalink to this heading">#</a></h4>
 <p>The discriminator (critic) is updated <strong>N<sub>CRITIC</sub> = 2</strong> times per generator update.<br />
 This ensures that the critic remains near its optimal configuration, providing stable gradient feedback.<br />
 The generator updates less frequently but with higher-quality gradients, balancing learning between adversarial realism and physics consistency.</p>
@@ -1530,7 +1524,7 @@ Loading model from data/generatorGAN-FCAL-1-2GeV.safetensors
 </section>
 </section>
 <section id="inference">
-<h2>Inference<a class="headerlink" href="#inference" title="Link to this heading">#</a></h2>
+<h2>Inference<a class="headerlink" href="#inference" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_gen_samples</span> <span class="o">=</span> <span class="mi">10_000</span>
@@ -1575,7 +1569,7 @@ Loading model from data/generatorGAN-FCAL-1-2GeV.safetensors
 </div>
 </div>
 <section id="measuring-fidelity">
-<h3>Measuring Fidelity<a class="headerlink" href="#measuring-fidelity" title="Link to this heading">#</a></h3>
+<h3>Measuring Fidelity<a class="headerlink" href="#measuring-fidelity" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets measure distribution fidelity metrics</span>
@@ -1611,7 +1605,7 @@ wasserstein_distance: 0.489269
 </div>
 </section>
 <section id="verifying-conditioning">
-<h3>Verifying conditioning<a class="headerlink" href="#verifying-conditioning" title="Link to this heading">#</a></h3>
+<h3>Verifying conditioning<a class="headerlink" href="#verifying-conditioning" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minthE</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># This is normalized value</span>
@@ -1637,7 +1631,7 @@ wasserstein_distance: 0.489269
 </section>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
 <p>In this exercise, we successfully demonstrated a <strong>conditional Wasserstein GAN with gradient penalty (wGAN-GP)</strong> to build a <strong>Fast Simulator</strong> for calorimeter showers in the <strong>GlueX Forward Calorimeter (FCAL)</strong>. The model was conditioned on the thrown photon energy and trained to generate realistic hit energy maps that reproduce various physics-driven distributions.</p>
 <p>The comparison plots show that the generated showers reproduce key observables such as:</p>
 <ul class="simple">
@@ -1649,7 +1643,7 @@ wasserstein_distance: 0.489269
 <p>This demonstrates that deep generative models can serve as <strong>learned surrogates</strong> to replace or accelerate full detector simulations — an idea increasingly adopted in <strong>nuclear and particle physics</strong> (notably, the <em>CaloGAN</em> developed for calorimeter simulations at the LHC).</p>
 <hr class="docutils" />
 <section id="drawbacks-of-gan-based-approaches">
-<h3>Drawbacks of GAN-based Approaches<a class="headerlink" href="#drawbacks-of-gan-based-approaches" title="Link to this heading">#</a></h3>
+<h3>Drawbacks of GAN-based Approaches<a class="headerlink" href="#drawbacks-of-gan-based-approaches" title="Permalink to this heading">#</a></h3>
 <p>While GANs offer fast and high-fidelity simulation capabilities, they also come with well-known challenges:</p>
 <ol class="arabic simple">
 <li><p><strong>Training Instability:</strong><br />
@@ -1666,17 +1660,16 @@ The model learns correlations implicitly; enforcing physics priors or conservati
 </section>
 <hr class="docutils" />
 <section id="try-next">
-<h3>Try Next<a class="headerlink" href="#try-next" title="Link to this heading">#</a></h3>
+<h3>Try Next<a class="headerlink" href="#try-next" title="Permalink to this heading">#</a></h3>
 <p>Here are a few directions to extend this work:</p>
 <ol class="arabic simple">
 <li><p><strong>Expand Kinematic Range:</strong><br />
 Train over the full photon energy range (e.g., 0.1–4 GeV) and check model stability and fidelity at high and low ends. A trained model for this purpose is available at <a class="reference external" href="https://huggingface.co/AI4EIC/DNP2025-tutorial/resolve/main/generatorGAN-FCAL-100MeV-4GeV.safetensors"><code class="docutils literal notranslate"><span class="pre">generatorGAN-FCAL-100MeV-4GeV.safetensors</span></code> <img alt="Hugging Face Dataset" src="https://img.shields.io/badge/HuggingFace-Dataset-blue.svg?logo=huggingface" /></a></p></li>
 </ol>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/FullKinematicResult.png"><img alt="Full range training GAN" src="../_images/FullKinematicResult.png" style="width: 80%;" />
-</a>
+<a class="reference internal image-reference" href="../_images/FullKinematicResult.png"><img alt="Full range training GAN" src="../_images/FullKinematicResult.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">:caption: Performance of GAN trained on the full photon energy range <span class="math notranslate nohighlight">\([0.1 - 4.0]\)</span> [GeV] with a minimum hit energy threshold of <span class="math notranslate nohighlight">\(0.01\)</span> [GeV].</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">:caption: Performance of GAN trained on the full photon energy range <span class="math notranslate nohighlight">\([0.1 - 4.0]\)</span> [GeV] with a minimum hit energy threshold of <span class="math notranslate nohighlight">\(0.01\)</span> [GeV].</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="2">
@@ -1685,7 +1678,7 @@ Include the photon’s polar <span class="math notranslate nohighlight">\((\thet
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>For this, additional data preparation is needed. Refer to <a class="reference internal" href="02-dataset-preparation.html"><span class="std std-doc">Data set preparation</span></a> on how to create the patched dataset with updated parameters.</p>
+<p>For this, additional data preparation is needed. Refer to <a class="reference internal" href="02-dataset-preparation.html"><span class="doc std std-doc">Data set preparation</span></a> on how to create the patched dataset with updated parameters.</p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p><strong>Tune Model Hyperparameters:</strong><br />
@@ -1706,7 +1699,7 @@ Integrate the trained generator into a GlueX simulation pipeline as a drop-in su
 <p>By completing this exercise, you’ve seen how <strong>generative AI</strong> can be used to <strong>accelerate detector simulations</strong> while retaining physics fidelity — a powerful tool for next-generation analyses in <strong>nuclear and particle physics</strong>.</p>
 </section>
 <section id="alternatives-and-future-directions">
-<h3>Alternatives and Future Directions<a class="headerlink" href="#alternatives-and-future-directions" title="Link to this heading">#</a></h3>
+<h3>Alternatives and Future Directions<a class="headerlink" href="#alternatives-and-future-directions" title="Permalink to this heading">#</a></h3>
 <p>Several alternative generative approaches address these limitations and are worth exploring:</p>
 <ul class="simple">
 <li><p><strong>Variational Autoencoders (VAEs):</strong><br />
@@ -1795,7 +1788,7 @@ Incorporate known detector response or conservation laws directly into the archi
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generator-network">Generator Network</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discriminator-network">Discriminator Network</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wgan-gp-objective">WGAN-GP Objective</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-strategy-and-ncritic">Training Strategy and N<sub>CRITIC</sub></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-strategy-and-n-sub-critic-sub">Training Strategy and N<sub>CRITIC</sub></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-formulation-and-physics-guided-regularization">Loss Formulation and Physics-Guided Regularization</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wasserstein-loss">Wasserstein Loss</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-penalty-gp">Gradient Penalty (GP)</a></li>
@@ -1830,7 +1823,7 @@ Incorporate known detector response or conservation laws directly into the archi
   <div class="footer-item">
     
 <p class="component-author">
-By Karthik Suresh & Cristiano Fanelli
+By Cristiano Fanelli & Karthik Suresh
 </p>
 
   </div>
@@ -1840,7 +1833,7 @@ By Karthik Suresh & Cristiano Fanelli
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>
