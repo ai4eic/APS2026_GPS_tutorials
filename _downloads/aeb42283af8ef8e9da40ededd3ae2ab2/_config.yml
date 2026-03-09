@@ -16,7 +16,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://ai4eic.github.io/APS2026_GPS_tutorials
+  url: https://github.com/ai4eic/APS2026_GPS_tutorials
   path_to_book: .  # Path to the book (root in this case)
   branch: main
 
