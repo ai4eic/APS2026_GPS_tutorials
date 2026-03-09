@@ -53,11 +53,6 @@ sphinx:
     - sphinxcontrib.mermaid
     - sphinx_design
   config:
-    html_theme_options:
-      repository_url: https://github.com/ai4eic/APS2026_GPS_tutorials
-      use_repository_button: true
-      use_issues_button: true
-      use_edit_page_button: true
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # Parse and render MyST markdown

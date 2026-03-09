@@ -139,8 +139,8 @@ const thebe_selector_output = ".output, .cell_output"
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search this book..."
+         aria-label="Search this book..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -201,6 +201,14 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="landing_page.html">
+                    Data Science for Physicists
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="chapters/01-intro-to-gluex.html">Introduction to GlueX</a></li>
@@ -211,7 +219,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GNN for FCAL (2026)</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://docs.google.com/presentation/d/1Bd6isqCNZgUn0Mho43jsID-rZDn7fHWo3y0gd4ngI8Q/edit?usp=drive_link">Lecture -- GNN Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/GNN_GlueX2026.html">GNN for FCAL Shower Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/GNN_Classification.html">GNN for FCAL Shower Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/GNN_Regression.html">GNN for FCAL Shower Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CNN for FCAL (2025)</span></p>
 <ul class="nav bd-sidenav">
@@ -299,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/BUILD.md" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/./BUILD.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -702,6 +711,9 @@ By Cristiano Fanelli & Karthik Suresh
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  APS-GPS 2026 - (Short Course) Data Science for Physicists
+</div>
   </div>
   
 </div>
