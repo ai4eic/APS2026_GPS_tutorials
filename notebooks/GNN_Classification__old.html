@@ -99,12 +99,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/GNN_Classification';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/GNN_Classification.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/GNN_Classification__old';</script>
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/GNN_Classification__old.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Graph Neural Network for GlueX FCAL data - Regression Tutorial" href="GNN_Regression.html" />
-    <link rel="prev" title="Data Preprocessing" href="02-dataset-preparation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,6 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -219,9 +219,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="02-dataset-preparation.html">Data Preprocessing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GNN for FCAL (2026)</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://docs.google.com/presentation/d/1Bd6isqCNZgUn0Mho43jsID-rZDn7fHWo3y0gd4ngI8Q/edit?usp=drive_link">Lecture -- GNN Overview</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">GNN for FCAL Shower Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GNN_Classification.html">GNN for FCAL Shower Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GNN_Regression.html">GNN for FCAL Shower Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CNN for FCAL (2025)</span></p>
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/ai4eic/APS2026_GPS_tutorials/blob/main/./notebooks/GNN_Classification.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ai4eic/APS2026_GPS_tutorials/blob/main/./notebooks/GNN_Classification__old.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +341,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/./notebooks/GNN_Classification.ipynb" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/./notebooks/GNN_Classification__old.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +358,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/GNN_Classification.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/GNN_Classification__old.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +388,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/GNN_Classification.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/GNN_Classification__old.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -482,40 +482,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">1. Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-unformatted-particle-gun-root-for-gnn">Download unformatted particle-gun ROOT (for GNN)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-root-arrays">Read ROOT arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-val-test-split">Train/Val/Test Split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-unformatted-particle-gun-root-for-gnn">Download unformatted particle-gun ROOT (for GNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-root-arrays">Read ROOT arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-val-test-split">Train/Val/Test Split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-construction-all-hits">Graph Construction (all hits)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-dataloader">Dataset + DataLoader</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-model-graph-classifier">GNN Model (graph classifier)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-train">Evaluate + Train</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-training">Run Training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-performance">Evaluate Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit-definitions">Figure of Merit Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-significance">Signal Significance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purity">Purity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-construction">2. Graph Construction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-construction-all-hits">Graph Construction (all hits)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-graphs">Visualize Graphs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-dataloader">Dataset + DataLoader</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-model">3. GNN Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-model-graph-classifier">GNN Model (graph classifier)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-train">Evaluate + Train</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-training">Run Training</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">4. Performance</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-performance">Evaluate Performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit-definitions">Figure of Merit Definitions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-significance">Signal Significance</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#purity">Purity</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-analysis">5. Physics Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-on-physics-events">Inference on Physics Events</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meaning-of-the-voigt-fit-parameters">Meaning of the Voigt Fit Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-p-values-in-2-goodness-of-fit-tests">Interpretation of p-values in χ² goodness-of-fit tests</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-on-physics-events">Inference on Physics Events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meaning-of-the-voigt-fit-parameters">Meaning of the Voigt Fit Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-p-values-in-2-goodness-of-fit-tests">Interpretation of p-values in χ² goodness-of-fit tests</a></li>
 </ul>
             </nav>
         </div>
@@ -545,61 +529,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.10.0+cu128
-CUDA available: True
-CUDA: 12.8
-</pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!uname -a
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linux 425bf75dcbaa 6.6.113+ #1 SMP Mon Feb  2 12:27:57 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!nvidia-smi
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tue Mar 10 18:32:35 2026       
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
-+-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
-| N/A   37C    P8             10W /   70W |       3MiB /  15360MiB |      0%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|  No running processes found                                                             |
-+-----------------------------------------------------------------------------------------+
-</pre></div>
-</div>
-</div>
-</div>
-<section id="data">
-<h2>1. Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
 <section id="download-unformatted-particle-gun-root-for-gnn">
-<h3>Download unformatted particle-gun ROOT (for GNN)<a class="headerlink" href="#download-unformatted-particle-gun-root-for-gnn" title="Permalink to this heading">#</a></h3>
+<h2>Download unformatted particle-gun ROOT (for GNN)<a class="headerlink" href="#download-unformatted-particle-gun-root-for-gnn" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
@@ -635,24 +567,24 @@ CUDA: 12.8
 <span class="sd">        str: Path to the downloaded (or existing) file.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Ensure the target directory exists</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#do nothing if target_dir exists</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Infer the filename from the URL</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">path</span><span class="p">)</span> <span class="c1"># parse the url (scheme, netloc, path) and take the name of the file</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
     <span class="n">local_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 
     <span class="c1"># If file already exists, skip download</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">local_path</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ File already exists: </span><span class="si">{</span><span class="n">local_path</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ File already exists: </span><span class="si">{</span><span class="n">local_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">local_path</span>
 
     <span class="c1"># Download with progress bar</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">⬇️  Downloading </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⬇️  Downloading </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">with</span> <span class="n">DownloadProgressBar</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">miniters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span> <span class="c1">#miniters controls how frequently tqdm updates the bar</span>
+    <span class="k">with</span> <span class="n">DownloadProgressBar</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">miniters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
         <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">local_path</span><span class="p">,</span> <span class="n">reporthook</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">update_to</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">✅ Download complete: </span><span class="si">{</span><span class="n">local_path</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Download complete: </span><span class="si">{</span><span class="n">local_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">local_path</span>
 
 <span class="n">data_dir</span> <span class="o">=</span> <span class="s2">&quot;data&quot;</span>
@@ -672,7 +604,7 @@ CUDA: 12.8
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⬇️  Downloading ParticleGunDataSet_800k.root from https://huggingface.co/datasets/AI4EIC/DNP2025-tutorial/resolve/main/unformatted_dataset/ParticleGunDataSet_800k.root
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ParticleGunDataSet_800k.root: 102MB [00:03, 29.4MB/s]                           
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ParticleGunDataSet_800k.root: 102MB [00:18, 5.39MB/s]                           
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Download complete: data/ParticleGunDataSet_800k.root
@@ -685,64 +617,14 @@ CUDA: 12.8
 </div>
 </section>
 <section id="read-root-arrays">
-<h3>Read ROOT arrays<a class="headerlink" href="#read-root-arrays" title="Permalink to this heading">#</a></h3>
+<h2>Read ROOT arrays<a class="headerlink" href="#read-root-arrays" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">uproot</span><span class="o">,</span><span class="w"> </span><span class="nn">awkward</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ak</span><span class="o">,</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="n">file</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gun_root</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;FCALShowers;1&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gun_root</span><span class="p">)[</span><span class="s2">&quot;FCALShowers&quot;</span><span class="p">]</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">uproot</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gun_root</span><span class="p">)[</span><span class="s2">&quot;FCALShowers&quot;</span><span class="p">]</span>
 
-<span class="n">tree</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;index&#39;,
- &#39;thrownPID&#39;,
- &#39;thrownEnergy&#39;,
- &#39;thrownPosition_fX&#39;,
- &#39;thrownPosition_fY&#39;,
- &#39;thrownPosition_fZ&#39;,
- &#39;thrownMomentum_fX&#39;,
- &#39;thrownMomentum_fY&#39;,
- &#39;thrownMomentum_fZ&#39;,
- &#39;thrownMass&#39;,
- &#39;numBlocks&#39;,
- &#39;isNearBorder&#39;,
- &#39;showerE&#39;,
- &#39;showerPos_fX&#39;,
- &#39;showerPos_fY&#39;,
- &#39;showerPos_fZ&#39;,
- &#39;nrows&#39;,
- &#39;rows&#39;,
- &#39;ncols&#39;,
- &#39;cols&#39;,
- &#39;nenergies&#39;,
- &#39;energies&#39;,
- &#39;isSplitOff&#39;,
- &#39;isPhotonShower&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Explanation of these features can be found here:
-<a class="reference external" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/02-dataset-preparation.html">data preparation</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">branches</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rows&quot;</span><span class="p">,</span><span class="s2">&quot;cols&quot;</span><span class="p">,</span><span class="s2">&quot;energies&quot;</span><span class="p">,</span><span class="s2">&quot;showerE&quot;</span><span class="p">,</span><span class="s2">&quot;thrownEnergy&quot;</span><span class="p">,</span><span class="s2">&quot;numBlocks&quot;</span><span class="p">,</span><span class="s2">&quot;isNearBorder&quot;</span><span class="p">,</span><span class="s2">&quot;isSplitOff&quot;</span><span class="p">,</span><span class="s2">&quot;isPhotonShower&quot;</span><span class="p">]</span>
+<span class="n">branches</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rows&quot;</span><span class="p">,</span><span class="s2">&quot;cols&quot;</span><span class="p">,</span><span class="s2">&quot;energies&quot;</span><span class="p">,</span><span class="s2">&quot;showerE&quot;</span><span class="p">,</span><span class="s2">&quot;thrownEnergy&quot;</span><span class="p">,</span><span class="s2">&quot;numBlocks&quot;</span><span class="p">,</span><span class="s2">&quot;isNearBorder&quot;</span><span class="p">,</span><span class="s2">&quot;isSplitOff&quot;</span><span class="p">,</span><span class="s2">&quot;isPhotonShower&quot;</span><span class="p">]</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="n">branches</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="s2">&quot;ak&quot;</span><span class="p">)</span>
 
 <span class="n">rows_ak</span><span class="p">,</span> <span class="n">cols_ak</span><span class="p">,</span> <span class="n">en_ak</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="s2">&quot;rows&quot;</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="s2">&quot;cols&quot;</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="s2">&quot;energies&quot;</span><span class="p">]</span>
@@ -753,7 +635,7 @@ CUDA: 12.8
 <span class="n">isSplit</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="s2">&quot;isSplitOff&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
 <span class="n">isPhoton</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="s2">&quot;isPhotonShower&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
 
-<span class="c1"># Labels consistent with GNN: 1 photon, 0 splitOff</span>
+<span class="c1"># Labels consistent with CNN: 1 photon, 0 splitOff</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">isPhoton</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">isSplit</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
 
 <span class="c1"># Keep only clean ones</span>
@@ -772,21 +654,9 @@ Photons: 434845 SplitOffs: 379306
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ak</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">en_ak</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ArrayType(ListType(NumpyType(&#39;float64&#39;)), 814151, None)
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="train-val-test-split">
-<h3>Train/Val/Test Split<a class="headerlink" href="#train-val-test-split" title="Permalink to this heading">#</a></h3>
+<h2>Train/Val/Test Split<a class="headerlink" href="#train-val-test-split" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
@@ -812,84 +682,22 @@ Photons: 434845 SplitOffs: 379306
 </div>
 </div>
 </section>
-</section>
-<section id="graph-construction">
-<h2>2. Graph Construction<a class="headerlink" href="#graph-construction" title="Permalink to this heading">#</a></h2>
 <section id="graph-construction-all-hits">
-<h3>Graph Construction (all hits)<a class="headerlink" href="#graph-construction-all-hits" title="Permalink to this heading">#</a></h3>
-<p><strong>Data Engineering</strong></p>
-<p>Typical pattern in a shower:</p>
-<ul class="simple">
-<li><p>central blocks -&gt; large energy</p></li>
-<li><p>nearby blocks -&gt; moderate</p></li>
-<li><p>peripheral blocks -&gt; very small</p></li>
-</ul>
-<p>Consequently, if you feed raw energies directly into a neural network:</p>
-<ul class="simple">
-<li><p>large values fominate gradients</p></li>
-<li><p>tiny values become almost invisible</p></li>
-<li><p>training could become unstable</p></li>
-</ul>
-<p>We do a node-level energy transform</p>
+<h2>Graph Construction (all hits)<a class="headerlink" href="#graph-construction-all-hits" title="Permalink to this heading">#</a></h2>
+<p>We do a node-level eneergy transform</p>
 <div class="math notranslate nohighlight">
 \[
 z(E) = \frac{log(1+E/e_{0})}{log(1+E_{max}/e_{0})} \in [0,1]
 \]</div>
-<p>We are applying a non-linear compression of the energy scale</p>
-<ul class="simple">
-<li><p>large energies -&gt; compressed</p></li>
-<li><p>small energies -&gt; expanded</p></li>
-</ul>
-<p>This could make the shape of the shower easier to learn. In calorimeter ML this is very common.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="c1"># Flatten all crystal energies across all showers</span>
-<span class="n">all_E</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">ak</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">en_ak</span><span class="p">))</span>
-
-<span class="c1"># Plot histogram</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">all_E</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Crystal energy (GeV)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Counts&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of individual FCAL crystal energies&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>   <span class="c1"># useful because distribution spans many orders</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/0d11a5017a20a6999bc1383a8e9452ae6c608967e2494b1fa688173e2a34e70e.png" src="../_images/0d11a5017a20a6999bc1383a8e9452ae6c608967e2494b1fa688173e2a34e70e.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">all_E</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.53997727, 1.16369786, 2.37762243, 3.12767875])
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">torch_geometric.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">Data</span>
 
 <span class="n">FCAL_GEOMETRY</span> <span class="o">=</span> <span class="p">(</span><span class="mi">59</span><span class="p">,</span> <span class="mi">59</span><span class="p">)</span>
-<span class="n">ENERGY_SCALE</span>  <span class="o">=</span> <span class="mf">0.05</span> <span class="c1">#</span>
-<span class="n">CLIP_MAX</span>      <span class="o">=</span> <span class="mf">2.0</span> <span class="c1">#</span>
+<span class="n">ENERGY_SCALE</span>  <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">CLIP_MAX</span>      <span class="o">=</span> <span class="mf">2.0</span>
 
-<span class="c1">#############################################################################################################</span>
-<span class="c1"># nodes = calorimeter blocks belonging to the shower</span>
-<span class="c1"># edges = adjacency between neighboring blocks</span>
-<span class="c1"># node features = per-block quantities like position and energy</span>
-<span class="c1"># global graph features = shower-level quantities like total shower energy, number of blocks, and border flag</span>
-<span class="c1">#############################################################################################################</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">logE_norm</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">e0</span><span class="o">=</span><span class="n">ENERGY_SCALE</span><span class="p">,</span> <span class="n">emax</span><span class="o">=</span><span class="n">CLIP_MAX</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">):</span>
     <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">E</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">emax</span><span class="p">)</span>
     <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">E</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">e0</span><span class="p">))</span>
@@ -897,10 +705,7 @@ z(E) = \frac{log(1+E/e_{0})}{log(1+E_{max}/e_{0})} \in [0,1]
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">build_edges_8n</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
-    <span class="c1"># creates a dictionary mapping grid position → node index.</span>
-    <span class="c1"># Later we want to ask: if crystal (r,c) has a neighbour at (r+1,c), which node is that?</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="p">{(</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)):</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))}</span>
-
     <span class="n">neigh</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
              <span class="p">(</span> <span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>         <span class="p">(</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
              <span class="p">(</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
@@ -912,13 +717,9 @@ z(E) = \frac{log(1+E/e_{0})}{log(1+E_{max}/e_{0})} \in [0,1]
             <span class="k">if</span> <span class="n">j</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>               <span class="c1"># returns 2 x E, where E are edges</span>
-    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span><span class="o">.</span><span class="n">t</span><span class="p">()</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span>  <span class="c1"># returns 2 x E</span>
-    <span class="c1"># .contiguous forces PyTorch to copy the data into a new block of memory arranged in the correct order after transpose</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span><span class="o">.</span><span class="n">t</span><span class="p">()</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span>
 
-<span class="c1">#############################################################################################################</span>
-<span class="c1"># the output of shower_to_graph is a torch_geometric.data.Data object representing one shower</span>
-<span class="c1">#############################################################################################################</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">shower_to_graph</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="n">showerE</span><span class="p">,</span> <span class="n">numBlocks</span><span class="p">,</span> <span class="n">isNearBorder</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">):</span>
     <span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
     <span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
@@ -926,112 +727,40 @@ z(E) = \frac{log(1+E/e_{0})}{log(1+E_{max}/e_{0})} \in [0,1]
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Eraw</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
 
-    <span class="c1"># Energy transform</span>
+    <span class="c1"># energy transform like CNN</span>
     <span class="n">E</span> <span class="o">=</span> <span class="n">logE_norm</span><span class="p">(</span><span class="n">Eraw</span><span class="p">)</span>
 
     <span class="n">Esum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Eraw</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">+</span> <span class="n">eps</span>  <span class="c1"># use raw sum for fractions</span>
-
-    <span class="c1"># Cluster &quot;center of mass&quot;</span>
-    <span class="c1"># --- In FCAL, rows and cols are indices of position on the calorimeter plane. We can compute energy-weighted indices:</span>
     <span class="n">row_c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">rows</span> <span class="o">*</span> <span class="n">Eraw</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">Esum</span><span class="p">)</span>
     <span class="n">col_c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">cols</span> <span class="o">*</span> <span class="n">Eraw</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">Esum</span><span class="p">)</span>
 
-    <span class="c1"># Relative coordinates: cluster shape</span>
     <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">rows</span> <span class="o">-</span> <span class="n">row_c</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">cols</span> <span class="o">-</span> <span class="n">col_c</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">rr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-    <span class="c1"># Normalize detector coordinates</span>
-    <span class="c1"># rows 0-&gt;58</span>
-    <span class="c1"># cols 0-&gt;58</span>
-    <span class="n">row_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">rows</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">FCAL_GEOMETRY</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1">#[0,1]-&gt;[-1,1]</span>
-    <span class="n">col_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">cols</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">FCAL_GEOMETRY</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1">#[0,1]-&gt;[-1,1]</span>
+    <span class="n">row_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">rows</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">FCAL_GEOMETRY</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">col_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">cols</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">FCAL_GEOMETRY</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
 
     <span class="n">Efrac</span> <span class="o">=</span> <span class="p">(</span><span class="n">Eraw</span> <span class="o">/</span> <span class="n">Esum</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">logE</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Eraw</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
     <span class="c1"># Node features</span>
-    <span class="c1"># [row_n, col_n, E_logscaled, logEraw, Efrac, dx, dy, r] --- they all are (N,)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">row_n</span><span class="p">,</span> <span class="n">col_n</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">logE</span><span class="p">,</span> <span class="n">Efrac</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rr</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># --- returns (N, 8) where N: #crystals, 8: #features</span>
+    <span class="c1"># [row_n, col_n, E_logscaled, logEraw, Efrac, dx, dy, r]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">row_n</span><span class="p">,</span> <span class="n">col_n</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">logE</span><span class="p">,</span> <span class="n">Efrac</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">rr</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
     <span class="n">edge_index</span> <span class="o">=</span> <span class="n">build_edges_8n</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span>
 
-    <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="o">=</span><span class="n">edge_index</span><span class="p">)</span> <span class="c1"># defines data.x and data.edge_index</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">showerE</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">numBlocks</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">isNearBorder</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1">#data.g is a custom attribute that stores graph-level (global) features for the shower</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="o">=</span><span class="n">edge_index</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">showerE</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">numBlocks</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">isNearBorder</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">data</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># flatten energies</span>
-<span class="n">all_E</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">ak</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">en_ak</span><span class="p">))</span>
-
-<span class="c1"># apply your transform</span>
-<span class="n">Z</span> <span class="o">=</span> <span class="n">logE_norm</span><span class="p">(</span><span class="n">all_E</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_E</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Raw crystal energy (GeV)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Transformed energy z(E)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Energy transform used for GNN input&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.05</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/d6ffc9a8c1e35618e0b27a00a5d4ad7c10ce590e119fd49509c5d457be2d131f.png" src="../_images/d6ffc9a8c1e35618e0b27a00a5d4ad7c10ce590e119fd49509c5d457be2d131f.png" />
-</div>
-</div>
-</section>
-<section id="visualize-graphs">
-<h3>Visualize Graphs<a class="headerlink" href="#visualize-graphs" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_shower_nodes</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">energies</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Shower nodes&quot;</span><span class="p">):</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
-    <span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">energies</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">sc</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">energies</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Crystal energy&quot;</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>   <span class="c1"># optional, often nicer for detector grids</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;col&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">keep_idx</span><span class="p">[</span><span class="mi">7879</span><span class="p">]</span>
-<span class="n">plot_shower_nodes</span><span class="p">(</span><span class="n">rows_ak</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cols_ak</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">en_ak</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;FCAL shower nodes&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/5d163021410353d75a67bf2e3765df5c8cc94a2f2171acfb7af7ff7d9f703038.png" src="../_images/5d163021410353d75a67bf2e3765df5c8cc94a2f2171acfb7af7ff7d9f703038.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="dataset-dataloader">
-<h3>Dataset + DataLoader<a class="headerlink" href="#dataset-dataloader" title="Permalink to this heading">#</a></h3>
+<h2>Dataset + DataLoader<a class="headerlink" href="#dataset-dataloader" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
@@ -1075,191 +804,32 @@ z(E) = \frac{log(1+E/e_{0})}{log(1+E_{max}/e_{0})} \in [0,1]
 <span class="n">val_loader</span>   <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">FCALGraphDataset</span><span class="p">(</span><span class="n">val_idx</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH_SIZE</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">test_loader</span>  <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">FCALGraphDataset</span><span class="p">(</span><span class="n">test_idx</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH_SIZE</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
-<span class="n">batch1</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">batch1</span><span class="p">)</span>
-<span class="n">batch2</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">batch2</span><span class="p">)</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">train_loader</span><span class="p">))</span>
+<span class="n">batch</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataBatch(x=[3214, 8], edge_index=[2, 11520], g=[512, 3], y=[512], showerE=[512], thrownE=[512], batch=[3214], ptr=[513])
-DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512], thrownE=[512], batch=[3224], ptr=[513])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataBatch(x=[3060, 8], edge_index=[2, 10732], g=[512, 3], y=[512], showerE=[512], thrownE=[512], batch=[3060], ptr=[513])
 </pre></div>
 </div>
-</div>
-</div>
-<p><strong>Notes:</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code> is a pointer array automatically created by the PyTorch Geometric DataLoader. It tells you where each graph starts and ends in the concatenated node list.</p></li>
-<li><p>Formally, <code class="docutils literal notranslate"><span class="pre">ptr.shape</span> <span class="pre">=</span> <span class="pre">batch_size</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batch2</span><span class="o">.</span><span class="n">ptr</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([   0,    9,   20,   30,   33,   39,   42,   47,   49,   51,   56,   62,
-          67,   72,   76,   84,   88,   98,  107,  117,  125,  137,  141,  149,
-         163,  167,  176,  179,  185,  192,  200,  203,  213,  217,  223,  226,
-         230,  232,  234,  245,  253,  261,  264,  268,  277,  279,  282,  287,
-         297,  300,  304,  310,  321,  331,  340,  345,  359,  363,  367,  371,
-         379,  383,  390,  398,  401,  406,  410,  413,  425,  436,  440,  450,
-         453,  463,  466,  473,  475,  478,  488,  492,  503,  506,  512,  515,
-         524,  535,  544,  548,  553,  562,  565,  571,  582,  586,  588,  598,
-         601,  604,  608,  619,  621,  630,  633,  637,  641,  646,  648,  659,
-         664,  675,  678,  687,  690,  692,  695,  700,  704,  708,  714,  718,
-         721,  730,  733,  746,  749,  752,  758,  764,  771,  776,  781,  786,
-         796,  799,  808,  817,  821,  833,  843,  852,  854,  862,  866,  870,
-         875,  881,  883,  892,  898,  907,  920,  926,  936,  939,  946,  953,
-         964,  968,  976,  980,  983,  988,  992, 1000, 1011, 1016, 1021, 1025,
-        1028, 1031, 1043, 1054, 1059, 1064, 1067, 1076, 1087, 1095, 1103, 1106,
-        1114, 1119, 1128, 1131, 1139, 1150, 1158, 1160, 1162, 1169, 1171, 1173,
-        1185, 1193, 1195, 1209, 1213, 1218, 1220, 1226, 1233, 1236, 1240, 1250,
-        1254, 1265, 1269, 1280, 1284, 1287, 1297, 1304, 1314, 1323, 1327, 1332,
-        1343, 1345, 1347, 1357, 1361, 1364, 1366, 1372, 1382, 1386, 1391, 1397,
-        1404, 1416, 1425, 1427, 1430, 1435, 1439, 1442, 1451, 1457, 1463, 1465,
-        1472, 1480, 1482, 1490, 1493, 1502, 1509, 1512, 1519, 1528, 1532, 1543,
-        1546, 1550, 1562, 1569, 1571, 1578, 1590, 1593, 1597, 1603, 1615, 1620,
-        1623, 1633, 1635, 1645, 1648, 1658, 1670, 1676, 1685, 1691, 1701, 1708,
-        1714, 1724, 1728, 1733, 1746, 1751, 1755, 1759, 1762, 1764, 1774, 1777,
-        1785, 1793, 1804, 1812, 1820, 1823, 1827, 1831, 1835, 1838, 1841, 1845,
-        1847, 1857, 1859, 1868, 1870, 1880, 1885, 1888, 1895, 1900, 1909, 1911,
-        1919, 1927, 1933, 1939, 1950, 1960, 1965, 1968, 1972, 1982, 1993, 2004,
-        2009, 2014, 2016, 2020, 2028, 2041, 2053, 2059, 2063, 2066, 2071, 2077,
-        2087, 2090, 2099, 2102, 2104, 2113, 2116, 2122, 2126, 2130, 2134, 2144,
-        2147, 2149, 2160, 2164, 2172, 2175, 2182, 2187, 2191, 2197, 2209, 2218,
-        2228, 2234, 2245, 2253, 2256, 2264, 2272, 2275, 2280, 2286, 2288, 2298,
-        2302, 2305, 2307, 2312, 2318, 2320, 2330, 2334, 2337, 2348, 2350, 2352,
-        2363, 2370, 2377, 2389, 2395, 2397, 2401, 2404, 2407, 2409, 2414, 2424,
-        2426, 2433, 2437, 2445, 2454, 2461, 2472, 2475, 2484, 2488, 2497, 2499,
-        2501, 2510, 2522, 2533, 2544, 2547, 2551, 2555, 2562, 2570, 2578, 2580,
-        2590, 2596, 2604, 2609, 2611, 2613, 2625, 2631, 2638, 2642, 2645, 2651,
-        2658, 2668, 2672, 2674, 2680, 2683, 2693, 2697, 2701, 2705, 2713, 2717,
-        2724, 2726, 2730, 2734, 2742, 2749, 2756, 2767, 2779, 2784, 2787, 2790,
-        2794, 2796, 2800, 2811, 2822, 2826, 2834, 2837, 2844, 2858, 2870, 2874,
-        2878, 2885, 2888, 2896, 2899, 2906, 2918, 2921, 2930, 2939, 2943, 2947,
-        2956, 2969, 2978, 2986, 2989, 3002, 3014, 3016, 3022, 3025, 3027, 3029,
-        3039, 3041, 3053, 3059, 3063, 3066, 3073, 3075, 3078, 3083, 3093, 3096,
-        3099, 3109, 3113, 3124, 3127, 3135, 3142, 3146, 3150])
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Convert a PyG graph to NetworkX and plot</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">torch_geometric.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_networkx</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
-
-<span class="c1"># take a single shower</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">keep_idx</span><span class="p">[</span><span class="mi">7879</span><span class="p">]</span>
-
-<span class="n">rows</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rows_ak</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">cols_ak</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="n">ens</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">en_ak</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">shower_to_graph</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">ens</span><span class="p">,</span>
-                       <span class="n">showerE</span><span class="o">=</span><span class="n">showerE</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                       <span class="n">numBlocks</span><span class="o">=</span><span class="n">numBlocks</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                       <span class="n">isNearBorder</span><span class="o">=</span><span class="n">isNearBorder</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="c1"># convert to networkx</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">to_networkx</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">to_undirected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Use detector coordinates for layout</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">(</span><span class="n">cols</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rows</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">))}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
-    <span class="n">G</span><span class="p">,</span>
-    <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span>
-    <span class="n">node_size</span><span class="o">=</span><span class="mi">220</span><span class="p">,</span>
-    <span class="n">node_color</span><span class="o">=</span><span class="n">ens</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">,</span>
-    <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;FCAL Shower Graph&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/f81fb68f2d123d59e8f87a0ad9bdbac84cf2223ef4421bceed6ce497d6a8cc50.png" src="../_images/f81fb68f2d123d59e8f87a0ad9bdbac84cf2223ef4421bceed6ce497d6a8cc50.png" />
 </div>
 </div>
 </section>
-</section>
-<section id="gnn-model">
-<h2>3. GNN Model<a class="headerlink" href="#gnn-model" title="Permalink to this heading">#</a></h2>
-<p><strong>To-do list</strong></p>
-<ul class="simple">
-<li><p>Explain GNN — link to slides?</p></li>
-<li><p>Explain — Explain SAGEConv and link to other types of graph neural networks</p></li>
-</ul>
 <section id="gnn-model-graph-classifier">
-<h3>GNN Model (graph classifier)<a class="headerlink" href="#gnn-model-graph-classifier" title="Permalink to this heading">#</a></h3>
+<h2>GNN Model (graph classifier)<a class="headerlink" href="#gnn-model-graph-classifier" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">################################################################################</span>
-<span class="c1">#                            MODEL DESCRIPTION                                 #</span>
-<span class="c1">################################################################################</span>
-<span class="c1">#	1.	crystals start with 8 handcrafted node features                          #</span>
-<span class="c1">#	2.	GraphSAGE updates each crystal using neighboring crystals                #</span>
-<span class="c1">#	3.	after 3 layers, each crystal embedding reflects local shower structure   #</span>
-<span class="c1">#	4.	node embeddings are pooled into one vector representing the whole shower #</span>
-<span class="c1">#	5.	that vector is combined with global shower metadata                      #</span>
-<span class="c1">#	6.	final MLP predicts whether the shower is photon or split-off             #</span>
-<span class="c1">################################################################################</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">torch_geometric.nn</span><span class="w"> </span><span class="kn">import</span> <span class="n">SAGEConv</span><span class="p">,</span> <span class="n">global_mean_pool</span><span class="p">,</span> <span class="n">global_max_pool</span>
 
-<span class="c1"># (crystal/node features) x_i = [row_n, col_n, E, logE, Efrac, dx, dy, rr]</span>
-<span class="c1"># (shower/graph features) [showerE, numBlocks, isNearBorder]</span>
-
 <span class="k">class</span><span class="w"> </span><span class="nc">SmallGNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node_in</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">g_in</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
-
-        <span class="c1"># node_in : number of input features per node (here 8 crystal features)</span>
-        <span class="c1"># g_in    : number of graph-level features (here 3 shower-level quantities in data.g)</span>
-        <span class="c1"># hidden  : size of the node embedding produced by the GNN layers</span>
-        <span class="c1"># n_classes : number of output classes (photon vs split-off)</span>
-        <span class="c1"># dropout : dropout probability used in the classification head</span>
-
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="c1"># calls the constructor of the parent class (nn.Module)</span>
-        <span class="c1"># this registers the model with PyTorch so parameters, layers,</span>
-        <span class="c1"># and gradients are properly tracked during training</span>
-
-        <span class="c1"># GraphSAGE layers (message passing between neighboring crystals)</span>
-        <span class="c1"># N = total number of nodes in the batch</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">SAGEConv</span><span class="p">(</span><span class="n">node_in</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>  <span class="c1"># (N, node_in=8)  -&gt; (N, 64)</span>
-        <span class="c1"># each node updates its features by aggregating information from its neighbors</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">SAGEConv</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>       <span class="c1"># (N, 64) -&gt; (N, 64)</span>
-        <span class="c1"># deeper layer: node embeddings now encode information from a larger neighborhood</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span> <span class="o">=</span> <span class="n">SAGEConv</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">hidden</span><span class="p">)</span>   <span class="c1"># (N, 64) -&gt; (N, hidden)</span>
-        <span class="c1"># final node embeddings used for graph-level pooling</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">SAGEConv</span><span class="p">(</span><span class="n">node_in</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">SAGEConv</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span> <span class="o">=</span> <span class="n">SAGEConv</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">hidden</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">hidden</span> <span class="o">+</span> <span class="n">g_in</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span>
@@ -1269,33 +839,13 @@ DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512]
         <span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-
-        <span class="c1"># data.batch tells which graph each node belongs to. Its dimension, B, coincides with the total number of nodes in the batch, Ntot</span>
-        <span class="c1"># x: (Ntot, 8); ei: (2, Etot); b: (Ntot,)</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">ei</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">edge_index</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">batch</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ei</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ei</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ei</span><span class="p">))</span>
 
-        <span class="c1">#############################################################################</span>
-        <span class="c1"># Node embedding stage:</span>
-        <span class="c1"># start from crystal-level node features (8 per crystal)</span>
-        <span class="c1"># each SAGEConv layer updates a crystal representation by combining</span>
-        <span class="c1"># its own features with features aggregated from neighboring crystals</span>
-        <span class="c1"># (defined by the graph edges)</span>
-        <span class="c1">#############################################################################</span>
-
-        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ei</span><span class="p">))</span>   <span class="c1"># (Ntot, node_in=8)  -&gt; (Ntot, 64)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ei</span><span class="p">))</span>   <span class="c1"># (Ntot, 64)         -&gt; (Ntot, 64)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ei</span><span class="p">))</span>   <span class="c1"># (Ntot, 64)         -&gt; (Ntot, hidden)</span>
-
-        <span class="c1">#############################################################################</span>
-        <span class="c1"># pool all node embeddings into one-grap-level embedding for the whole shower</span>
-        <span class="c1">#############################################################################</span>
-
-        <span class="c1"># B: number of graphs/showers in the batch</span>
         <span class="n">pooled</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">global_mean_pool</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">global_max_pool</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="c1"># (Ntot x hidden) -&gt; (B x 2*hidden)</span>
-
         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">pooled</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">g</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-        <span class="c1"># (B x 2*hidden) + (B x 3) -&gt; (B x (2*hidden + 3)) -&gt; head -&gt; (B x 2)</span>
         <span class="k">return</span> <span class="n">out</span>
 </pre></div>
 </div>
@@ -1303,7 +853,7 @@ DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512]
 </div>
 </section>
 <section id="evaluate-train">
-<h3>Evaluate + Train<a class="headerlink" href="#evaluate-train" title="Permalink to this heading">#</a></h3>
+<h2>Evaluate + Train<a class="headerlink" href="#evaluate-train" title="Permalink to this heading">#</a></h2>
 <p>Returns <code class="docutils literal notranslate"><span class="pre">y_true</span></code>, <code class="docutils literal notranslate"><span class="pre">y_prob</span></code> where <code class="docutils literal notranslate"><span class="pre">y_prob=P(photon)</span></code> or <code class="docutils literal notranslate"><span class="pre">P(splitoff)</span></code> depending on the convention.</p>
 <p>We consider here</p>
 <ul class="simple">
@@ -1322,24 +872,19 @@ DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512]
 <span class="n">DEVICE</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
 <span class="n">USE_AMP</span> <span class="o">=</span> <span class="p">(</span><span class="n">DEVICE</span> <span class="o">==</span> <span class="s2">&quot;cuda&quot;</span><span class="p">)</span>
 
-<span class="c1">################################################################################</span>
-<span class="nd">@torch</span><span class="o">.</span><span class="n">inference_mode</span><span class="p">()</span> <span class="c1"># disables gradient tracking and autograd</span>
+<span class="nd">@torch</span><span class="o">.</span><span class="n">inference_mode</span><span class="p">()</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_gnn</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Eval&quot;</span><span class="p">,</span> <span class="n">returnShowerE</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">returnThrownE</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-
-    <span class="c1"># switches the network to evaluation mode and turns off training behaviors</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
-
-    <span class="c1"># true labels, predicted photon probs, reco shower energy, true thrown energy</span>
     <span class="n">ys</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">shE</span><span class="p">,</span> <span class="n">thE</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
     <span class="n">correct</span> <span class="o">=</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">bar</span><span class="p">:</span>
         <span class="n">batch</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
-        <span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>                             <span class="c1"># [B,2] row: batch of showers, col: classes</span>
-        <span class="n">prob_photon</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># P(photon) sliced as 1D tensor by [:,1]</span>
-        <span class="n">pred</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>                       <span class="c1"># returns index of largest value: 0 split-off, 1 photon</span>
+        <span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>                 <span class="c1"># [B,2]</span>
+        <span class="n">prob_photon</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># P(photon)</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="n">yb</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>                             <span class="c1"># take true class label, flattened as 1D vector</span>
+        <span class="n">yb</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">ys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yb</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
         <span class="n">ps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prob_photon</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
 
@@ -1348,9 +893,9 @@ DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512]
 
         <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">pred</span> <span class="o">==</span> <span class="n">yb</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">yb</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span>
-        <span class="n">bar</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">(</span><span class="n">acc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">(</span><span class="n">correct</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">total</span><span class="p">))</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># show running accuracy in the progress bar</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">(</span><span class="n">acc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">(</span><span class="n">correct</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">total</span><span class="p">))</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span> <span class="k">if</span> <span class="n">ys</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>      <span class="c1"># stitching into one long array</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span> <span class="k">if</span> <span class="n">ys</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
     <span class="n">y_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span> <span class="k">if</span> <span class="n">ps</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
     <span class="n">showerE_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">shE</span><span class="p">)</span> <span class="k">if</span> <span class="n">shE</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
     <span class="n">thrownE_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">thE</span><span class="p">)</span> <span class="k">if</span> <span class="n">thE</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
@@ -1364,408 +909,65 @@ DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512]
         <span class="k">return</span> <span class="n">acc</span><span class="p">,</span> <span class="n">auc</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_prob</span><span class="p">,</span> <span class="n">thrownE_out</span>
     <span class="k">return</span> <span class="n">acc</span><span class="p">,</span> <span class="n">auc</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">y_prob</span>
 
-<span class="c1">################################################################################</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">train_gnn</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./models&quot;</span><span class="p">,</span> <span class="n">counts</span><span class="o">=</span><span class="n">counts</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
-
-    <span class="c1">#---------------------------------------------------------------------------</span>
-    <span class="c1"># Parameters</span>
-    <span class="c1"># ----------</span>
-    <span class="c1"># model: your SmallGNN model</span>
-    <span class="c1"># opt: optimizer (e.g. Adam)</span>
-    <span class="c1"># train_loader: training DataLoader - Yields mini-batches of training graphs.</span>
-    <span class="c1"># val_loader: validation DataLoader - Yields mini-batches of validation graphs.</span>
-    <span class="c1"># save_path: where the trained model will be saved</span>
-    <span class="c1"># counts: array-like, shape (n_classes,) # of training examples in each class.</span>
-    <span class="c1">#        counts[0] = number of split-off showers</span>
-    <span class="c1">#        counts[1] = number of photon showers</span>
-    <span class="c1"># epochs: number of training passes over the dataset</span>
-
-    <span class="c1"># Returns</span>
-    <span class="c1"># -------</span>
-    <span class="c1"># model : nn.Module</span>
-    <span class="c1">#    The model restored to the best validation AUC seen during training.</span>
-    <span class="c1">#---------------------------------------------------------------------------</span>
-
     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="c1"># -------------------------------------------------------------------------</span>
-    <span class="c1"># Build class weights for the loss function.</span>
-    <span class="c1">#</span>
-    <span class="c1"># counts.sum() = total number of samples across classes.</span>
-    <span class="c1"># counts + 1e-6 avoids division by zero if a class were empty.</span>
-    <span class="c1">#</span>
-    <span class="c1"># This produces one weight per class: w_c = total_count / count_c</span>
-    <span class="c1">#</span>
-    <span class="c1"># Rarer classes get a larger weight. This helps when the dataset is imbalanced.</span>
-    <span class="c1"># -------------------------------------------------------------------------</span>
-    <span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span>
-        <span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">counts</span> <span class="o">+</span> <span class="mf">1e-6</span><span class="p">)),</span>
-        <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
-        <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Weighted cross-entropy loss.</span>
-    <span class="c1"># The weight used for a sample depends on its true class.</span>
-    <span class="c1"># For binary classification with labels 0/1:</span>
-    <span class="c1">#   weight[0] is used for class 0 samples</span>
-    <span class="c1">#   weight[1] is used for class 1 samples</span>
+    <span class="c1"># weights: same logic as CNN tutorial</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">((</span><span class="n">counts</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="p">(</span><span class="n">counts</span> <span class="o">+</span> <span class="mf">1e-6</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span>
     <span class="n">crit</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
 
-    <span class="c1"># -------------------------------------------------------------------------</span>
-    <span class="c1"># Automatic Mixed Precision (AMP) support.</span>
-    <span class="c1">#</span>
-    <span class="c1"># USE_AMP is True only when training on CUDA in this notebook.</span>
-    <span class="c1">#</span>
-    <span class="c1"># GradScaler is used only with float16 mixed precision on GPU.</span>
-    <span class="c1"># It scales the loss before backpropagation so tiny gradients do not</span>
-    <span class="c1"># underflow to zero in float16. If AMP is not used, scaler is simply None.</span>
-    <span class="c1"># -------------------------------------------------------------------------</span>
     <span class="n">scaler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">GradScaler</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">USE_AMP</span> <span class="k">else</span> <span class="kc">None</span>
 
-    <span class="c1"># Move the model parameters to the selected device (GPU or CPU).</span>
     <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
+    <span class="n">best_auc</span><span class="p">,</span> <span class="n">best_state</span><span class="p">,</span> <span class="n">patience</span><span class="p">,</span> <span class="n">bad</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span>
 
-    <span class="c1"># -------------------------------------------------------------------------</span>
-    <span class="c1"># Early-stopping bookkeeping.</span>
-    <span class="c1">#</span>
-    <span class="c1"># best_auc   : best validation AUC seen so far</span>
-    <span class="c1"># best_state : frozen copy of the model parameters at best_auc</span>
-    <span class="c1"># patience   : stop after this many consecutive non-improving epochs</span>
-    <span class="c1"># no_improv  : number of consecutive epochs without improvement</span>
-    <span class="c1"># -------------------------------------------------------------------------</span>
-    <span class="n">best_auc</span><span class="p">,</span> <span class="n">best_state</span><span class="p">,</span> <span class="n">patience</span><span class="p">,</span> <span class="n">no_improv</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span>
-
-    <span class="c1"># Main epoch loop.</span>
-    <span class="c1"># trange(...) is just tqdm(range(...)) with a progress bar.</span>
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Training&quot;</span><span class="p">):</span>
-
-        <span class="c1"># Put the model in training mode.</span>
-        <span class="c1"># This matters for layers like Dropout and BatchNorm.</span>
         <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">running</span><span class="p">,</span> <span class="n">seen</span><span class="p">,</span> <span class="n">correct</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="n">bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_loader</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2"> (train)&quot;</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-        <span class="c1"># Running statistics for the current epoch.</span>
-        <span class="c1"># running : sum of per-sample losses over the epoch</span>
-        <span class="c1"># seen    : number of graphs processed so far in this epoch</span>
-        <span class="c1"># correct : number of correctly classified graphs so far</span>
-        <span class="n">running</span> <span class="o">=</span> <span class="mf">0.0</span>
-        <span class="n">seen</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="c1"># Wrap the train_loader in a tqdm progress bar.</span>
-        <span class="c1"># bar now iterates over the same batches as train_loader with a live progress bar and dynamic text updates.</span>
-        <span class="n">bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span>
-            <span class="n">train_loader</span><span class="p">,</span>
-            <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2"> (train)&quot;</span><span class="p">,</span>
-            <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="p">)</span>
-
-        <span class="n">bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_loader</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2"> (train)&quot;</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1">## does now bar control train_loader, i.e., one can loop batches in bar?</span>
-
-        <span class="c1"># ---------------------------------------------------------------------</span>
-        <span class="c1"># Mini-batch training loop</span>
-        <span class="c1"># ---------------------------------------------------------------------</span>
         <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">bar</span><span class="p">:</span>
-
-            <span class="c1"># Move the entire batched graph object to the selected device.</span>
-            <span class="c1"># This moves data.x, data.edge_index, data.y, data.g, etc.</span>
             <span class="n">batch</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
-
-            <span class="c1"># batch.y stores one label per graph.</span>
-            <span class="c1"># view(-1) reshapes it into a flat 1D tensor of shape (B,) where B is the number of graphs in this batch.</span>
             <span class="n">yb</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-            <span class="c1"># Reset gradients from the previous optimization step.</span>
-            <span class="c1"># set_to_none=True is a slightly more memory-efficient / faster way than filling old gradients with zeros.</span>
             <span class="n">opt</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">(</span><span class="n">set_to_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-
-            <span class="c1"># -----------------------------------------------------------------</span>
-            <span class="c1"># Build the precision context.</span>
-            <span class="c1">#</span>
-            <span class="c1"># If AMP is enabled: use autocast so many ops run in float16 on CUDA</span>
-            <span class="c1"># If AMP is disabled: use nullcontext(), i.e. do nothing special</span>
-            <span class="c1"># -----------------------------------------------------------------</span>
             <span class="n">ctx</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">device_type</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="k">if</span> <span class="n">USE_AMP</span> <span class="k">else</span> <span class="n">nullcontext</span><span class="p">()</span>
-
-            <span class="c1"># &quot;with ctx:&quot; enters that context manager</span>
-            <span class="c1"># If ctx is autocast(...): operations inside the block run in mixed precision where safe</span>
-            <span class="c1"># If ctx is nullcontext(): the block runs normally</span>
-
-            <span class="c1"># The point of using &quot;with&quot; is that only this block is affected,</span>
-            <span class="c1"># and once we exit the block, precision behavior returns to normal.</span>
             <span class="k">with</span> <span class="n">ctx</span><span class="p">:</span>
-                <span class="c1"># Forward pass: model outputs logits of shape (B, n_classes).</span>
                 <span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
-
-                <span class="c1"># Compute weighted cross-entropy loss against the true labels.</span>
                 <span class="n">loss</span> <span class="o">=</span> <span class="n">crit</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">yb</span><span class="p">)</span>
 
-            <span class="c1"># -----------------------------------------------------------------</span>
-            <span class="c1"># Backpropagation + optimizer step</span>
-            <span class="c1"># -----------------------------------------------------------------</span>
             <span class="k">if</span> <span class="n">USE_AMP</span><span class="p">:</span>
-
-                <span class="c1"># Scale the loss to protect small gradients in float16.</span>
                 <span class="n">scaler</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-
-                <span class="c1"># Perform the optimizer step using the scaled/unscaled gradients.</span>
                 <span class="n">scaler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span>
-
-                <span class="c1"># Update the internal scaling factor for the next iteration.</span>
-                <span class="c1"># The scaler dynamically adapts:</span>
-                <span class="c1">#   - if gradients are safe, it may increase the scale</span>
-                <span class="c1">#   - if overflow is detected, it may reduce the scale</span>
                 <span class="n">scaler</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="c1"># Standard float32 training path.</span>
                 <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-                <span class="n">opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span> <span class="c1">## why no updated as before?</span>
+                <span class="n">opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
-            <span class="c1"># -----------------------------------------------------------------</span>
-            <span class="c1"># Accumulate training metrics for this epoch</span>
-            <span class="c1"># -----------------------------------------------------------------</span>
-
-            <span class="c1"># loss.item() is typically the mean loss over the current batch.</span>
-            <span class="c1">#</span>
-            <span class="c1"># To compute the true epoch-average loss, we multiply by batch size</span>
-            <span class="c1"># to convert the batch mean loss into the batch sum loss, then later</span>
-            <span class="c1"># divide by the total number of samples seen.</span>
             <span class="n">running</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span> <span class="o">*</span> <span class="n">yb</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-            <span class="c1"># Number of graphs processed so far in this epoch.</span>
             <span class="n">seen</span> <span class="o">+=</span> <span class="n">yb</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-            <span class="c1"># logits.argmax(1):</span>
-            <span class="c1">#   argmax over class dimension (dim=1)</span>
-            <span class="c1">#   gives the predicted class index for each graph in the batch</span>
-            <span class="c1">#</span>
-            <span class="c1"># If logits has shape (B, 2), then logits.argmax(1) has shape (B,)</span>
-            <span class="c1"># and contains 0 or 1 for each graph.</span>
             <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">logits</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">yb</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-
-            <span class="c1"># Update the live progress-bar text with running averages.</span>
             <span class="n">bar</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">(</span><span class="n">avg_loss</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">running</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">seen</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">(</span><span class="n">correct</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">seen</span><span class="p">))</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-        <span class="c1"># Average training loss over the full epoch.</span>
         <span class="n">train_loss</span> <span class="o">=</span> <span class="n">running</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">seen</span><span class="p">)</span>
-
-        <span class="c1"># Evaluate on the validation set.</span>
-        <span class="c1"># evaluate_gnn returns: val_acc, val_auc, y_true, y_prob</span>
         <span class="n">val_acc</span><span class="p">,</span> <span class="n">val_auc</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">evaluate_gnn</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2"> (val)&quot;</span><span class="p">)</span>
-
         <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2"> | train_loss </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> | val_acc </span><span class="si">{</span><span class="n">val_acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> | val_auc </span><span class="si">{</span><span class="n">val_auc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-        <span class="c1"># If AUC is NaN, replace it by 0.0 for comparison purposes.</span>
         <span class="n">score</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">val_auc</span><span class="p">)</span> <span class="k">else</span> <span class="n">val_auc</span>
-
-        <span class="c1"># ---------------------------------------------------------------------</span>
-        <span class="c1"># Check whether this epoch improved the validation score</span>
-        <span class="c1"># ---------------------------------------------------------------------</span>
         <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">best_auc</span><span class="p">:</span>
-            <span class="c1"># Improvement found: update best score and reset bad-epoch counter.</span>
-            <span class="n">best_auc</span> <span class="o">=</span> <span class="n">score</span>
-            <span class="n">no_improv</span> <span class="o">=</span> <span class="mi">0</span>
-
-            <span class="c1"># Save a frozen snapshot of the model weights.</span>
-            <span class="c1">#</span>
-            <span class="c1"># model.state_dict().items() gives (name, tensor) pairs.</span>
-            <span class="c1">#</span>
-            <span class="c1"># For each tensor v:</span>
-            <span class="c1">#   detach() : remove gradient history / autograd tracking</span>
-            <span class="c1">#   cpu()    : move to CPU memory so it is safely stored there</span>
-            <span class="c1">#   clone()  : make an independent copy of the tensor data</span>
-            <span class="c1">#</span>
-            <span class="n">best_state</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span> <span class="c1">## when do detach? ## why clone? ## I do not understand this</span>
-            <span class="c1"># if you do best_state = model.state_dict(), the best_state would be the same tensors used by the model during training.</span>
-            <span class="c1"># A deep copy creates a new object with new memory. The copied tensory point to a different memory block.</span>
-            <span class="c1"># PyTorch tracks operations in a computation graph so gradients can be computed. .detach() creates a tensor that: shares the same values but has no gradient history</span>
-            <span class="c1"># .detach().cpu().clone() together allows a frozen snapshot of model weights independent of training, stored safely in CPU memory</span>
-
+            <span class="n">best_auc</span><span class="p">,</span> <span class="n">bad</span> <span class="o">=</span> <span class="n">score</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="n">best_state</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
             <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✓ New best AUC </span><span class="si">{</span><span class="n">best_auc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">save_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="s2">&quot;FCAL_GNN_Classifier.safetensors&quot;</span><span class="p">))</span>
-
         <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># No improvement this epoch.</span>
-            <span class="n">no_improv</span> <span class="o">+=</span> <span class="mi">1</span>
-
-            <span class="c1"># If we have gone too many epochs without improvement, stop early.</span>
-            <span class="k">if</span> <span class="n">no_improv</span> <span class="o">&gt;=</span> <span class="n">patience</span><span class="p">:</span>
+            <span class="n">bad</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">bad</span> <span class="o">&gt;=</span> <span class="n">patience</span><span class="p">:</span>
                 <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Early stopping.&quot;</span><span class="p">)</span>
                 <span class="k">break</span>
 
-    <span class="c1"># After training ends, restore the best weights we saw during validation.</span>
     <span class="k">if</span> <span class="n">best_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">best_state</span><span class="p">)</span>
-
     <span class="k">return</span> <span class="n">model</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_416/3650800745.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">math</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span><span class="p">,</span> <span class="n">trange</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">roc_auc_score</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">nullcontext</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">safetensors.torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_model</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="n">_distributor_init</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">73</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">clone</span>  <span class="c1"># noqa: E402</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._show_versions</span><span class="w"> </span><span class="kn">import</span> <span class="n">show_versions</span>  <span class="c1"># noqa: E402</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span> 
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config_context</span><span class="p">,</span> <span class="n">get_config</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">InconsistentVersionWarning</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._estimator_html_repr</span><span class="w"> </span><span class="kn">import</span> <span class="n">_HTMLDocumentationLinkMixin</span><span class="p">,</span> <span class="n">estimator_html_repr</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._metadata_requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MetadataRequester</span><span class="p">,</span> <span class="n">_routing_enabled</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._param_validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate_parameter_constraints</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_joblib</span><span class="p">,</span> <span class="n">metadata_routing</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._bunch</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bunch</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._chunking</span><span class="w"> </span><span class="kn">import</span> <span class="n">gen_batches</span><span class="p">,</span> <span class="n">gen_even_slices</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._estimator_html_repr</span><span class="w"> </span><span class="kn">import</span> <span class="n">estimator_html_repr</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> 
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">_chunking</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_config</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._param_validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">validate_params</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> 
-<span class="g g-Whitespace">     </span><span class="mi">13</span> 
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">_param_validation</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> 
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config_context</span><span class="p">,</span> <span class="n">get_config</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">_is_arraylike_not_scalar</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> 
-<span class="g g-Whitespace">     </span><span class="mi">19</span> 
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">validation</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_config</span> <span class="k">as</span> <span class="n">_get_config</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataConversionWarning</span><span class="p">,</span> <span class="n">NotFittedError</span><span class="p">,</span> <span class="n">PositiveSpectrumWarning</span>
-<span class="ne">---&gt; </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..utils._array_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">_asarray_with_order</span><span class="p">,</span> <span class="n">_is_numpy_namespace</span><span class="p">,</span> <span class="n">get_namespace</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..utils.deprecation</span><span class="w"> </span><span class="kn">import</span> <span class="n">_deprecate_force_all_finite</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..utils.fixes</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComplexWarning</span><span class="p">,</span> <span class="n">_preserve_dia_indices_dtype</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">_array_api</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> 
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_config</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.fixes</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_version</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> 
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">_NUMPY_NAMESPACE_NAMES</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;array_api_compat.numpy&quot;</span><span class="p">}</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">fixes</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> 
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">20</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">pd</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas.core.config_init</span>  <span class="c1"># pyright: ignore[reportUnusedImport] # noqa: F401</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> 
-<span class="ne">---&gt; </span><span class="mi">49</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.api</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="c1"># dtype</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">ArrowDtype</span><span class="p">,</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">api</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">value_counts</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">28</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays</span><span class="w"> </span><span class="kn">import</span> <span class="n">Categorical</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.boolean</span><span class="w"> </span><span class="kn">import</span> <span class="n">BooleanDtype</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.floating</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">arrays</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.arrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrowExtensionArray</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.base</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">ExtensionArray</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">ExtensionOpsMixin</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">ExtensionScalarOpsMixin</span><span class="p">,</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">arrays</span><span class="o">/</span><span class="n">arrow</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.arrow.accessors</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">ListAccessor</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">StructAccessor</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.arrow.array</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrowExtensionArray</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">arrays</span><span class="o">/</span><span class="n">arrow</span><span class="o">/</span><span class="n">accessors</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pa_version_under10p1</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
-<span class="ne">---&gt; </span><span class="mi">23</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> 
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.dtypes.dtypes</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrowDtype</span>
-
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyarrow</span><span class="o">/</span><span class="n">compute</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span> 
-<span class="g g-Whitespace">    </span><span class="mi">335</span> 
-<span class="ne">--&gt; </span><span class="mi">336</span> <span class="n">_make_global_functions</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span> 
-<span class="g g-Whitespace">    </span><span class="mi">338</span> 
-
-<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_make_global_functions</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>             <span class="k">continue</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>         <span class="k">assert</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">g</span><span class="p">,</span> <span class="n">name</span>
-<span class="ne">--&gt; </span><span class="mi">333</span>         <span class="n">g</span><span class="p">[</span><span class="n">cpp_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_wrap_function</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span> 
-<span class="g g-Whitespace">    </span><span class="mi">335</span> 
-
-<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_wrap_function</span><span class="nt">(name, func)</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="n">wrapper</span><span class="o">.</span><span class="n">__signature__</span> <span class="o">=</span> <span class="n">_make_signature</span><span class="p">(</span><span class="n">arg_names</span><span class="p">,</span> <span class="n">var_arg_names</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>                                             <span class="n">options_class</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>     <span class="k">return</span> <span class="n">_decorate_compute_function</span><span class="p">(</span><span class="n">wrapper</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">options_class</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span> 
-<span class="g g-Whitespace">    </span><span class="mi">306</span> 
-
-<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_decorate_compute_function</span><span class="nt">(wrapper, exposed_name, func, options_class)</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>     <span class="c1"># 3b. Compute function option values</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span>     <span class="k">if</span> <span class="n">options_class</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">170</span>         <span class="n">options_class_doc</span> <span class="o">=</span> <span class="n">_scrape_options_class_doc</span><span class="p">(</span><span class="n">options_class</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>         <span class="k">if</span> <span class="n">options_class_doc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">options_class_doc</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_scrape_options_class_doc</span><span class="nt">(options_class)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">options_class</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>         <span class="k">return</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">117</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">docscrape</span><span class="o">.</span><span class="n">NumpyDocString</span><span class="p">(</span><span class="n">options_class</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="k">return</span> <span class="n">_OptionsClassDoc</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="s1">&#39;Parameters&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span> 
-
-<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/vendored/docscrape.py</span> in <span class="ni">__init__</span><span class="nt">(self, docstring, config)</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span> 
-<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_doc</span> <span class="o">=</span> <span class="n">Reader</span><span class="p">(</span><span class="n">docstring</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">151</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_parsed_data</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span> 
-<span class="g g-Whitespace">    </span><span class="mi">153</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">/usr/lib/python3.12/copy.py</span> in <span class="ni">deepcopy</span><span class="nt">(x, memo, _nil)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="n">copier</span> <span class="o">=</span> <span class="n">_deepcopy_dispatch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="n">copier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">136</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">copier</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-
-<span class="nn">/usr/lib/python3.12/copy.py</span> in <span class="ni">_deepcopy_dict</span><span class="nt">(x, memo, deepcopy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">memo</span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="n">y</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">221</span>         <span class="n">y</span><span class="p">[</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">memo</span><span class="p">)]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="k">return</span> <span class="n">y</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="n">d</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="n">_deepcopy_dict</span>
-
-<span class="nn">/usr/lib/python3.12/copy.py</span> in <span class="ni">deepcopy</span><span class="nt">(x, memo, _nil)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span> 
-<span class="ne">--&gt; </span><span class="mi">134</span>     <span class="n">copier</span> <span class="o">=</span> <span class="n">_deepcopy_dispatch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="n">copier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">copier</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1784,7 +986,7 @@ DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512]
 </div>
 </section>
 <section id="run-training">
-<h3>Run Training<a class="headerlink" href="#run-training" title="Permalink to this heading">#</a></h3>
+<h2>Run Training<a class="headerlink" href="#run-training" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1817,11 +1019,8 @@ DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512]
 </div>
 </div>
 </section>
-</section>
-<section id="performance">
-<h2>4. Performance<a class="headerlink" href="#performance" title="Permalink to this heading">#</a></h2>
 <section id="evaluate-performance">
-<h3>Evaluate Performance<a class="headerlink" href="#evaluate-performance" title="Permalink to this heading">#</a></h3>
+<h2>Evaluate Performance<a class="headerlink" href="#evaluate-performance" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">confusion_matrix</span>
@@ -1946,7 +1145,7 @@ Split-off rejection = 0.9265
 </div>
 </section>
 <section id="figure-of-merit-definitions">
-<h3>Figure of Merit Definitions<a class="headerlink" href="#figure-of-merit-definitions" title="Permalink to this heading">#</a></h3>
+<h2>Figure of Merit Definitions<a class="headerlink" href="#figure-of-merit-definitions" title="Permalink to this heading">#</a></h2>
 <p>When optimizing a binary classifier in the presence of signal and background, the <strong>optimal threshold</strong> is often chosen by maximizing a <strong>Figure of Merit (FoM)</strong> that balances <strong>signal efficiency</strong> and <strong>background contamination</strong>.</p>
 <p>In this tutorial:</p>
 <ul class="simple">
@@ -1955,7 +1154,7 @@ Split-off rejection = 0.9265
 </ul>
 <hr class="docutils" />
 <section id="signal-significance">
-<h4>Signal Significance<a class="headerlink" href="#signal-significance" title="Permalink to this heading">#</a></h4>
+<h3>Signal Significance<a class="headerlink" href="#signal-significance" title="Permalink to this heading">#</a></h3>
 <p>A commonly used metric is the <strong>signal significance</strong>, defined as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1973,7 +1172,7 @@ Split-off rejection = 0.9265
 </section>
 <hr class="docutils" />
 <section id="purity">
-<h4>Purity<a class="headerlink" href="#purity" title="Permalink to this heading">#</a></h4>
+<h3>Purity<a class="headerlink" href="#purity" title="Permalink to this heading">#</a></h3>
 <p><strong>Purity</strong> measures how clean the selected sample is, i.e. the fraction of signal among all selected events:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2000,7 +1199,7 @@ Split-off rejection = 0.9265
 </section>
 <hr class="docutils" />
 <section id="interpretation">
-<h4>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h4>
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Signal significance</strong> is useful when the goal is to <strong>maximize discovery potential</strong> (typical in searches for new physics).</p></li>
 <li><p><strong>Purity</strong> is useful when the goal is to obtain a <strong>clean signal sample</strong>, for example when building templates or performing precision measurements.</p></li>
@@ -2234,11 +1433,8 @@ Split-off rejection = 0.9265
 </div>
 </section>
 </section>
-</section>
-<section id="physics-analysis">
-<h2>5. Physics Analysis<a class="headerlink" href="#physics-analysis" title="Permalink to this heading">#</a></h2>
 <section id="inference-on-physics-events">
-<h3>Inference on Physics Events<a class="headerlink" href="#inference-on-physics-events" title="Permalink to this heading">#</a></h3>
+<h2>Inference on Physics Events<a class="headerlink" href="#inference-on-physics-events" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unformatted_omega_data_url</span> <span class="o">=</span> <span class="s2">&quot;https://huggingface.co/datasets/AI4EIC/DNP2025-tutorial/resolve/main/unformatted_dataset/OmegaExclusive_100k.root&quot;</span>
@@ -2263,7 +1459,7 @@ Split-off rejection = 0.9265
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- ω physics-events analysis with your trained SmallGNN on UNFORMATTED ROOT ---</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- DROP-IN: ω physics-events analysis with your trained SmallGNN on UNFORMATTED ROOT ---</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">uproot</span><span class="o">,</span><span class="w"> </span><span class="nn">awkward</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ak</span><span class="o">,</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
@@ -2684,7 +1880,7 @@ Running ω-event inference (unformatted ROOT): 100%|█████████�
 <p><strong>Note:</strong> The GNN-based photon identification achieves a performance comparable to (or slightly better than) the traditional π⁰ mass window selection. Importantly, the classifier relies solely on calorimeter shower topology and does not use the π⁰ invariant mass as an input. When applied to ω → π⁺π⁻π⁰ events, the GNN selection reproduces the expected π⁰ and ω mass peaks while significantly reducing combinatorial background relative to the inclusive benchmark</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Improved ω mass fits with proper weighted uncertainties + better background ---</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- DROP-IN: Improved ω mass fits with proper weighted uncertainties + better background ---</span>
 
 <span class="o">%</span><span class="n">pip</span> <span class="o">-</span><span class="n">q</span> <span class="n">install</span> <span class="n">scipy</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
 
@@ -2910,7 +2106,7 @@ Running ω-event inference (unformatted ROOT): 100%|█████████�
 </div>
 </section>
 <section id="meaning-of-the-voigt-fit-parameters">
-<h3>Meaning of the Voigt Fit Parameters<a class="headerlink" href="#meaning-of-the-voigt-fit-parameters" title="Permalink to this heading">#</a></h3>
+<h2>Meaning of the Voigt Fit Parameters<a class="headerlink" href="#meaning-of-the-voigt-fit-parameters" title="Permalink to this heading">#</a></h2>
 <p>The ω mass peak is modeled using a <strong>Voigt function</strong>, which is the convolution of a <strong>Breit–Wigner distribution</strong> (intrinsic particle width) and a <strong>Gaussian distribution</strong> (detector resolution).</p>
 <ul class="simple">
 <li><p><strong>Γ (Gamma)</strong> — <em>Intrinsic decay width of the particle</em>.<br />
@@ -2922,7 +2118,7 @@ This represents the <strong>Gaussian smearing introduced by the detector and rec
 </ul>
 </section>
 <section id="interpretation-of-p-values-in-2-goodness-of-fit-tests">
-<h3>Interpretation of p-values in χ² goodness-of-fit tests<a class="headerlink" href="#interpretation-of-p-values-in-2-goodness-of-fit-tests" title="Permalink to this heading">#</a></h3>
+<h2>Interpretation of p-values in χ² goodness-of-fit tests<a class="headerlink" href="#interpretation-of-p-values-in-2-goodness-of-fit-tests" title="Permalink to this heading">#</a></h2>
 <p>If the model is correct and the uncertainties are correct, what is the probability of observing a χ² at least this large just from statistical fluctuations?</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2953,7 +2149,6 @@ p = p(\chi^2 \leq \chi^{2}_{obs}| \text{model true})
 </tbody>
 </table>
 </div>
-</section>
 </section>
 </section>
 
@@ -2987,24 +2182,6 @@ p = p(\chi^2 \leq \chi^{2}_{obs}| \text{model true})
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="02-dataset-preparation.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Preprocessing</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="GNN_Regression.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Graph Neural Network for GlueX FCAL data - Regression Tutorial</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -3021,40 +2198,24 @@ p = p(\chi^2 \leq \chi^{2}_{obs}| \text{model true})
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">1. Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-unformatted-particle-gun-root-for-gnn">Download unformatted particle-gun ROOT (for GNN)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-root-arrays">Read ROOT arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-val-test-split">Train/Val/Test Split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-unformatted-particle-gun-root-for-gnn">Download unformatted particle-gun ROOT (for GNN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-root-arrays">Read ROOT arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-val-test-split">Train/Val/Test Split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-construction-all-hits">Graph Construction (all hits)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-dataloader">Dataset + DataLoader</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-model-graph-classifier">GNN Model (graph classifier)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-train">Evaluate + Train</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-training">Run Training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-performance">Evaluate Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit-definitions">Figure of Merit Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-significance">Signal Significance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#purity">Purity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-construction">2. Graph Construction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-construction-all-hits">Graph Construction (all hits)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-graphs">Visualize Graphs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-dataloader">Dataset + DataLoader</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-model">3. GNN Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-model-graph-classifier">GNN Model (graph classifier)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-train">Evaluate + Train</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-training">Run Training</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">4. Performance</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-performance">Evaluate Performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit-definitions">Figure of Merit Definitions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-significance">Signal Significance</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#purity">Purity</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-analysis">5. Physics Analysis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-on-physics-events">Inference on Physics Events</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meaning-of-the-voigt-fit-parameters">Meaning of the Voigt Fit Parameters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-p-values-in-2-goodness-of-fit-tests">Interpretation of p-values in χ² goodness-of-fit tests</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-on-physics-events">Inference on Physics Events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meaning-of-the-voigt-fit-parameters">Meaning of the Voigt Fit Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-p-values-in-2-goodness-of-fit-tests">Interpretation of p-values in χ² goodness-of-fit tests</a></li>
 </ul>
   </nav></div>
 
