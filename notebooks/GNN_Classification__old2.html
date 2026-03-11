@@ -99,12 +99,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/GNN_Classification';</script>
-    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/GNN_Classification.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/GNN_Classification__old2';</script>
+    <link rel="canonical" href="https://ai4eic.github.io/APS2026_GPS_tutorials/notebooks/GNN_Classification__old2.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Graph Neural Network for GlueX FCAL data - Regression Tutorial" href="GNN_Regression.html" />
-    <link rel="prev" title="Data Preprocessing" href="02-dataset-preparation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,6 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -219,9 +219,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="02-dataset-preparation.html">Data Preprocessing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GNN for FCAL (2026)</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://docs.google.com/presentation/d/1Bd6isqCNZgUn0Mho43jsID-rZDn7fHWo3y0gd4ngI8Q/edit?usp=drive_link">Lecture -- GNN Overview</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">GNN for FCAL Shower Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GNN_Classification.html">GNN for FCAL Shower Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GNN_Regression.html">GNN for FCAL Shower Regression</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CNN for FCAL (2025)</span></p>
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/ai4eic/APS2026_GPS_tutorials/blob/main/./notebooks/GNN_Classification.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ai4eic/APS2026_GPS_tutorials/blob/main/./notebooks/GNN_Classification__old2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +341,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/./notebooks/GNN_Classification.ipynb" target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/edit/main/./notebooks/GNN_Classification__old2.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +358,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/GNN_Classification.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai4eic/APS2026_GPS_tutorials/issues/new?title=Issue%20on%20page%20%2Fnotebooks/GNN_Classification__old2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +388,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/GNN_Classification.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/GNN_Classification__old2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -531,10 +531,7 @@ document.write(`
 <h1>Graph Neural Network for GlueX forward calo data - Tutorial<a class="headerlink" href="#graph-neural-network-for-gluex-forward-calo-data-tutorial" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># %pip -q install uproot awkward torch-geometric scikit-learn safetensors tqdm &gt; /dev/null</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">uproot</span> <span class="n">awkward</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">safetensors</span> <span class="n">tqdm</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">torch</span><span class="o">-</span><span class="n">geometric</span>
-<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">torch</span><span class="o">-</span><span class="n">scatter</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">pyg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch</span><span class="o">-</span><span class="mf">2.10.0</span><span class="o">+</span><span class="n">cu128</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pip</span> <span class="o">-</span><span class="n">q</span> <span class="n">install</span> <span class="n">uproot</span> <span class="n">awkward</span> <span class="n">torch</span><span class="o">-</span><span class="n">geometric</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">safetensors</span> <span class="n">tqdm</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
 </pre></div>
 </div>
 </div>
@@ -542,11 +539,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch_scatter</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch_geometric</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch_scatter</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CUDA available:&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CUDA:&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span><span class="p">)</span>
 </pre></div>
@@ -554,7 +547,6 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.10.0+cu128
-2.1.2+pt210cu128
 CUDA available: True
 CUDA: 12.8
 </pre></div>
@@ -568,7 +560,7 @@ CUDA: 12.8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linux 3d4f44b3b7e7 6.6.113+ #1 SMP Mon Feb  2 12:27:57 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linux 425bf75dcbaa 6.6.113+ #1 SMP Mon Feb  2 12:27:57 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
 </pre></div>
 </div>
 </div>
@@ -580,7 +572,7 @@ CUDA: 12.8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wed Mar 11 01:38:39 2026       
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tue Mar 10 18:32:35 2026       
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
 +-----------------------------------------+------------------------+----------------------+
@@ -589,7 +581,7 @@ CUDA: 12.8
 |                                         |                        |               MIG M. |
 |=========================================+========================+======================|
 |   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
-| N/A   48C    P8             10W /   70W |       3MiB /  15360MiB |      0%      Default |
+| N/A   37C    P8             10W /   70W |       3MiB /  15360MiB |      0%      Default |
 |                                         |                        |                  N/A |
 +-----------------------------------------+------------------------+----------------------+
 
@@ -677,7 +669,16 @@ CUDA: 12.8
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ File already exists: data/ParticleGunDataSet_800k.root
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⬇️  Downloading ParticleGunDataSet_800k.root from https://huggingface.co/datasets/AI4EIC/DNP2025-tutorial/resolve/main/unformatted_dataset/ParticleGunDataSet_800k.root
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ParticleGunDataSet_800k.root: 102MB [00:03, 29.4MB/s]                           
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Download complete: data/ParticleGunDataSet_800k.root
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -767,6 +768,18 @@ CUDA: 12.8
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total: 814151 Kept: 814151
 Photons: 434845 SplitOffs: 379306
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ak</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">en_ak</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ArrayType(ListType(NumpyType(&#39;float64&#39;)), 814151, None)
 </pre></div>
 </div>
 </div>
@@ -1071,8 +1084,8 @@ z(E) = \frac{log(1+E/e_{0})}{log(1+E_{max}/e_{0})} \in [0,1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataBatch(x=[3153, 8], edge_index=[2, 11220], g=[512, 3], y=[512], showerE=[512], thrownE=[512], batch=[3153], ptr=[513])
-DataBatch(x=[3168, 8], edge_index=[2, 11304], g=[512, 3], y=[512], showerE=[512], thrownE=[512], batch=[3168], ptr=[513])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataBatch(x=[3214, 8], edge_index=[2, 11520], g=[512, 3], y=[512], showerE=[512], thrownE=[512], batch=[3214], ptr=[513])
+DataBatch(x=[3224, 8], edge_index=[2, 11594], g=[512, 3], y=[512], showerE=[512], thrownE=[512], batch=[3224], ptr=[513])
 </pre></div>
 </div>
 </div>
@@ -1089,49 +1102,49 @@ DataBatch(x=[3168, 8], edge_index=[2, 11304], g=[512, 3], y=[512], showerE=[512]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([   0,   10,   14,   27,   29,   41,   53,   57,   67,   78,   81,   84,
-          88,  100,  104,  108,  115,  123,  128,  130,  135,  141,  144,  147,
-         151,  156,  160,  165,  176,  180,  184,  187,  195,  197,  203,  213,
-         215,  221,  227,  232,  239,  245,  253,  264,  267,  274,  280,  283,
-         285,  296,  304,  307,  314,  321,  324,  327,  333,  340,  344,  350,
-         354,  362,  366,  371,  374,  378,  381,  383,  389,  398,  402,  407,
-         410,  412,  415,  417,  428,  439,  444,  451,  455,  462,  464,  467,
-         470,  482,  487,  490,  493,  499,  504,  510,  516,  522,  525,  532,
-         537,  549,  553,  558,  562,  564,  570,  582,  587,  597,  600,  603,
-         613,  618,  628,  631,  642,  656,  660,  667,  669,  678,  687,  691,
-         701,  704,  714,  719,  722,  732,  736,  739,  748,  754,  758,  762,
-         766,  777,  780,  790,  793,  798,  803,  810,  814,  824,  828,  835,
-         839,  842,  844,  848,  856,  863,  870,  877,  886,  890,  901,  908,
-         910,  919,  922,  930,  942,  950,  956,  960,  964,  972,  983,  986,
-         996, 1007, 1010, 1012, 1015, 1019, 1026, 1032, 1035, 1043, 1050, 1053,
-        1059, 1068, 1073, 1078, 1090, 1096, 1103, 1109, 1117, 1129, 1139, 1141,
-        1154, 1159, 1164, 1168, 1182, 1191, 1193, 1202, 1208, 1212, 1217, 1224,
-        1226, 1237, 1243, 1247, 1255, 1257, 1261, 1265, 1268, 1272, 1280, 1283,
-        1291, 1301, 1307, 1310, 1319, 1322, 1329, 1332, 1334, 1339, 1344, 1346,
-        1352, 1357, 1364, 1375, 1381, 1388, 1400, 1410, 1417, 1423, 1432, 1437,
-        1440, 1453, 1462, 1475, 1482, 1484, 1487, 1491, 1497, 1500, 1505, 1515,
-        1525, 1529, 1540, 1546, 1549, 1552, 1561, 1564, 1571, 1577, 1580, 1592,
-        1601, 1610, 1613, 1619, 1630, 1633, 1645, 1649, 1654, 1657, 1662, 1673,
-        1675, 1687, 1700, 1703, 1712, 1716, 1723, 1734, 1742, 1751, 1762, 1769,
-        1777, 1780, 1792, 1795, 1798, 1809, 1816, 1827, 1831, 1840, 1850, 1853,
-        1863, 1866, 1871, 1877, 1886, 1897, 1900, 1912, 1923, 1926, 1938, 1940,
-        1943, 1947, 1956, 1967, 1969, 1977, 1989, 2001, 2007, 2017, 2019, 2021,
-        2025, 2032, 2034, 2043, 2046, 2051, 2054, 2065, 2068, 2071, 2081, 2090,
-        2100, 2103, 2105, 2109, 2114, 2116, 2118, 2128, 2132, 2141, 2144, 2152,
-        2162, 2168, 2173, 2177, 2183, 2186, 2189, 2196, 2206, 2212, 2214, 2222,
-        2232, 2239, 2244, 2251, 2256, 2262, 2265, 2271, 2276, 2284, 2287, 2290,
-        2296, 2298, 2304, 2309, 2313, 2325, 2334, 2336, 2338, 2345, 2350, 2354,
-        2361, 2372, 2377, 2380, 2385, 2392, 2395, 2408, 2419, 2429, 2431, 2442,
-        2454, 2468, 2473, 2477, 2486, 2491, 2494, 2498, 2507, 2516, 2528, 2536,
-        2540, 2544, 2546, 2550, 2557, 2566, 2575, 2579, 2589, 2592, 2599, 2603,
-        2607, 2617, 2619, 2629, 2638, 2640, 2646, 2657, 2663, 2665, 2672, 2682,
-        2687, 2697, 2701, 2704, 2711, 2714, 2724, 2729, 2733, 2742, 2753, 2762,
-        2769, 2775, 2787, 2790, 2801, 2806, 2811, 2818, 2825, 2832, 2844, 2851,
-        2857, 2861, 2865, 2870, 2873, 2876, 2880, 2883, 2891, 2898, 2900, 2904,
-        2907, 2909, 2912, 2915, 2919, 2930, 2937, 2949, 2954, 2965, 2975, 2983,
-        2994, 2998, 3001, 3005, 3016, 3027, 3037, 3043, 3045, 3049, 3051, 3054,
-        3061, 3064, 3068, 3072, 3075, 3078, 3080, 3085, 3098, 3109, 3113, 3117,
-        3119, 3121, 3129, 3133, 3143, 3150, 3160, 3166, 3168])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([   0,    9,   20,   30,   33,   39,   42,   47,   49,   51,   56,   62,
+          67,   72,   76,   84,   88,   98,  107,  117,  125,  137,  141,  149,
+         163,  167,  176,  179,  185,  192,  200,  203,  213,  217,  223,  226,
+         230,  232,  234,  245,  253,  261,  264,  268,  277,  279,  282,  287,
+         297,  300,  304,  310,  321,  331,  340,  345,  359,  363,  367,  371,
+         379,  383,  390,  398,  401,  406,  410,  413,  425,  436,  440,  450,
+         453,  463,  466,  473,  475,  478,  488,  492,  503,  506,  512,  515,
+         524,  535,  544,  548,  553,  562,  565,  571,  582,  586,  588,  598,
+         601,  604,  608,  619,  621,  630,  633,  637,  641,  646,  648,  659,
+         664,  675,  678,  687,  690,  692,  695,  700,  704,  708,  714,  718,
+         721,  730,  733,  746,  749,  752,  758,  764,  771,  776,  781,  786,
+         796,  799,  808,  817,  821,  833,  843,  852,  854,  862,  866,  870,
+         875,  881,  883,  892,  898,  907,  920,  926,  936,  939,  946,  953,
+         964,  968,  976,  980,  983,  988,  992, 1000, 1011, 1016, 1021, 1025,
+        1028, 1031, 1043, 1054, 1059, 1064, 1067, 1076, 1087, 1095, 1103, 1106,
+        1114, 1119, 1128, 1131, 1139, 1150, 1158, 1160, 1162, 1169, 1171, 1173,
+        1185, 1193, 1195, 1209, 1213, 1218, 1220, 1226, 1233, 1236, 1240, 1250,
+        1254, 1265, 1269, 1280, 1284, 1287, 1297, 1304, 1314, 1323, 1327, 1332,
+        1343, 1345, 1347, 1357, 1361, 1364, 1366, 1372, 1382, 1386, 1391, 1397,
+        1404, 1416, 1425, 1427, 1430, 1435, 1439, 1442, 1451, 1457, 1463, 1465,
+        1472, 1480, 1482, 1490, 1493, 1502, 1509, 1512, 1519, 1528, 1532, 1543,
+        1546, 1550, 1562, 1569, 1571, 1578, 1590, 1593, 1597, 1603, 1615, 1620,
+        1623, 1633, 1635, 1645, 1648, 1658, 1670, 1676, 1685, 1691, 1701, 1708,
+        1714, 1724, 1728, 1733, 1746, 1751, 1755, 1759, 1762, 1764, 1774, 1777,
+        1785, 1793, 1804, 1812, 1820, 1823, 1827, 1831, 1835, 1838, 1841, 1845,
+        1847, 1857, 1859, 1868, 1870, 1880, 1885, 1888, 1895, 1900, 1909, 1911,
+        1919, 1927, 1933, 1939, 1950, 1960, 1965, 1968, 1972, 1982, 1993, 2004,
+        2009, 2014, 2016, 2020, 2028, 2041, 2053, 2059, 2063, 2066, 2071, 2077,
+        2087, 2090, 2099, 2102, 2104, 2113, 2116, 2122, 2126, 2130, 2134, 2144,
+        2147, 2149, 2160, 2164, 2172, 2175, 2182, 2187, 2191, 2197, 2209, 2218,
+        2228, 2234, 2245, 2253, 2256, 2264, 2272, 2275, 2280, 2286, 2288, 2298,
+        2302, 2305, 2307, 2312, 2318, 2320, 2330, 2334, 2337, 2348, 2350, 2352,
+        2363, 2370, 2377, 2389, 2395, 2397, 2401, 2404, 2407, 2409, 2414, 2424,
+        2426, 2433, 2437, 2445, 2454, 2461, 2472, 2475, 2484, 2488, 2497, 2499,
+        2501, 2510, 2522, 2533, 2544, 2547, 2551, 2555, 2562, 2570, 2578, 2580,
+        2590, 2596, 2604, 2609, 2611, 2613, 2625, 2631, 2638, 2642, 2645, 2651,
+        2658, 2668, 2672, 2674, 2680, 2683, 2693, 2697, 2701, 2705, 2713, 2717,
+        2724, 2726, 2730, 2734, 2742, 2749, 2756, 2767, 2779, 2784, 2787, 2790,
+        2794, 2796, 2800, 2811, 2822, 2826, 2834, 2837, 2844, 2858, 2870, 2874,
+        2878, 2885, 2888, 2896, 2899, 2906, 2918, 2921, 2930, 2939, 2943, 2947,
+        2956, 2969, 2978, 2986, 2989, 3002, 3014, 3016, 3022, 3025, 3027, 3029,
+        3039, 3041, 3053, 3059, 3063, 3066, 3073, 3075, 3078, 3083, 3093, 3096,
+        3099, 3109, 3113, 3124, 3127, 3135, 3142, 3146, 3150])
 </pre></div>
 </div>
 </div>
@@ -1588,6 +1601,186 @@ DataBatch(x=[3168, 8], edge_index=[2, 11304], g=[512, 3], y=[512], showerE=[512]
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">/tmp/ipykernel_416/3650800745.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">math</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span><span class="p">,</span> <span class="n">trange</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">roc_auc_score</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">nullcontext</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">safetensors.torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">save_model</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="n">_distributor_init</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">73</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">clone</span>  <span class="c1"># noqa: E402</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._show_versions</span><span class="w"> </span><span class="kn">import</span> <span class="n">show_versions</span>  <span class="c1"># noqa: E402</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> 
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config_context</span><span class="p">,</span> <span class="n">get_config</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">InconsistentVersionWarning</span>
+<span class="ne">---&gt; </span><span class="mi">19</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._estimator_html_repr</span><span class="w"> </span><span class="kn">import</span> <span class="n">_HTMLDocumentationLinkMixin</span><span class="p">,</span> <span class="n">estimator_html_repr</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._metadata_requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">_MetadataRequester</span><span class="p">,</span> <span class="n">_routing_enabled</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.utils._param_validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate_parameter_constraints</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_joblib</span><span class="p">,</span> <span class="n">metadata_routing</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._bunch</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bunch</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._chunking</span><span class="w"> </span><span class="kn">import</span> <span class="n">gen_batches</span><span class="p">,</span> <span class="n">gen_even_slices</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._estimator_html_repr</span><span class="w"> </span><span class="kn">import</span> <span class="n">estimator_html_repr</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">_chunking</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_config</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._param_validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Interval</span><span class="p">,</span> <span class="n">validate_params</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">_param_validation</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">config_context</span><span class="p">,</span> <span class="n">get_config</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">_is_arraylike_not_scalar</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> 
+<span class="g g-Whitespace">     </span><span class="mi">19</span> 
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">validation</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_config</span> <span class="k">as</span> <span class="n">_get_config</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataConversionWarning</span><span class="p">,</span> <span class="n">NotFittedError</span><span class="p">,</span> <span class="n">PositiveSpectrumWarning</span>
+<span class="ne">---&gt; </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..utils._array_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">_asarray_with_order</span><span class="p">,</span> <span class="n">_is_numpy_namespace</span><span class="p">,</span> <span class="n">get_namespace</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..utils.deprecation</span><span class="w"> </span><span class="kn">import</span> <span class="n">_deprecate_force_all_finite</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">..utils.fixes</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComplexWarning</span><span class="p">,</span> <span class="n">_preserve_dia_indices_dtype</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">_array_api</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.._config</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_config</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.fixes</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_version</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> 
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">_NUMPY_NAMESPACE_NAMES</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;array_api_compat.numpy&quot;</span><span class="p">}</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">sklearn</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">fixes</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> 
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">20</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">pd</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas.core.config_init</span>  <span class="c1"># pyright: ignore[reportUnusedImport] # noqa: F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> 
+<span class="ne">---&gt; </span><span class="mi">49</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.api</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="c1"># dtype</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">ArrowDtype</span><span class="p">,</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">api</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">value_counts</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">28</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays</span><span class="w"> </span><span class="kn">import</span> <span class="n">Categorical</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.boolean</span><span class="w"> </span><span class="kn">import</span> <span class="n">BooleanDtype</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.floating</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">arrays</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.arrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrowExtensionArray</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.base</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">ExtensionArray</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">ExtensionOpsMixin</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">ExtensionScalarOpsMixin</span><span class="p">,</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">arrays</span><span class="o">/</span><span class="n">arrow</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.arrow.accessors</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">ListAccessor</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">StructAccessor</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.arrays.arrow.array</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrowExtensionArray</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">arrays</span><span class="o">/</span><span class="n">arrow</span><span class="o">/</span><span class="n">accessors</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pa_version_under10p1</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> 
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.core.dtypes.dtypes</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrowDtype</span>
+
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyarrow</span><span class="o">/</span><span class="n">compute</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span> 
+<span class="g g-Whitespace">    </span><span class="mi">335</span> 
+<span class="ne">--&gt; </span><span class="mi">336</span> <span class="n">_make_global_functions</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> 
+<span class="g g-Whitespace">    </span><span class="mi">338</span> 
+
+<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_make_global_functions</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span>             <span class="k">continue</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span>         <span class="k">assert</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">g</span><span class="p">,</span> <span class="n">name</span>
+<span class="ne">--&gt; </span><span class="mi">333</span>         <span class="n">g</span><span class="p">[</span><span class="n">cpp_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">_wrap_function</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span> 
+<span class="g g-Whitespace">    </span><span class="mi">335</span> 
+
+<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_wrap_function</span><span class="nt">(name, func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="n">wrapper</span><span class="o">.</span><span class="n">__signature__</span> <span class="o">=</span> <span class="n">_make_signature</span><span class="p">(</span><span class="n">arg_names</span><span class="p">,</span> <span class="n">var_arg_names</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>                                             <span class="n">options_class</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">304</span>     <span class="k">return</span> <span class="n">_decorate_compute_function</span><span class="p">(</span><span class="n">wrapper</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">options_class</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span> 
+<span class="g g-Whitespace">    </span><span class="mi">306</span> 
+
+<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_decorate_compute_function</span><span class="nt">(wrapper, exposed_name, func, options_class)</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span>     <span class="c1"># 3b. Compute function option values</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span>     <span class="k">if</span> <span class="n">options_class</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">170</span>         <span class="n">options_class_doc</span> <span class="o">=</span> <span class="n">_scrape_options_class_doc</span><span class="p">(</span><span class="n">options_class</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>         <span class="k">if</span> <span class="n">options_class_doc</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span>             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">options_class_doc</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/compute.py</span> in <span class="ni">_scrape_options_class_doc</span><span class="nt">(options_class)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">options_class</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>         <span class="k">return</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">117</span>     <span class="n">doc</span> <span class="o">=</span> <span class="n">docscrape</span><span class="o">.</span><span class="n">NumpyDocString</span><span class="p">(</span><span class="n">options_class</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="k">return</span> <span class="n">_OptionsClassDoc</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="s1">&#39;Parameters&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span> 
+
+<span class="nn">/usr/local/lib/python3.12/dist-packages/pyarrow/vendored/docscrape.py</span> in <span class="ni">__init__</span><span class="nt">(self, docstring, config)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> 
+<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_doc</span> <span class="o">=</span> <span class="n">Reader</span><span class="p">(</span><span class="n">docstring</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">151</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_parsed_data</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span> 
+<span class="g g-Whitespace">    </span><span class="mi">153</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">/usr/lib/python3.12/copy.py</span> in <span class="ni">deepcopy</span><span class="nt">(x, memo, _nil)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="n">copier</span> <span class="o">=</span> <span class="n">_deepcopy_dispatch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="n">copier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">136</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">copier</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+
+<span class="nn">/usr/lib/python3.12/copy.py</span> in <span class="ni">_deepcopy_dict</span><span class="nt">(x, memo, deepcopy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">memo</span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="n">y</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">221</span>         <span class="n">y</span><span class="p">[</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">memo</span><span class="p">)]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="k">return</span> <span class="n">y</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="n">d</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="n">_deepcopy_dict</span>
+
+<span class="nn">/usr/lib/python3.12/copy.py</span> in <span class="ni">deepcopy</span><span class="nt">(x, memo, _nil)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> 
+<span class="ne">--&gt; </span><span class="mi">134</span>     <span class="n">copier</span> <span class="o">=</span> <span class="n">_deepcopy_dispatch</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">if</span> <span class="n">copier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">copier</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;which device? </span><span class="si">{</span><span class="n">DEVICE</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>which device? cuda
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="run-training">
@@ -1597,9 +1790,7 @@ DataBatch(x=[3168, 8], edge_index=[2, 11304], g=[512, 3], y=[512], showerE=[512]
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">LR</span> <span class="o">=</span> <span class="mf">3e-4</span>
 
-<span class="n">model</span> <span class="o">=</span> <span class="n">SmallGNN</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># forces all model parameters and buffers to use the float32 datatype.</span>
-
-<span class="c1"># Adaptive Moment Estimation (Adam) + weight decay regularization</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SmallGNN</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">opt</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">LR</span><span class="p">)</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">train_gnn</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">opt</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./models&quot;</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">EPOCHS</span><span class="p">)</span>
@@ -1607,12 +1798,20 @@ DataBatch(x=[3168, 8], edge_index=[2, 11304], g=[512, 3], y=[512], showerE=[512]
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cb412b882662402ea2b25728fa2dc2e5"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f737d10c722f475cbe1c85bf3dceded3"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "157026b4bfe94009826bf18a37be0638"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "3d7903e4d5d54c24af4ffacc461d8d9b"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 01 | train_loss 0.2198 | val_acc 0.9251 | val_auc 0.9770
-✓ New best AUC 0.9770
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "edc56dffb8a0412daa0df23066863663"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "04aea9b9396d44aebe70178d286a8d0e"}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/torch_geometric/utils/_scatter.py:91: UserWarning: The usage of `scatter(reduce=&#39;max&#39;)` can be accelerated via the &#39;torch-scatter&#39; package, but it was not found
+  warnings.warn(
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "484ed881a37740d5863c209174be14b5"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "a2b4e92a8c87492bba0f87b5d74e9d97"}</script><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "2635fda427954214b2b88574eedf28f8"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 02 | train_loss 0.1886 | val_acc 0.9275 | val_auc 0.9784
-✓ New best AUC 0.9784
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "28641abc4a964e00b15132983c899179"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 01 | train_loss 0.2219 | val_acc 0.9249 | val_auc 0.9768
+✓ New best AUC 0.9768
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5161e5b1940c4a768fbae35b00d3c502"}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/torch_geometric/utils/_scatter.py:91: UserWarning: The usage of `scatter(reduce=&#39;max&#39;)` can be accelerated via the &#39;torch-scatter&#39; package, but it was not found
+  warnings.warn(
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "821f64669cd04304869cdafdd34b6116"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 02 | train_loss 0.1893 | val_acc 0.9271 | val_auc 0.9782
+✓ New best AUC 0.9782
 </pre></div>
 </div>
 </div>
@@ -1640,10 +1839,10 @@ DataBatch(x=[3168, 8], edge_index=[2, 11304], g=[512, 3], y=[512], showerE=[512]
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "6053247e2aa94628a7ca5fc9c01961ca"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test | acc 0.9267 | auc 0.9789
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "621de7ec2e784bc3aca3de3d8675ba77"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test | acc 0.9262 | auc 0.9787
 </pre></div>
 </div>
-<img alt="../_images/d1d0d9676116cf01bb17e3962796a64b75369034741ced587bf1c616fd2776dd.png" src="../_images/d1d0d9676116cf01bb17e3962796a64b75369034741ced587bf1c616fd2776dd.png" />
+<img alt="../_images/367736f41267fb9b54d71d42e72c984391b1b6adca8dcf44953f063e8c2fad54.png" src="../_images/367736f41267fb9b54d71d42e72c984391b1b6adca8dcf44953f063e8c2fad54.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1728,19 +1927,19 @@ DataBatch(x=[3168, 8], edge_index=[2, 11304], g=[512, 3], y=[512], showerE=[512]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Working point (ε_sig≈0.85)
-threshold = 0.8326
-Photon efficiency = 0.8500
-Split-off rejection = 0.9702
+threshold = 0.7874
+Photon efficiency = 0.8499
+Split-off rejection = 0.9693
 
 Confusion matrix
 (rows=true, cols=pred)
 0=SplitOff, 1=Photon
-[[55198  1698]
- [ 9783 55444]]
+[[55149  1747]
+ [ 9788 55439]]
 
 At threshold 0.5
-Photon efficiency = 0.9333
-Split-off rejection = 0.9192
+Photon efficiency = 0.9259
+Split-off rejection = 0.9265
 </pre></div>
 </div>
 </div>
@@ -1868,11 +2067,11 @@ Split-off rejection = 0.9192
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal point Summary:
-  threshold = 0.534
+  threshold = 0.490
   Photon efficiency = 0.928
-  Split-off rejection = 0.926
-  FoM (S/sqrt(S+B)) = 0.927
-  Purity = 0.926
+  Split-off rejection = 0.925
+  FoM (S/sqrt(S+B)) = 0.926
+  Purity = 0.925
 </pre></div>
 </div>
 </div>
@@ -1896,7 +2095,7 @@ Split-off rejection = 0.9192
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7aeb7987abfb158d0761b96b658488405aa79d0a4e1af5f5e428ac909b14a239.png" src="../_images/7aeb7987abfb158d0761b96b658488405aa79d0a4e1af5f5e428ac909b14a239.png" />
+<img alt="../_images/7f9c0398ed23c379c934905fc5e550bb6b7a33328f5e3d52b1eb8bdb8c89e1f6.png" src="../_images/7f9c0398ed23c379c934905fc5e550bb6b7a33328f5e3d52b1eb8bdb8c89e1f6.png" />
 </div>
 </div>
 <p><strong>Plot FoM and purity vs threshold</strong></p>
@@ -1926,7 +2125,7 @@ Split-off rejection = 0.9192
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/179a2a41c2e0050640960a28d6fca380b25e3276b4bf530c925d16810fda3e40.png" src="../_images/179a2a41c2e0050640960a28d6fca380b25e3276b4bf530c925d16810fda3e40.png" />
+<img alt="../_images/66ddac4d52c65b38ef1c06396281fff97e0870fff2dcd6256cbc71b587508590.png" src="../_images/66ddac4d52c65b38ef1c06396281fff97e0870fff2dcd6256cbc71b587508590.png" />
 </div>
 </div>
 <p><strong>Energy-dependent Performance</strong></p>
@@ -1945,7 +2144,7 @@ Split-off rejection = 0.9192
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9209e9429dfe45a6a12de39be94c3d16"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "ac8a8806819e4602ae441f8a69cf3fdd"}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1987,10 +2186,10 @@ Split-off rejection = 0.9192
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_bin                 Acc       AUC   Nevents
-[0.1, 0.5)          0.889     0.917     46603
-[0.5, 1.0)          0.864     0.912     13455
-[1.0, 2.0)          0.943     0.905     19009
-[2.0, 4.0)          0.983     0.892     32519
+[0.1, 0.5)          0.889     0.916     46603
+[0.5, 1.0)          0.861     0.909     13455
+[1.0, 2.0)          0.943     0.906     19009
+[2.0, 4.0)          0.983     0.891     32519
 </pre></div>
 </div>
 </div>
@@ -2030,7 +2229,7 @@ Split-off rejection = 0.9192
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.5 1.  1.5 2. ]
 </pre></div>
 </div>
-<img alt="../_images/9dc394bdc1f5d5b90eb6a598dfce1d68a1af2cf8558d41f48b773bbafc15731f.png" src="../_images/9dc394bdc1f5d5b90eb6a598dfce1d68a1af2cf8558d41f48b773bbafc15731f.png" />
+<img alt="../_images/82dc263e930db75e453ab6a938f63a9823adf3f2bd7a806e62fe2d807c2bad3f.png" src="../_images/82dc263e930db75e453ab6a938f63a9823adf3f2bd7a806e62fe2d807c2bad3f.png" />
 </div>
 </div>
 </section>
@@ -2051,7 +2250,7 @@ Split-off rejection = 0.9192
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⬇️  Downloading OmegaExclusive_100k.root from https://huggingface.co/datasets/AI4EIC/DNP2025-tutorial/resolve/main/unformatted_dataset/OmegaExclusive_100k.root
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OmegaExclusive_100k.root: 86.0MB [00:02, 34.0MB/s]                            
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OmegaExclusive_100k.root: 86.0MB [00:04, 20.2MB/s]                            
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Download complete: data/OmegaExclusive_100k.root
@@ -2455,31 +2654,31 @@ Split-off rejection = 0.9192
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Loaded ω events: 97525
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running ω-event inference (unformatted ROOT):   0%|          | 0/97525 [00:00&lt;?, ?it/s]/tmp/ipykernel_14068/1340404881.py:226: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running ω-event inference (unformatted ROOT):   0%|          | 0/97525 [00:00&lt;?, ?it/s]/tmp/ipykernel_564/1692429624.py:226: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   m_omega  = float(fourvec_mass(p4_omega))
-/tmp/ipykernel_14068/1340404881.py:241: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_564/1692429624.py:241: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   m_omega  = float(fourvec_mass(p4_omega))
-/tmp/ipykernel_14068/1340404881.py:252: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_564/1692429624.py:252: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   m_omega  = float(fourvec_mass(p4_omega))
-Running ω-event inference (unformatted ROOT): 100%|██████████| 97525/97525 [19:20&lt;00:00, 84.00it/s]
+Running ω-event inference (unformatted ROOT): 100%|██████████| 97525/97525 [20:03&lt;00:00, 81.03it/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Raw entry counts:
   bench: N=  595673  sum(weights)=595673.00
   rect : N=  104166  sum(weights)=68834.00
-  gnn  : N=  100352  sum(weights)=68324.00
+  gnn  : N=   98021  sum(weights)=67608.00
 </pre></div>
 </div>
-<img alt="../_images/c6aae161af869004138121b526861e9450d9f27b20147990d230b7d41ca6b1b1.png" src="../_images/c6aae161af869004138121b526861e9450d9f27b20147990d230b7d41ca6b1b1.png" />
-<img alt="../_images/9155774bbc916e441cd418dc4308776e550934f37d777605c2f6dd20ddb418b4.png" src="../_images/9155774bbc916e441cd418dc4308776e550934f37d777605c2f6dd20ddb418b4.png" />
+<img alt="../_images/719e2ced4c88e96711d6c8a9f07c01700d9ffcb61eb044af53e985a19ccec6c4.png" src="../_images/719e2ced4c88e96711d6c8a9f07c01700d9ffcb61eb044af53e985a19ccec6c4.png" />
+<img alt="../_images/5133b7e08f948ce07ec08cce4f8004a11ddbfefc38aa9727ad46073eb00c82b3.png" src="../_images/5133b7e08f948ce07ec08cce4f8004a11ddbfefc38aa9727ad46073eb00c82b3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GNN photon-score statistics (sampled showers):
-  mean: 0.4355287253856659
-  std : 0.437677800655365
-  min : 9.766842716529833e-12
-  max : 0.9997170567512512
+  mean: 0.4262986183166504
+  std : 0.43213167786598206
+  min : 7.51024742395856e-10
+  max : 0.9991188645362854
 </pre></div>
 </div>
-<img alt="../_images/5d46d303ad189cb5d6d72c6d6b34055298272bb8cfe9e3ab5407862d243cbed2.png" src="../_images/5d46d303ad189cb5d6d72c6d6b34055298272bb8cfe9e3ab5407862d243cbed2.png" />
+<img alt="../_images/fb8e57908a4bab0157a209ebe3e85391a3e177bce65f2713deae3bb272fc47d4.png" src="../_images/fb8e57908a4bab0157a209ebe3e85391a3e177bce65f2713deae3bb272fc47d4.png" />
 </div>
 </div>
 <p><strong>Note:</strong> The GNN-based photon identification achieves a performance comparable to (or slightly better than) the traditional π⁰ mass window selection. Importantly, the classifier relies solely on calorimeter shower topology and does not use the π⁰ invariant mass as an input. When applied to ω → π⁺π⁻π⁰ events, the GNN selection reproduces the expected π⁰ and ω mass peaks while significantly reducing combinatorial background relative to the inclusive benchmark</p>
@@ -2685,11 +2884,11 @@ Running ω-event inference (unformatted ROOT): 100%|█████████�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_14068/746976919.py:121: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_564/1078107680.py:121: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
   yield_sig = np.trapz(sig, xfine)
 </pre></div>
 </div>
-<img alt="../_images/64861c48cddbf82747d500d2909018de9ca254eff8c17bf892964d308b0c7f12.png" src="../_images/64861c48cddbf82747d500d2909018de9ca254eff8c17bf892964d308b0c7f12.png" />
+<img alt="../_images/f15f1cf5aa9e4983226005319f61be4993a3d8451de99aae78fda58946f1dc2a.png" src="../_images/f15f1cf5aa9e4983226005319f61be4993a3d8451de99aae78fda58946f1dc2a.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Rectangular]  model=Voigt+poly2  range=(0.72, 0.84)  nbins=120
   m0        = 0.781994 ± 0.000097 GeV
   gamma     = 19.31 ± 5.00 MeV
@@ -2699,12 +2898,12 @@ Running ω-event inference (unformatted ROOT): 100%|█████████�
   p-value   = 0.116
 
 [GNN]  model=Voigt+poly2  range=(0.72, 0.84)  nbins=120
-  m0        = 0.782977 ± 0.000098 GeV
-  gamma     = 20.63 ± 4.63 MeV
-  sigma     = 9.87 ± 1.19 MeV
-  Yield     = 50.4 (a.u., integral of signal in fit window)
-  chi2/ndf  = 94.3 / 113 = 0.835
-  p-value   = 0.899
+  m0        = 0.782960 ± 0.000098 GeV
+  gamma     = 20.37 ± 4.57 MeV
+  sigma     = 9.86 ± 1.18 MeV
+  Yield     = 49.8 (a.u., integral of signal in fit window)
+  chi2/ndf  = 94.9 / 113 = 0.840
+  p-value   = 0.89
 </pre></div>
 </div>
 </div>
@@ -2788,24 +2987,6 @@ p = p(\chi^2 \leq \chi^{2}_{obs}| \text{model true})
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="02-dataset-preparation.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Preprocessing</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="GNN_Regression.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Graph Neural Network for GlueX FCAL data - Regression Tutorial</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
