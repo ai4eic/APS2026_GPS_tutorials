@@ -4,10 +4,13 @@ Welcome to the Short Course on Data Science for Physicists presented at APS-Glob
 
 ## Overview
 
-These tutorials are designed for Nuclear and Particle Physics and Researchers. We focus on two main applications of deep learning:
+These tutorials are designed for Nuclear and Particle Physics and Researchers and cover different applications of deep learning:
 
-1. **CNN-based Classification**: Using Convolutional Neural Networks to classify FCAL showers and distinguish between photons and splitoffs
-2. **Generative AI**: Building generative models to simulate FCAL photon showers based on their kinematics.
+1. **GNN-based Classification and Regression** (2026): Using Convolutional Neural Networks to classify FCAL showers and distinguish between photons and splitoffs; Regression of the true energy of a reconstructed (identified) photon.  
+
+2. **CNN-based Classification** (2025): Using Convolutional Neural Networks to classify FCAL showers and distinguish between photons and splitoffs
+
+3. **Generative AI** (2025): Building generative models to simulate FCAL photon showers based on their kinematics.
 
 ## Tutorial Goals
 
@@ -15,8 +18,7 @@ By the end of these tutorials, you will be able to:
 
 - Understand the physics behind FCAL showers and the importance of accurate classification
 - Prepare and preprocess FCAL data for deep learning applications
-- Build and train CNN models for binary classification (photons vs splitoffs)
-- Develop generative models (GANs, VAEs, or diffusion models) for FCAL shower simulation
+- Build and train deep learning models for binary classification (photons vs splitoffs)
 - Evaluate model performance using physics-informed metrics
 - Apply these techniques to your own nuclear physics research
 
@@ -59,7 +61,7 @@ For questions or feedback, please open an issue on our [GitHub repository](https
 
 ```{admonition} Authors Acknowledgements to GlueX
 :class: dropdrown
-* This tutorial is part of the AI4EIC collaboration’s effort to bring modern machine learning techniques to experimental nuclear physics.
+* This tutorial is part of the AI4EIC consortium effort to bring modern machine learning techniques to experimental nuclear physics.
 
 * We gratefully acknowledge the [GlueX Collaboration](https://gluex.org/) for the software framework and the public release of the Monte Carlo simulation data used in this work [GlueX acknowledgements](https://gluex.org/thanks.html).
 ```
