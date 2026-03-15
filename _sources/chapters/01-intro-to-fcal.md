@@ -19,7 +19,7 @@ The FCAL plays a central role in:
 
 ### Overall Structure
 
-The FCAL is a **lead-glass sampling calorimeter** consisting of  
+The FCAL is a **lead-glass homogeneous calorimeter** consisting of  
 **2800 individual modules** arranged in a roughly square matrix with a **beam hole** at the center to allow passage of the photon beam and low-angle particles.
 
 Each module is made of **TF-1 lead-glass** blocks with dimensions:
@@ -114,4 +114,3 @@ Typical resolutions:
 - **Timing:** 150–200 ps at 1 GeV
 
 Precise timing allows discrimination between prompt and accidental photons in the forward region (upto $2~ns$).
-
