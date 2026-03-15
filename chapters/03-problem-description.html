@@ -220,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GNN for FCAL (2026)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://docs.google.com/presentation/d/1Bd6isqCNZgUn0Mho43jsID-rZDn7fHWo3y0gd4ngI8Q/edit?usp=drive_link">Lecture -- GNN Overview</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.google.com/presentation/d/1dPol1bhN6FF6cCLxpWNXNRmZL30NvGtJa-7l80nsb0E/edit?usp=sharing">Quick GNN Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/GNN_Classification.html">GNN for FCAL Shower Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/GNN_Regression.html">GNN for FCAL Shower Regression</a></li>
 </ul>
@@ -472,7 +472,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="problem-formulation">
 <h1>Problem Formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this heading">#</a></h1>
 <p>The Forward Calorimeter (FCAL) in the GlueX detector is a high-granularity electromagnetic calorimeter composed of lead-glass modules arranged in a square grid. It measures the position and energy of electromagnetic (EM) showers produced by incident photons and electrons. When a high-energy photon enters the FCAL, it converts into an <span class="math notranslate nohighlight">\(e^+e^-\)</span> pair, initiating a cascade of secondary particles that deposit energy across neighboring calorimeter cells. The resulting two-dimensional energy map — the <strong>hit pattern</strong> — reflects the spatial development of the shower.</p>
-<p>In this study, we focus exclusively on <strong>photon-induced showers</strong> simulated with the GlueX Monte Carlo (HDGeant4 + halld_recon). From these reconstructed showers, we extract <strong>localized patches</strong> of the FCAL energy map centered around the shower maximum. Each patch encodes a localized shower image in the <span class="math notranslate nohighlight">\((\text{row}, \text{col})\)</span> grid, normalized to the total deposited energy.</p>
+<p>In this study, we focus exclusively on <strong>photon-induced showers</strong> simulated with the GlueX Monte Carlo (HDGeant4 + halld_recon). From these reconstructed showers, we extract <strong>localized patches</strong> of the FCAL energy map centered around the shower maximum.
+Each patch encodes a localized shower image in the <span class="math notranslate nohighlight">\((\text{row}, \text{col})\)</span> grid, normalized to the total deposited energy.</p>
 <hr class="docutils" />
 <section id="problem-definition">
 <h2>Problem Definition<a class="headerlink" href="#problem-definition" title="Permalink to this heading">#</a></h2>
