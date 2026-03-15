@@ -1,6 +1,6 @@
-# Problem Formulation
+# Problem Formulation   
 
-The Forward Calorimeter (FCAL) in the GlueX detector is an electromagnetic (EM) calorimeter located downstream of the target. It is designed primarily to measure the energies and positions of photons and electrons by absorbing their energy in dense lead-glass blocks. When a photon or electron enters the FCAL, it initiates an electromagnetic shower — a cascade of secondary photons, electrons, and positrons — that deposit energy across several adjacent calorimeter cells.
+The Forward Calorimeter (FCAL) in the GlueX detector is an electromagnetic (EM) calorimeter located downstream of the target. It is designed primarily to measure the energies and positions of photons and electrons by absorbing their energy in dense lead-glass blocks. When a photon or electron enters the FCAL, it initiates an electromagnetic shower — a cascade of secondary photons, electrons, and positrons — that deposit energy across several adjacent calorimeter cells.   
 
 In contrast, hadronic particles (such as $\pi^{+}$, $\pi^{-}$, protons, or neutrons) interact via both electromagnetic and strong interactions, leading to more complex and less localized energy deposition patterns. These interactions can produce **hadronic split-offs**, i.e., secondary interactions in which a single charged hadron produces additional neutral secondaries (such as $\pi^{0}$ or $\gamma$) that create **separate electromagnetic-like showers** in the calorimeter.
 
@@ -8,7 +8,9 @@ A single charged particle traversing the detector can therefore give rise to **m
 - One shower typically associated with the charged track (track-matched shower).
 - Additional showers, arising from split-offs, that are not associated with any charged track.
 
-By convention, **showers that are not matched to a reconstructed track** are classified as *neutral showers*. These include:
+By convention, **showers that are not matched to a reconstructed track** are classified as *neutral showers*.
+
+These include:
 - **True photon showers**, originating from neutral particles in the event (e.g., from π⁰ → γγ decays).
 - **Split-off showers**, arising from secondary hadronic interactions.
 
@@ -119,7 +121,7 @@ This integrated pipeline connects detector-level physics simulation with a machi
 
 ## A sample Event
 
-A typical event in FCAL will look like this. One can treat the FCAL readout as an image. 
+A typical event in FCAL will look like this. One can treat the FCAL readout as an image.
 
 ```{figure} ../images/FCALEvent.png
 ---

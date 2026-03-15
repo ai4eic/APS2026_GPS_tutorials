@@ -2,7 +2,8 @@
 
 The Forward Calorimeter (FCAL) in the GlueX detector is a high-granularity electromagnetic calorimeter composed of lead-glass modules arranged in a square grid. It measures the position and energy of electromagnetic (EM) showers produced by incident photons and electrons. When a high-energy photon enters the FCAL, it converts into an $e^+e^-$ pair, initiating a cascade of secondary particles that deposit energy across neighboring calorimeter cells. The resulting two-dimensional energy map — the **hit pattern** — reflects the spatial development of the shower.
 
-In this study, we focus exclusively on **photon-induced showers** simulated with the GlueX Monte Carlo (HDGeant4 + halld_recon). From these reconstructed showers, we extract **localized patches** of the FCAL energy map centered around the shower maximum. Each patch encodes a localized shower image in the $(\text{row}, \text{col})$ grid, normalized to the total deposited energy.
+In this study, we focus exclusively on **photon-induced showers** simulated with the GlueX Monte Carlo (HDGeant4 + halld_recon). From these reconstructed showers, we extract **localized patches** of the FCAL energy map centered around the shower maximum.
+Each patch encodes a localized shower image in the $(\text{row}, \text{col})$ grid, normalized to the total deposited energy.   
 
 ---
 
@@ -99,5 +100,5 @@ With these cuts:
 
 
 ```{note}
-Model trained on the full range with $0.01 \leq \text{thrownE} \leq 4.0~[\text{GeV}]$ with a minimum Hit Energy threshold of $0.01$[GeV] can be found in [`generatorGAN-FCAL-100MeV-4GeV.safetensors` ![Hugging Face Dataset](https://img.shields.io/badge/HuggingFace-Dataset-blue.svg?logo=huggingface)](https://huggingface.co/AI4EIC/DNP2025-tutorial/resolve/main/generatorGAN-FCAL-100MeV-4GeV.safetensors) 
+Model trained on the full range with $0.01 \leq \text{thrownE} \leq 4.0~[\text{GeV}]$ with a minimum Hit Energy threshold of $0.01$[GeV] can be found in [`generatorGAN-FCAL-100MeV-4GeV.safetensors` ![Hugging Face Dataset](https://img.shields.io/badge/HuggingFace-Dataset-blue.svg?logo=huggingface)](https://huggingface.co/AI4EIC/DNP2025-tutorial/resolve/main/generatorGAN-FCAL-100MeV-4GeV.safetensors)
 ```

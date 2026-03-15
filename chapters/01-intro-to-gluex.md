@@ -1,6 +1,6 @@
 # Introduction to GlueX
 
-## Scientific Motivation
+## Scientific Motivation 
 
 The **GlueX** experiment is a dedicated photoproduction experiment at Jefferson Lab (Hall D), designed to explore the spectrum of light-quark mesons, with special sensitivity to **hybrid and exotic mesons** that carry gluonic excitations beyond the simple quark–antiquark picture. {cite}`GlueX-overview, Zarling-RecentResults`  
 
@@ -51,7 +51,7 @@ Major subsystems:
 * **Start counter (SC)**
 * **Barrel Calorimeter (BCAL)** -- The Barrel Calorimeter (BCAL), built with layers of scintillating fibers and lead, surrounds the tracking region. Its design allows coverage for photons over a large polar angle range. It was commissioned in 2014 and operates routinely. Performance includes: $ \frac{\sigma_E}{E} \approx \frac{5.2\%}{\sqrt{E}} \oplus 3.6\% $, timing resolution ~150 ps at 1 GeV. {cite}`Beattie-BCAL`
 * **Forward Calorimeter** -- The forward calorimeter uses lead-glass modules arranged in a matrix to detect forward-going photons. (We will use FCAL data in later tutorial sections.)
-* **Particle Identification** -- In early GlueX running (Phase I) the PID was based on $\frac{dE}{dx}$ and 
+* **Particle Identification** -- In early GlueX running (Phase I) the PID was based on $\frac{dE}{dx}$ and
 **TOF**. In the Phase II program, a DIRC (Detection of Internally Reflected Cherenkov light) system (recycled from BaBar) was installed to enhance kaon/pion ($K/\pi$) discrimination, especially in the forward direction {cite}`Beattie-BCAL, DIRC-commissioning`.
 
 

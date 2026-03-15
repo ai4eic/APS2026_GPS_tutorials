@@ -1,7 +1,7 @@
 # The Forward Calorimeter (FCAL) in GlueX
 
 ## Overview and Physics Role
-
+ 
 The **Forward Calorimeter (FCAL)** is one of the two electromagnetic calorimeters of the GlueX spectrometer, located downstream of the target along the beamline.  
 Its primary purpose is to **detect photons and electrons emitted at small polar angles** (from roughly 1°–12°) and to provide energy, position, and timing measurements necessary for event reconstruction and particle identification.  
 
